@@ -6,6 +6,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,6 +29,8 @@ class Exercise {
 }
 
 class WorkoutPage extends StatefulWidget {
+  const WorkoutPage({super.key});
+
   @override
   _WorkoutPageState createState() => _WorkoutPageState();
 }
@@ -76,20 +80,20 @@ class _WorkoutPageState extends State<WorkoutPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Add Exercise'),
+          title: const Text('Add Exercise'),
           content: SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
                 ElevatedButton(
-                  child: Text('Choose from pre-defined exercises'),
+                  child: const Text('Choose from pre-defined exercises'),
                   onPressed: () {
                     Navigator.of(context).pop();
                     _showPreDefinedExercisesDialog();
                   },
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ElevatedButton(
-                  child: Text('Create a custom exercise'),
+                  child: const Text('Create a custom exercise'),
                   onPressed: () {
                     Navigator.of(context).pop();
                     _showCreateExerciseDialog();
@@ -108,7 +112,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Choose an Exercise'),
+          title: const Text('Choose an Exercise'),
           content: SingleChildScrollView(
             child: ListBody(
               children: allExercises
@@ -136,30 +140,30 @@ class _WorkoutPageState extends State<WorkoutPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Create New Exercise'),
+          title: const Text('Create New Exercise'),
           content: SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
                 TextField(
                   controller: nameController,
-                  decoration: InputDecoration(hintText: "Exercise Name"),
+                  decoration: const InputDecoration(hintText: "Exercise Name"),
                 ),
                 TextField(
                   controller: descriptionController,
-                  decoration: InputDecoration(hintText: "Description"),
+                  decoration: const InputDecoration(hintText: "Description"),
                 ),
               ],
             ),
           ),
           actions: <Widget>[
             TextButton(
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
             TextButton(
-              child: Text('Add'),
+              child: const Text('Add'),
               onPressed: () {
                 if (nameController.text.isNotEmpty &&
                     descriptionController.text.isNotEmpty) {
@@ -181,7 +185,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Your Workout'),
+        title: const Text('Your Workout'),
       ),
       body: ListView.builder(
         itemCount: exercises.length,
@@ -196,9 +200,9 @@ class _WorkoutPageState extends State<WorkoutPage> {
             },
             background: Container(
               color: Colors.red,
-              child: Icon(Icons.delete, color: Colors.white),
               alignment: Alignment.centerRight,
-              padding: EdgeInsets.only(right: 20),
+              padding: const EdgeInsets.only(right: 20),
+              child: Icon(Icons.delete, color: Colors.white),
             ),
             child: ListTile(
               title: Text(exercises[index].name),
@@ -212,14 +216,14 @@ class _WorkoutPageState extends State<WorkoutPage> {
         children: [
           FloatingActionButton(
             onPressed: generateWorkout,
-            child: Icon(Icons.refresh),
             heroTag: null,
+            child: Icon(Icons.refresh),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           FloatingActionButton(
             onPressed: _showAddExerciseDialog,
-            child: Icon(Icons.add),
             heroTag: null,
+            child: Icon(Icons.add),
           ),
         ],
       ),
