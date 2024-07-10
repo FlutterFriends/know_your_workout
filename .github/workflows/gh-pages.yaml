@@ -15,7 +15,7 @@ jobs:
         uses: subosito/flutter-action@v2
       - name: Build web app
         working-directory: random_workout
-        run: flutter build web --release --base-href /random-workout-generator/
+        run: flutter build web --release --base-href /random_workout_generator/
       - name: Configure Git, commit, and push
         run: |
           git config user.name github-actions
