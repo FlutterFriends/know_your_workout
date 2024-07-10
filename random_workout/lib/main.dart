@@ -156,26 +156,34 @@ class _WorkoutPageState extends State<WorkoutPage> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Choose an Exercise'),
-          content: SingleChildScrollView(
+          content: SizedBox(
+            width: double.maxFinite,
             child: availableExercises.isEmpty
                 ? const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       'No more pre-defined exercises available. Try creating your own custom exercise!',
-                      style: TextStyle(fontStyle: FontStyle.normal),
+                      style: TextStyle(fontStyle: FontStyle.italic),
                     ),
                   )
-                : ListBody(
-                    children: availableExercises
-                        .map((exercise) => ListTile(
-                              title: Text(exercise.name),
-                              subtitle: Text(exercise.description),
-                              onTap: () {
-                                addExercise(exercise);
-                                Navigator.of(context).pop();
-                              },
-                            ))
-                        .toList(),
+                : ScrollbarTheme(
+                    data: ScrollbarThemeData(
+                      thumbVisibility: MaterialStateProperty.all(true),
+                    ),
+                    child: ListView.builder(
+                      itemCount: availableExercises.length,
+                      itemBuilder: (context, index) {
+                        final exercise = availableExercises[index];
+                        return ListTile(
+                          title: Text(exercise.name),
+                          subtitle: Text(exercise.description),
+                          onTap: () {
+                            addExercise(exercise);
+                            Navigator.of(context).pop();
+                          },
+                        );
+                      },
+                    ),
                   ),
           ),
           actions: <Widget>[
