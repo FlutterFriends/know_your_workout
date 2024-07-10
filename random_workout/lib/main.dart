@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: WorkoutPage(),
+      home: const WorkoutPage(),
     );
   }
 }
@@ -54,12 +54,19 @@ class _WorkoutPageState extends State<WorkoutPage> {
     generateWorkout();
   }
 
+  bool isExerciseInWorkout(Exercise exercise) {
+    return exercises.any((e) => e.name == exercise.name);
+  }
+
   void generateWorkout() {
     final random = Random();
-    exercises = List.generate(
-      5,
-      (_) => allExercises[random.nextInt(allExercises.length)],
-    );
+    exercises.clear();
+    while (exercises.length < 5 && exercises.length < allExercises.length) {
+      final exercise = allExercises[random.nextInt(allExercises.length)];
+      if (!isExerciseInWorkout(exercise)) {
+        exercises.add(exercise);
+      }
+    }
     setState(() {});
   }
 
@@ -70,9 +77,11 @@ class _WorkoutPageState extends State<WorkoutPage> {
   }
 
   void addExercise(Exercise exercise) {
-    setState(() {
-      exercises.add(exercise);
-    });
+    if (!isExerciseInWorkout(exercise)) {
+      setState(() {
+        exercises.add(exercise);
+      });
+    }
   }
 
   Future<void> _showAddExerciseDialog() async {
@@ -108,25 +117,53 @@ class _WorkoutPageState extends State<WorkoutPage> {
   }
 
   Future<void> _showPreDefinedExercisesDialog() async {
+    List<Exercise> availableExercises = allExercises
+        .where((exercise) => !isExerciseInWorkout(exercise))
+        .toList();
+
     return showDialog<void>(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Choose an Exercise'),
           content: SingleChildScrollView(
-            child: ListBody(
-              children: allExercises
-                  .map((exercise) => ListTile(
-                        title: Text(exercise.name),
-                        subtitle: Text(exercise.description),
-                        onTap: () {
-                          addExercise(exercise);
-                          Navigator.of(context).pop();
-                        },
-                      ))
-                  .toList(),
-            ),
+            child: availableExercises.isEmpty
+                ? const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'No more pre-defined exercises available. Try creating your own custom exercise!',
+                      style: TextStyle(fontStyle: FontStyle.normal),
+                    ),
+                  )
+                : ListBody(
+                    children: availableExercises
+                        .map((exercise) => ListTile(
+                              title: Text(exercise.name),
+                              subtitle: Text(exercise.description),
+                              onTap: () {
+                                addExercise(exercise);
+                                Navigator.of(context).pop();
+                              },
+                            ))
+                        .toList(),
+                  ),
           ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            if (availableExercises.isEmpty)
+              TextButton(
+                child: const Text('Create Custom Exercise'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  _showCreateExerciseDialog();
+                },
+              ),
+          ],
         );
       },
     );
@@ -167,11 +204,20 @@ class _WorkoutPageState extends State<WorkoutPage> {
               onPressed: () {
                 if (nameController.text.isNotEmpty &&
                     descriptionController.text.isNotEmpty) {
-                  addExercise(Exercise(
+                  final newExercise = Exercise(
                     name: nameController.text,
                     description: descriptionController.text,
-                  ));
-                  Navigator.of(context).pop();
+                  );
+                  if (!isExerciseInWorkout(newExercise)) {
+                    addExercise(newExercise);
+                    Navigator.of(context).pop();
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                          content:
+                              Text('This exercise is already in your workout')),
+                    );
+                  }
                 }
               },
             ),
@@ -202,7 +248,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
               color: Colors.red,
               alignment: Alignment.centerRight,
               padding: const EdgeInsets.only(right: 20),
-              child: Icon(Icons.delete, color: Colors.white),
+              child: const Icon(Icons.delete, color: Colors.white),
             ),
             child: ListTile(
               title: Text(exercises[index].name),
@@ -217,13 +263,13 @@ class _WorkoutPageState extends State<WorkoutPage> {
           FloatingActionButton(
             onPressed: generateWorkout,
             heroTag: null,
-            child: Icon(Icons.refresh),
+            child: const Icon(Icons.refresh),
           ),
           const SizedBox(height: 16),
           FloatingActionButton(
             onPressed: _showAddExerciseDialog,
             heroTag: null,
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
           ),
         ],
       ),
