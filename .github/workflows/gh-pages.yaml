@@ -14,11 +14,12 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
       - name: Build web app
+        working-directory: random_workout
         run: flutter build web --release --base-href /random-workout-generator/
       - name: Configure Git, commit, and push
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git --work-tree build/web add --all
+          git --work-tree random_workout/build/web add --all
           git commit -m "Automatic deployment by github-actions"
           git push origin HEAD:gh-pages --force
