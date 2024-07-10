@@ -5,17 +5,31 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isDarkMode = true;
+
+  void toggleTheme() {
+    setState(() {
+      _isDarkMode = !_isDarkMode;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Random Workout Generator',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: _isDarkMode ? ThemeData.dark() : ThemeData.light(),
+      home: WorkoutPage(
+        isDarkMode: _isDarkMode,
+        toggleTheme: toggleTheme,
       ),
-      home: const WorkoutPage(),
     );
   }
 }
@@ -29,7 +43,13 @@ class Exercise {
 }
 
 class WorkoutPage extends StatefulWidget {
-  const WorkoutPage({super.key});
+  final bool isDarkMode;
+  final VoidCallback toggleTheme;
+  const WorkoutPage({
+    super.key,
+    required this.isDarkMode,
+    required this.toggleTheme,
+  });
 
   @override
   _WorkoutPageState createState() => _WorkoutPageState();
@@ -168,7 +188,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                   )
                 : ScrollbarTheme(
                     data: ScrollbarThemeData(
-                      thumbVisibility: MaterialStateProperty.all(true),
+                      thumbVisibility: WidgetStateProperty.all(true),
                     ),
                     child: ListView.builder(
                       itemCount: availableExercises.length,
@@ -270,6 +290,12 @@ class _WorkoutPageState extends State<WorkoutPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Your Workout'),
+        actions: [
+          IconButton(
+            icon: Icon(widget.isDarkMode ? Icons.light_mode : Icons.dark_mode),
+            onPressed: widget.toggleTheme,
+          ),
+        ],
       ),
       body: ListView.builder(
         itemCount: exercises.length,
