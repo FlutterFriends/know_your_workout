@@ -202,6 +202,37 @@ class _WorkoutPageState extends State<WorkoutPage> {
     );
   }
 
+  void _showInstructions(Exercise exercise) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(exercise.name),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(exercise.description),
+                SizedBox(height: 20),
+                Text('Instructions:',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                SizedBox(height: 10),
+                Text(exercise.instructions ?? 'No instructions available.'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Close'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -234,6 +265,10 @@ class _WorkoutPageState extends State<WorkoutPage> {
             child: ListTile(
               title: Text(exercises[index].name),
               subtitle: Text(exercises[index].description),
+              trailing: IconButton(
+                icon: Icon(Icons.info_outline),
+                onPressed: () => _showInstructions(exercises[index]),
+              ),
             ),
           );
         },
