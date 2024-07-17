@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import '../models/exercise.dart';
+import '../data/all_exercises.dart';
 
 class WorkoutPage extends StatefulWidget {
   final bool isDarkMode;
   final VoidCallback toggleTheme;
+  final ExerciseCategory category;
 
-  const WorkoutPage(
-      {super.key, required this.isDarkMode, required this.toggleTheme});
+  const WorkoutPage({
+    Key? key,
+    required this.isDarkMode,
+    required this.toggleTheme,
+    required this.category,
+  }) : super(key: key);
 
   @override
   _WorkoutPageState createState() => _WorkoutPageState();
@@ -24,9 +30,11 @@ class _WorkoutPageState extends State<WorkoutPage> {
 
   void generateWorkout() {
     final random = Random();
+    final categoryExercises =
+        allExercises.where((e) => e.category == widget.category).toList();
     exercises = List.generate(
       5,
-      (_) => allExercises[random.nextInt(allExercises.length)],
+      (_) => categoryExercises[random.nextInt(categoryExercises.length)],
     );
     setState(() {});
   }
@@ -82,7 +90,9 @@ class _WorkoutPageState extends State<WorkoutPage> {
   }
 
   Future<void> _showPreDefinedExercisesDialog() async {
-    List<Exercise> availableExercises = allExercises
+    final categoryExercises =
+        allExercises.where((e) => e.category == widget.category).toList();
+    List<Exercise> availableExercises = categoryExercises
         .where((exercise) => !isExerciseInWorkout(exercise))
         .toList();
 
@@ -180,6 +190,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                   addExercise(Exercise(
                     name: nameController.text,
                     description: descriptionController.text,
+                    category: widget.category,
                   ));
                   Navigator.of(context).pop();
                 }
@@ -195,7 +206,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Your Workout'),
+        title: Text('${widget.category.name.capitalize()} Workout'),
         actions: [
           IconButton(
             icon: Icon(widget.isDarkMode ? Icons.light_mode : Icons.dark_mode),
@@ -244,5 +255,11 @@ class _WorkoutPageState extends State<WorkoutPage> {
         ],
       ),
     );
+  }
+}
+
+extension StringExtension on String {
+  String capitalize() {
+    return "${this[0].toUpperCase()}${this.substring(1)}";
   }
 }

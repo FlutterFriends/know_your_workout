@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/workout_page.dart';
+import 'pages/category_selection_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Random Workout Generator',
       theme: _isDarkMode ? ThemeData.dark() : ThemeData.light(),
-      home: WorkoutPage(isDarkMode: _isDarkMode, toggleTheme: toggleTheme),
+      home: CategorySelectionPage(
+          isDarkMode: _isDarkMode, toggleTheme: toggleTheme),
     );
   }
 }
