@@ -9,11 +9,11 @@ class WorkoutPage extends StatefulWidget {
   final ExerciseCategory category;
 
   const WorkoutPage({
-    Key? key,
+    super.key,
     required this.isDarkMode,
     required this.toggleTheme,
     required this.category,
-  }) : super(key: key);
+  });
 
   @override
   _WorkoutPageState createState() => _WorkoutPageState();
@@ -113,7 +113,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                   )
                 : ScrollbarTheme(
                     data: ScrollbarThemeData(
-                      thumbVisibility: MaterialStateProperty.all(true),
+                      thumbVisibility: WidgetStateProperty.all(true),
                     ),
                     child: ListView.builder(
                       itemCount: availableExercises.length,
@@ -212,17 +212,17 @@ class _WorkoutPageState extends State<WorkoutPage> {
             child: ListBody(
               children: <Widget>[
                 Text(exercise.description),
-                SizedBox(height: 20),
-                Text('Instructions:',
+                const SizedBox(height: 20),
+                const Text('Instructions:',
                     style: TextStyle(fontWeight: FontWeight.bold)),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(exercise.instructions ?? 'No instructions available.'),
               ],
             ),
           ),
           actions: <Widget>[
             TextButton(
-              child: Text('Close'),
+              child: const Text('Close'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -266,7 +266,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
               title: Text(exercises[index].name),
               subtitle: Text(exercises[index].description),
               trailing: IconButton(
-                icon: Icon(Icons.info_outline),
+                icon: const Icon(Icons.info_outline),
                 onPressed: () => _showInstructions(exercises[index]),
               ),
             ),
@@ -295,6 +295,6 @@ class _WorkoutPageState extends State<WorkoutPage> {
 
 extension StringExtension on String {
   String capitalize() {
-    return "${this[0].toUpperCase()}${this.substring(1)}";
+    return "${this[0].toUpperCase()}${substring(1)}";
   }
 }
