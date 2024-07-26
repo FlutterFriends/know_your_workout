@@ -53,15 +53,15 @@ class WorkoutPage extends StatelessWidget {
                       if (exercise.muscleTargets != null &&
                           exercise.muscleTargets!.isNotEmpty)
                         Text(
-                            'Muscle Targets: ${exercise.muscleTargets!.map((t) => t.name).join(", ")}'),
+                            'Muscle Targets: ${exercise.muscleTargets!.map((t) => t.label).join(", ")}'),
                       if (exercise.jointTargets != null &&
                           exercise.jointTargets!.isNotEmpty)
                         Text(
-                            'Joint Targets: ${exercise.jointTargets!.map((t) => t.name).join(", ")}'),
+                            'Joint Targets: ${exercise.jointTargets!.map((t) => t.label).join(", ")}'),
                       if (exercise.specialTargets != null &&
                           exercise.specialTargets!.isNotEmpty)
                         Text(
-                            'Special Targets: ${exercise.specialTargets!.map((t) => t.name).join(", ")}'),
+                            'Special Targets: ${exercise.specialTargets!.map((t) => t.label).join(", ")}'),
                     ],
                   ),
                   trailing: IconButton(
@@ -231,7 +231,7 @@ class WorkoutPage extends StatelessWidget {
                       spacing: 8,
                       children: MuscleTarget.values.map((target) {
                         return FilterChip(
-                          label: Text(target.name),
+                          label: Text(target.label),
                           selected: selectedMuscleTargets.contains(target),
                           onSelected: (selected) {
                             setState(() {
@@ -251,7 +251,7 @@ class WorkoutPage extends StatelessWidget {
                       spacing: 8,
                       children: JointTarget.values.map((target) {
                         return FilterChip(
-                          label: Text(target.name),
+                          label: Text(target.label),
                           selected: selectedJointTargets.contains(target),
                           onSelected: (selected) {
                             setState(() {
@@ -271,7 +271,7 @@ class WorkoutPage extends StatelessWidget {
                       spacing: 8,
                       children: SpecialTarget.values.map((target) {
                         return FilterChip(
-                          label: Text(target.name),
+                          label: Text(target.label),
                           selected: selectedSpecialTargets.contains(target),
                           onSelected: (selected) {
                             setState(() {
