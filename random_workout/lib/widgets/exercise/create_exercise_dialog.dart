@@ -6,10 +6,10 @@ class CreateExerciseDialog extends StatefulWidget {
   final Function(Exercise) onExerciseCreated;
 
   const CreateExerciseDialog({
-    Key? key,
+    super.key,
     required this.category,
     required this.onExerciseCreated,
-  }) : super(key: key);
+  });
 
   @override
   _CreateExerciseDialogState createState() => _CreateExerciseDialogState();
@@ -68,8 +68,8 @@ class _CreateExerciseDialogState extends State<CreateExerciseDialog> {
           onPressed: () => Navigator.of(context).pop(),
         ),
         TextButton(
-          child: const Text('Add'),
           onPressed: _createExercise,
+          child: const Text('Add'),
         ),
       ],
     );

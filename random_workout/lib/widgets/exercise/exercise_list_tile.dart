@@ -7,11 +7,11 @@ class ExerciseListTile extends StatelessWidget {
   final VoidCallback onShowInstructions;
 
   const ExerciseListTile({
-    Key? key,
+    super.key,
     required this.exercise,
     required this.onRemove,
     required this.onShowInstructions,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

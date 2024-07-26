@@ -116,7 +116,7 @@ class WorkoutPage extends StatelessWidget {
                   )
                 : ScrollbarTheme(
                     data: ScrollbarThemeData(
-                      thumbVisibility: MaterialStateProperty.all(true),
+                      thumbVisibility: WidgetStateProperty.all(true),
                     ),
                     child: ListView.builder(
                       itemCount: availableExercises.length,
