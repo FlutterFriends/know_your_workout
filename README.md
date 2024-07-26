@@ -12,6 +12,7 @@
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Running the App](#running-the-app)
+  - [Testing](#testing)
   - [Contributing](#contributing)
     - [Submit feedback and ideas](#submit-feedback-and-ideas)
     - [Contribute code](#contribute-code)
@@ -47,24 +48,32 @@ The main goal of this app is to provide a quick and easy way for users to create
 ### Running the App
 
 1. Clone this repository:
-   ```
+   ```sh
    git clone https://github.com/FlutterFriends/random_workout_generator.git
    ```
 
 2. Navigate to the project directory:
-   ```
+   ```sh
    cd random_workout_generator
    ```
 
 3. Get the dependencies:
-   ```
+   ```sh
    flutter pub get
    ```
 
 4. Run the app:
-   ```
+   ```sh
    flutter run
    ```
+
+## Testing
+
+To run tests for the app, use the following command:
+
+```sh
+flutter test
+```
 
 ## Contributing
 
