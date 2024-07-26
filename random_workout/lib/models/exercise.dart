@@ -20,7 +20,7 @@ enum MuscleTarget {
   forearms,
   traps,
   lats,
-  neckMuscles // Added neck muscles
+  neckMuscles
 }
 
 enum JointTarget {
@@ -35,12 +35,29 @@ enum JointTarget {
   ankle
 }
 
-enum SpecialTarget {
-  neck,
-  lowerBack,
-  upperBack,
+enum SpecialTarget { neck, lowerBack, upperBack }
+
+class Exercise {
+  final String name;
+  final String description;
+  final String? instructions;
+  final ExerciseCategory category;
+  final List<MuscleTarget>? muscleTargets;
+  final List<JointTarget>? jointTargets;
+  final List<SpecialTarget>? specialTargets;
+
+  Exercise({
+    required this.name,
+    required this.description,
+    this.instructions,
+    required this.category,
+    this.muscleTargets,
+    this.jointTargets,
+    this.specialTargets,
+  });
 }
 
+// Extensions for labels
 extension MuscleTargetLabel on MuscleTarget {
   String get label {
     switch (this) {
@@ -112,24 +129,4 @@ extension SpecialTargetLabel on SpecialTarget {
         return 'Upper Back';
     }
   }
-}
-
-class Exercise {
-  final String name;
-  final String description;
-  final String? instructions;
-  final ExerciseCategory category;
-  final List<MuscleTarget>? muscleTargets;
-  final List<JointTarget>? jointTargets;
-  final List<SpecialTarget>? specialTargets;
-
-  Exercise({
-    required this.name,
-    required this.description,
-    this.instructions,
-    required this.category,
-    this.muscleTargets,
-    this.jointTargets,
-    this.specialTargets,
-  });
 }
