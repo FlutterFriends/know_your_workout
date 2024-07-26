@@ -45,7 +45,25 @@ class WorkoutPage extends StatelessWidget {
                 ),
                 child: ListTile(
                   title: Text(exercise.name),
-                  subtitle: Text(exercise.description),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(exercise.description),
+                      SizedBox(height: 4),
+                      if (exercise.muscleTargets != null &&
+                          exercise.muscleTargets!.isNotEmpty)
+                        Text(
+                            'Muscle Targets: ${exercise.muscleTargets!.map((t) => t.name).join(", ")}'),
+                      if (exercise.jointTargets != null &&
+                          exercise.jointTargets!.isNotEmpty)
+                        Text(
+                            'Joint Targets: ${exercise.jointTargets!.map((t) => t.name).join(", ")}'),
+                      if (exercise.specialTargets != null &&
+                          exercise.specialTargets!.isNotEmpty)
+                        Text(
+                            'Special Targets: ${exercise.specialTargets!.map((t) => t.name).join(", ")}'),
+                    ],
+                  ),
                   trailing: IconButton(
                     icon: const Icon(Icons.info_outline),
                     onPressed: () => _showInstructions(context, exercise),
@@ -175,50 +193,138 @@ class WorkoutPage extends StatelessWidget {
   Future<void> _showCreateExerciseDialog(BuildContext context) async {
     final nameController = TextEditingController();
     final descriptionController = TextEditingController();
+    final instructionsController = TextEditingController();
     final appState = Provider.of<AppState>(context, listen: false);
+    List<MuscleTarget> selectedMuscleTargets = [];
+    List<JointTarget> selectedJointTargets = [];
+    List<SpecialTarget> selectedSpecialTargets = [];
 
     return showDialog<void>(
       context: context,
       builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Create New Exercise'),
-          content: SingleChildScrollView(
-            child: ListBody(
-              children: <Widget>[
-                TextField(
-                  controller: nameController,
-                  decoration: const InputDecoration(hintText: "Exercise Name"),
+        return StatefulBuilder(
+          builder: (context, setState) {
+            return AlertDialog(
+              title: const Text('Create New Exercise'),
+              content: SingleChildScrollView(
+                child: ListBody(
+                  children: <Widget>[
+                    TextField(
+                      controller: nameController,
+                      decoration:
+                          const InputDecoration(hintText: "Exercise Name"),
+                    ),
+                    TextField(
+                      controller: descriptionController,
+                      decoration:
+                          const InputDecoration(hintText: "Description"),
+                    ),
+                    TextField(
+                      controller: instructionsController,
+                      decoration:
+                          const InputDecoration(hintText: "Instructions"),
+                      maxLines: 3,
+                    ),
+                    const SizedBox(height: 16),
+                    const Text('Muscle Targets (Optional):'),
+                    Wrap(
+                      spacing: 8,
+                      children: MuscleTarget.values.map((target) {
+                        return FilterChip(
+                          label: Text(target.name),
+                          selected: selectedMuscleTargets.contains(target),
+                          onSelected: (selected) {
+                            setState(() {
+                              if (selected) {
+                                selectedMuscleTargets.add(target);
+                              } else {
+                                selectedMuscleTargets.remove(target);
+                              }
+                            });
+                          },
+                        );
+                      }).toList(),
+                    ),
+                    const SizedBox(height: 16),
+                    const Text('Joint Targets (Optional):'),
+                    Wrap(
+                      spacing: 8,
+                      children: JointTarget.values.map((target) {
+                        return FilterChip(
+                          label: Text(target.name),
+                          selected: selectedJointTargets.contains(target),
+                          onSelected: (selected) {
+                            setState(() {
+                              if (selected) {
+                                selectedJointTargets.add(target);
+                              } else {
+                                selectedJointTargets.remove(target);
+                              }
+                            });
+                          },
+                        );
+                      }).toList(),
+                    ),
+                    const SizedBox(height: 16),
+                    const Text('Special Targets (Optional):'),
+                    Wrap(
+                      spacing: 8,
+                      children: SpecialTarget.values.map((target) {
+                        return FilterChip(
+                          label: Text(target.name),
+                          selected: selectedSpecialTargets.contains(target),
+                          onSelected: (selected) {
+                            setState(() {
+                              if (selected) {
+                                selectedSpecialTargets.add(target);
+                              } else {
+                                selectedSpecialTargets.remove(target);
+                              }
+                            });
+                          },
+                        );
+                      }).toList(),
+                    ),
+                  ],
                 ),
-                TextField(
-                  controller: descriptionController,
-                  decoration: const InputDecoration(hintText: "Description"),
+              ),
+              actions: <Widget>[
+                TextButton(
+                  child: const Text('Cancel'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+                TextButton(
+                  child: const Text('Add'),
+                  onPressed: () {
+                    if (nameController.text.isNotEmpty &&
+                        descriptionController.text.isNotEmpty) {
+                      final newExercise = Exercise(
+                        name: nameController.text,
+                        description: descriptionController.text,
+                        instructions: instructionsController.text.isNotEmpty
+                            ? instructionsController.text
+                            : null,
+                        category: category,
+                        muscleTargets: selectedMuscleTargets.isNotEmpty
+                            ? selectedMuscleTargets
+                            : null,
+                        jointTargets: selectedJointTargets.isNotEmpty
+                            ? selectedJointTargets
+                            : null,
+                        specialTargets: selectedSpecialTargets.isNotEmpty
+                            ? selectedSpecialTargets
+                            : null,
+                      );
+                      appState.addExercise(newExercise);
+                      Navigator.of(context).pop();
+                    }
+                  },
                 ),
               ],
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('Cancel'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            TextButton(
-              child: const Text('Add'),
-              onPressed: () {
-                if (nameController.text.isNotEmpty &&
-                    descriptionController.text.isNotEmpty) {
-                  final newExercise = Exercise(
-                    name: nameController.text,
-                    description: descriptionController.text,
-                    category: category,
-                  );
-                  appState.addExercise(newExercise);
-                  Navigator.of(context).pop();
-                }
-              },
-            ),
-          ],
+            );
+          },
         );
       },
     );
