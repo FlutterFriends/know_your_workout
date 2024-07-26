@@ -1,63 +1,82 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
+import 'package:provider/provider.dart';
 import '../models/exercise.dart';
+import '../providers/app_state.dart';
 import '../data/all_exercises.dart';
 
-class WorkoutPage extends StatefulWidget {
-  final bool isDarkMode;
-  final VoidCallback toggleTheme;
+class WorkoutPage extends StatelessWidget {
   final ExerciseCategory category;
 
-  const WorkoutPage({
-    super.key,
-    required this.isDarkMode,
-    required this.toggleTheme,
-    required this.category,
-  });
+  const WorkoutPage({super.key, required this.category});
 
   @override
-  _WorkoutPageState createState() => _WorkoutPageState();
-}
-
-class _WorkoutPageState extends State<WorkoutPage> {
-  List<Exercise> exercises = [];
-
-  @override
-  void initState() {
-    super.initState();
-    generateWorkout();
-  }
-
-  void generateWorkout() {
-    final random = Random();
-    final categoryExercises =
-        allExercises.where((e) => e.category == widget.category).toList();
-    exercises = List.generate(
-      5,
-      (_) => categoryExercises[random.nextInt(categoryExercises.length)],
+  Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('${category.name.capitalize()} Workout'),
+        actions: [
+          IconButton(
+            icon:
+                Icon(appState.isDarkMode ? Icons.light_mode : Icons.dark_mode),
+            onPressed: appState.toggleTheme,
+          ),
+        ],
+      ),
+      body: Consumer<AppState>(
+        builder: (context, appState, child) {
+          return ListView.builder(
+            itemCount: appState.currentWorkout.length,
+            itemBuilder: (context, index) {
+              final exercise = appState.currentWorkout[index];
+              return Dismissible(
+                key: Key(exercise.name + index.toString()),
+                onDismissed: (direction) {
+                  appState.removeExercise(index);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('${exercise.name} removed')),
+                  );
+                },
+                background: Container(
+                  color: Colors.red,
+                  alignment: Alignment.centerRight,
+                  padding: const EdgeInsets.only(right: 20),
+                  child: const Icon(Icons.delete, color: Colors.white),
+                ),
+                child: ListTile(
+                  title: Text(exercise.name),
+                  subtitle: Text(exercise.description),
+                  trailing: IconButton(
+                    icon: const Icon(Icons.info_outline),
+                    onPressed: () => _showInstructions(context, exercise),
+                  ),
+                ),
+              );
+            },
+          );
+        },
+      ),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: () => Provider.of<AppState>(context, listen: false)
+                .generateWorkout(category),
+            heroTag: null,
+            child: const Icon(Icons.refresh),
+          ),
+          const SizedBox(height: 16),
+          FloatingActionButton(
+            onPressed: () => _showAddExerciseDialog(context),
+            heroTag: null,
+            child: const Icon(Icons.add),
+          ),
+        ],
+      ),
     );
-    setState(() {});
   }
 
-  void removeExercise(int index) {
-    setState(() {
-      exercises.removeAt(index);
-    });
-  }
-
-  void addExercise(Exercise exercise) {
-    if (!isExerciseInWorkout(exercise)) {
-      setState(() {
-        exercises.add(exercise);
-      });
-    }
-  }
-
-  bool isExerciseInWorkout(Exercise exercise) {
-    return exercises.any((e) => e.name == exercise.name);
-  }
-
-  Future<void> _showAddExerciseDialog() async {
+  Future<void> _showAddExerciseDialog(BuildContext context) async {
     return showDialog<void>(
       context: context,
       builder: (BuildContext context) {
@@ -70,7 +89,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                   child: const Text('Choose from pre-defined exercises'),
                   onPressed: () {
                     Navigator.of(context).pop();
-                    _showPreDefinedExercisesDialog();
+                    _showPreDefinedExercisesDialog(context);
                   },
                 ),
                 const SizedBox(height: 20),
@@ -78,7 +97,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                   child: const Text('Create a custom exercise'),
                   onPressed: () {
                     Navigator.of(context).pop();
-                    _showCreateExerciseDialog();
+                    _showCreateExerciseDialog(context);
                   },
                 ),
               ],
@@ -89,11 +108,12 @@ class _WorkoutPageState extends State<WorkoutPage> {
     );
   }
 
-  Future<void> _showPreDefinedExercisesDialog() async {
+  Future<void> _showPreDefinedExercisesDialog(BuildContext context) async {
+    final appState = Provider.of<AppState>(context, listen: false);
     final categoryExercises =
-        allExercises.where((e) => e.category == widget.category).toList();
+        allExercises.where((e) => e.category == category).toList();
     List<Exercise> availableExercises = categoryExercises
-        .where((exercise) => !isExerciseInWorkout(exercise))
+        .where((exercise) => !appState.currentWorkout.contains(exercise))
         .toList();
 
     return showDialog<void>(
@@ -113,7 +133,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                   )
                 : ScrollbarTheme(
                     data: ScrollbarThemeData(
-                      thumbVisibility: WidgetStateProperty.all(true),
+                      thumbVisibility: MaterialStateProperty.all(true),
                     ),
                     child: ListView.builder(
                       itemCount: availableExercises.length,
@@ -123,7 +143,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                           title: Text(exercise.name),
                           subtitle: Text(exercise.description),
                           onTap: () {
-                            addExercise(exercise);
+                            appState.addExercise(exercise);
                             Navigator.of(context).pop();
                           },
                         );
@@ -143,7 +163,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                 child: const Text('Create Custom Exercise'),
                 onPressed: () {
                   Navigator.of(context).pop();
-                  _showCreateExerciseDialog();
+                  _showCreateExerciseDialog(context);
                 },
               ),
           ],
@@ -152,9 +172,10 @@ class _WorkoutPageState extends State<WorkoutPage> {
     );
   }
 
-  Future<void> _showCreateExerciseDialog() async {
+  Future<void> _showCreateExerciseDialog(BuildContext context) async {
     final nameController = TextEditingController();
     final descriptionController = TextEditingController();
+    final appState = Provider.of<AppState>(context, listen: false);
 
     return showDialog<void>(
       context: context,
@@ -187,11 +208,12 @@ class _WorkoutPageState extends State<WorkoutPage> {
               onPressed: () {
                 if (nameController.text.isNotEmpty &&
                     descriptionController.text.isNotEmpty) {
-                  addExercise(Exercise(
+                  final newExercise = Exercise(
                     name: nameController.text,
                     description: descriptionController.text,
-                    category: widget.category,
-                  ));
+                    category: category,
+                  );
+                  appState.addExercise(newExercise);
                   Navigator.of(context).pop();
                 }
               },
@@ -202,7 +224,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
     );
   }
 
-  void _showInstructions(Exercise exercise) {
+  void _showInstructions(BuildContext context, Exercise exercise) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -230,65 +252,6 @@ class _WorkoutPageState extends State<WorkoutPage> {
           ],
         );
       },
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('${widget.category.name.capitalize()} Workout'),
-        actions: [
-          IconButton(
-            icon: Icon(widget.isDarkMode ? Icons.light_mode : Icons.dark_mode),
-            onPressed: widget.toggleTheme,
-          ),
-        ],
-      ),
-      body: ListView.builder(
-        itemCount: exercises.length,
-        itemBuilder: (context, index) {
-          return Dismissible(
-            key: Key(exercises[index].name + index.toString()),
-            onDismissed: (direction) {
-              removeExercise(index);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('${exercises[index].name} removed')),
-              );
-            },
-            background: Container(
-              color: Colors.red,
-              alignment: Alignment.centerRight,
-              padding: const EdgeInsets.only(right: 20),
-              child: const Icon(Icons.delete, color: Colors.white),
-            ),
-            child: ListTile(
-              title: Text(exercises[index].name),
-              subtitle: Text(exercises[index].description),
-              trailing: IconButton(
-                icon: const Icon(Icons.info_outline),
-                onPressed: () => _showInstructions(exercises[index]),
-              ),
-            ),
-          );
-        },
-      ),
-      floatingActionButton: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            onPressed: generateWorkout,
-            heroTag: null,
-            child: const Icon(Icons.refresh),
-          ),
-          const SizedBox(height: 16),
-          FloatingActionButton(
-            onPressed: _showAddExerciseDialog,
-            heroTag: null,
-            child: const Icon(Icons.add),
-          ),
-        ],
-      ),
     );
   }
 }
