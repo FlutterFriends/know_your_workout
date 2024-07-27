@@ -9,8 +9,11 @@ void main() {
     final exercise = Exercise(
       name: 'Squats',
       description: 'Lower body exercise',
+      instructions: 'Do squats',
       category: ExerciseCategory.strength,
       muscleTargets: [MuscleTarget.quadriceps, MuscleTarget.glutes],
+      jointTargets: [JointTarget.knee],
+      focusAreas: [FocusArea.lowerBody],
     );
 
     await tester.pumpWidget(

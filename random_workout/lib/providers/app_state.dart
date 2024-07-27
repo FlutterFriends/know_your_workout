@@ -16,6 +16,8 @@ class AppState extends ChangeNotifier {
   List<Exercise> get categoryExercises => _categoryExercises;
   List<Exercise> get availableExercises => _availableExercises;
 
+  Map<dynamic, int> _targetCounts = {};
+
   void toggleTheme() {
     _isDarkMode = !_isDarkMode;
     notifyListeners();
@@ -44,23 +46,83 @@ class AppState extends ChangeNotifier {
   void generateWorkout() {
     if (_selectedCategory == null) return;
 
-    final random = Random();
     _currentWorkout = [];
     _updateAvailableExercises();
+    _resetTargetCounts();
 
     while (_currentWorkout.length < 5 && _availableExercises.isNotEmpty) {
-      final randomIndex = random.nextInt(_availableExercises.length);
-      final selectedExercise = _availableExercises[randomIndex];
+      Exercise selectedExercise = _selectBalancedExercise();
       _currentWorkout.add(selectedExercise);
-      _availableExercises.removeAt(randomIndex);
+      _updateTargetCounts(selectedExercise);
+      _availableExercises.remove(selectedExercise);
     }
 
     notifyListeners();
   }
 
+  void _resetTargetCounts() {
+    _targetCounts = {};
+  }
+
+  void _updateTargetCounts(Exercise exercise) {
+    exercise.muscleTargets?.forEach((muscle) {
+      _targetCounts[muscle] = (_targetCounts[muscle] ?? 0) + 1;
+    });
+    exercise.jointTargets?.forEach((joint) {
+      _targetCounts[joint] = (_targetCounts[joint] ?? 0) + 1;
+    });
+    exercise.focusAreas?.forEach((focus) {
+      _targetCounts[focus] = (_targetCounts[focus] ?? 0) + 1;
+    });
+  }
+
+  void _recalculateTargetCounts() {
+    _resetTargetCounts();
+    for (var exercise in _currentWorkout) {
+      _updateTargetCounts(exercise);
+    }
+  }
+
+  List<MapEntry<dynamic, int>> getSortedTargetCounts() {
+    var sortedEntries = _targetCounts.entries.toList()
+      ..sort((a, b) => b.value.compareTo(a.value));
+    return sortedEntries;
+  }
+
+  Exercise _selectBalancedExercise() {
+    _availableExercises.sort((a, b) {
+      int scoreA = _calculateDiversityScore(a);
+      int scoreB = _calculateDiversityScore(b);
+      return scoreB.compareTo(scoreA); // Higher score is better
+    });
+
+    // Select randomly from top 3 to maintain some randomness
+    int selectionPool = min(3, _availableExercises.length);
+    return _availableExercises[Random().nextInt(selectionPool)];
+  }
+
+  int _calculateDiversityScore(Exercise exercise) {
+    int score = 0;
+
+    exercise.muscleTargets?.forEach((muscle) {
+      score += 3 - min(2, _targetCounts[muscle] ?? 0);
+    });
+
+    exercise.jointTargets?.forEach((joint) {
+      score += 3 - min(2, _targetCounts[joint] ?? 0);
+    });
+
+    exercise.focusAreas?.forEach((focus) {
+      score += 3 - min(2, _targetCounts[focus] ?? 0);
+    });
+
+    return score;
+  }
+
   void removeExercise(int index) {
     _currentWorkout.removeAt(index);
     _updateAvailableExercises();
+    _recalculateTargetCounts();
     notifyListeners();
   }
 
@@ -68,7 +130,38 @@ class AppState extends ChangeNotifier {
     if (!_currentWorkout.contains(exercise)) {
       _currentWorkout.add(exercise);
       _updateAvailableExercises();
+      _updateTargetCounts(exercise);
       notifyListeners();
     }
+  }
+
+  int get workoutDiversityScore {
+    return _currentWorkout.fold(
+        0, (sum, exercise) => sum + _calculateDiversityScore(exercise));
+  }
+
+  Map<String, List<MapEntry<dynamic, int>>> getGroupedTargetCounts() {
+    Map<String, List<MapEntry<dynamic, int>>> groupedCounts = {
+      'Muscles': [],
+      'Joints': [],
+      'Focus Areas': [],
+    };
+
+    _targetCounts.entries.forEach((entry) {
+      if (entry.key is MuscleTarget) {
+        groupedCounts['Muscles']!.add(entry);
+      } else if (entry.key is JointTarget) {
+        groupedCounts['Joints']!.add(entry);
+      } else if (entry.key is FocusArea) {
+        groupedCounts['Focus Areas']!.add(entry);
+      }
+    });
+
+    // Sort each group
+    groupedCounts.forEach((key, value) {
+      value.sort((a, b) => b.value.compareTo(a.value));
+    });
+
+    return groupedCounts;
   }
 }

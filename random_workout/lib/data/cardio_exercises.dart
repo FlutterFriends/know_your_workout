@@ -13,6 +13,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.core
     ],
     jointTargets: [JointTarget.knee, JointTarget.hip],
+    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Jumping Jacks',
@@ -26,6 +27,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.shoulders
     ],
     jointTargets: [JointTarget.shoulder, JointTarget.hip, JointTarget.ankle],
+    focusAreas: [FocusArea.legs, FocusArea.arms],
   ),
   Exercise(
     name: 'Mountain Climbers',
@@ -39,6 +41,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.shoulders
     ],
     jointTargets: [JointTarget.shoulder, JointTarget.hip, JointTarget.knee],
+    focusAreas: [FocusArea.core, FocusArea.legs],
   ),
   Exercise(
     name: 'Burpees',
@@ -53,6 +56,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.shoulders
     ],
     jointTargets: [JointTarget.shoulder, JointTarget.hip, JointTarget.knee],
+    focusAreas: [FocusArea.fullBody],
   ),
   Exercise(
     name: 'Jump Rope (Imaginary)',
@@ -67,6 +71,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.shoulders
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.wrist],
+    focusAreas: [FocusArea.legs, FocusArea.arms],
   ),
   Exercise(
     name: 'Squat Jumps',
@@ -80,6 +85,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.calves
     ],
     jointTargets: [JointTarget.knee, JointTarget.hip, JointTarget.ankle],
+    focusAreas: [FocusArea.legs],
   ),
   Exercise(
     name: 'Lateral Shuffles',
@@ -93,6 +99,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.calves
     ],
     jointTargets: [JointTarget.knee, JointTarget.hip, JointTarget.ankle],
+    focusAreas: [FocusArea.legs],
   ),
   Exercise(
     name: 'Punch and Kick',
@@ -107,6 +114,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.quadriceps
     ],
     jointTargets: [JointTarget.shoulder, JointTarget.hip, JointTarget.knee],
+    focusAreas: [FocusArea.fullBody],
   ),
   Exercise(
     name: 'Speed Skaters',
@@ -121,6 +129,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.calves
     ],
     jointTargets: [JointTarget.knee, JointTarget.hip, JointTarget.ankle],
+    focusAreas: [FocusArea.legs],
   ),
   Exercise(
     name: 'Plank Jacks',
@@ -134,6 +143,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.quadriceps
     ],
     jointTargets: [JointTarget.shoulder, JointTarget.hip],
+    focusAreas: [FocusArea.core, FocusArea.legs],
   ),
   Exercise(
     name: 'Butt Kicks',
@@ -143,6 +153,7 @@ final List<Exercise> cardioExercises = [
     category: ExerciseCategory.cardio,
     muscleTargets: [MuscleTarget.hamstrings, MuscleTarget.calves],
     jointTargets: [JointTarget.knee, JointTarget.hip],
+    focusAreas: [FocusArea.legs],
   ),
   Exercise(
     name: 'Star Jumps',
@@ -156,6 +167,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.shoulders
     ],
     jointTargets: [JointTarget.knee, JointTarget.hip, JointTarget.shoulder],
+    focusAreas: [FocusArea.fullBody],
   ),
   Exercise(
     name: 'Skater Hops',
@@ -170,6 +182,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.calves
     ],
     jointTargets: [JointTarget.knee, JointTarget.hip, JointTarget.ankle],
+    focusAreas: [FocusArea.legs],
   ),
   Exercise(
     name: 'Invisible Jump Rope Sprints',
@@ -183,6 +196,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.hamstrings
     ],
     jointTargets: [JointTarget.knee, JointTarget.hip, JointTarget.ankle],
+    focusAreas: [FocusArea.legs],
   ),
   Exercise(
     name: 'Half Burpees',
@@ -197,5 +211,6 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.shoulders
     ],
     jointTargets: [JointTarget.knee, JointTarget.hip, JointTarget.shoulder],
+    focusAreas: [FocusArea.fullBody],
   ),
 ];
