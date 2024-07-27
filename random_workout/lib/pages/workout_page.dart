@@ -50,7 +50,7 @@ class WorkoutPage extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           FloatingActionButton(
-            onPressed: () => _showCreateExerciseDialog(context),
+            onPressed: () => _showAddExerciseDialog(context),
             heroTag: null,
             child: const Icon(Icons.add),
           ),
