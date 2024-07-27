@@ -139,4 +139,29 @@ class AppState extends ChangeNotifier {
     return _currentWorkout.fold(
         0, (sum, exercise) => sum + _calculateDiversityScore(exercise));
   }
+
+  Map<String, List<MapEntry<dynamic, int>>> getGroupedTargetCounts() {
+    Map<String, List<MapEntry<dynamic, int>>> groupedCounts = {
+      'Muscles': [],
+      'Joints': [],
+      'Focus Areas': [],
+    };
+
+    _targetCounts.entries.forEach((entry) {
+      if (entry.key is MuscleTarget) {
+        groupedCounts['Muscles']!.add(entry);
+      } else if (entry.key is JointTarget) {
+        groupedCounts['Joints']!.add(entry);
+      } else if (entry.key is FocusArea) {
+        groupedCounts['Focus Areas']!.add(entry);
+      }
+    });
+
+    // Sort each group
+    groupedCounts.forEach((key, value) {
+      value.sort((a, b) => b.value.compareTo(a.value));
+    });
+
+    return groupedCounts;
+  }
 }
