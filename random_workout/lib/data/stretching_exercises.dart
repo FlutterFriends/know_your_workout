@@ -89,6 +89,7 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     focusAreas: [FocusArea.glutes],
     muscleTargets: [MuscleTarget.piriformis],
+    jointTargets: [JointTarget.hip],
   ),
   Exercise(
     name: 'Lower Back Twist',
@@ -136,6 +137,9 @@ final List<Exercise> stretchingExercises = [
     instructions:
         "1. Lie face down with hands under your shoulders.\n2. Push your chest up while keeping your hips on the ground.\n3. Hold for 15-30 seconds.",
     category: ExerciseCategory.stretching,
+    focusAreas: [FocusArea.core],
+    muscleTargets: [MuscleTarget.abdominals, MuscleTarget.chest],
+    jointTargets: [JointTarget.spine],
   ),
   Exercise(
     name: 'Seated Spinal Twist',

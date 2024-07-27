@@ -13,6 +13,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.core
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
+    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Tree Pose',
@@ -26,6 +27,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.core
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
+    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Flamingo Stand',
@@ -40,6 +42,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.core
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
+    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Tightrope Walk',
@@ -49,6 +52,7 @@ final List<Exercise> balanceExercises = [
     category: ExerciseCategory.balance,
     muscleTargets: [MuscleTarget.calves, MuscleTarget.core],
     jointTargets: [JointTarget.ankle],
+    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Single Leg Deadlift',
@@ -63,6 +67,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.back
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
+    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Warrior III Pose',
@@ -76,6 +81,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.hamstrings
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
+    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Standing Leg Swings',
@@ -85,6 +91,7 @@ final List<Exercise> balanceExercises = [
     category: ExerciseCategory.balance,
     muscleTargets: [MuscleTarget.core],
     jointTargets: [JointTarget.hip, JointTarget.ankle],
+    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Pillow Balance',
@@ -98,6 +105,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.core
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee],
+    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Clock Reach',
@@ -113,6 +121,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.core
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
+    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Single Leg Balance with Arm Movements',
@@ -126,6 +135,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.quadriceps
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.shoulder],
+    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Heel-to-Toe Balance Walk',
@@ -135,6 +145,7 @@ final List<Exercise> balanceExercises = [
     category: ExerciseCategory.balance,
     muscleTargets: [MuscleTarget.calves, MuscleTarget.core],
     jointTargets: [JointTarget.ankle],
+    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Standing Windmill',
@@ -148,6 +159,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.obliques
     ],
     jointTargets: [JointTarget.hip, JointTarget.spine],
+    focusAreas: [FocusArea.core],
   ),
   Exercise(
     name: 'Single Leg Romanian Deadlift',
@@ -162,6 +174,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.back
     ],
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.ankle],
+    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Tandem Balance',
@@ -175,5 +188,6 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.core
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee],
+    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
 ];

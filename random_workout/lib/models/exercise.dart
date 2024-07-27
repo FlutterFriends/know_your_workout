@@ -102,11 +102,11 @@ class Exercise {
   Exercise({
     required this.name,
     required this.description,
-    this.instructions,
+    required this.instructions,
     required this.category,
-    this.muscleTargets,
-    this.jointTargets,
-    this.focusAreas,
+    required this.muscleTargets,
+    required this.jointTargets,
+    required this.focusAreas,
   });
 }
 

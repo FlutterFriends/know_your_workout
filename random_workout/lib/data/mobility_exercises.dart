@@ -67,8 +67,9 @@ final List<Exercise> mobilityExercises = [
     instructions:
         "1. Stand with feet shoulder-width apart.\n2. Extend arms out to the sides.\n3. Twist your torso to one side, keeping hips facing forward.\n4. Return to center and twist to the other side.\n5. Repeat for desired reps.",
     category: ExerciseCategory.mobility,
-    focusAreas: [FocusArea.core],
     muscleTargets: [MuscleTarget.abdominals],
+    jointTargets: [JointTarget.spine],
+    focusAreas: [FocusArea.core],
   ),
   Exercise(
     name: 'Cat-Cow',
