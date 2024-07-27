@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:random_workout/widgets/exercise/add_exercise_options_dialog.dart';
 import '../models/exercise.dart';
 import '../providers/app_state.dart';
 import '../data/all_exercises.dart';
@@ -46,12 +47,14 @@ class WorkoutPage extends StatelessWidget {
           FloatingActionButton(
             onPressed: () => appState.generateWorkout(category),
             heroTag: null,
+            tooltip: 'Generate new workout',
             child: const Icon(Icons.refresh),
           ),
           const SizedBox(height: 16),
           FloatingActionButton(
             onPressed: () => _showAddExerciseDialog(context),
             heroTag: null,
+            tooltip: 'Add exercise',
             child: const Icon(Icons.add),
           ),
         ],
@@ -63,29 +66,9 @@ class WorkoutPage extends StatelessWidget {
     return showDialog<void>(
       context: context,
       builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Add Exercise'),
-          content: SingleChildScrollView(
-            child: ListBody(
-              children: <Widget>[
-                ElevatedButton(
-                  child: const Text('Choose from pre-defined exercises'),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                    _showPreDefinedExercisesDialog(context);
-                  },
-                ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  child: const Text('Create a custom exercise'),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                    _showCreateExerciseDialog(context);
-                  },
-                ),
-              ],
-            ),
-          ),
+        return AddExerciseOptionsDialog(
+          onChoosePreDefined: () => _showPreDefinedExercisesDialog(context),
+          onCreateCustom: () => _showCreateExerciseDialog(context),
         );
       },
     );

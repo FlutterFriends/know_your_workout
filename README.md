@@ -13,6 +13,7 @@
     - [Prerequisites](#prerequisites)
     - [Running the App](#running-the-app)
   - [Testing](#testing)
+    - [Generating mocks](#generating-mocks)
   - [Contributing](#contributing)
     - [Submit feedback and ideas](#submit-feedback-and-ideas)
     - [Contribute code](#contribute-code)
@@ -87,6 +88,14 @@ To run integration tests, use the following command:
 flutter drive \
   --driver=test_driver/integration_test.dart \
   --target=integration_test/app_test.dart
+```
+
+### Generating mocks
+
+To generate mocks for testing, use the following command:
+
+```sh
+dart run build_runner build
 ```
 
 ## Contributing
