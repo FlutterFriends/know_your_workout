@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:random_workout/widgets/exercise/add_exercise_options_dialog.dart';
 import 'package:random_workout/widgets/exercise/predefined_exercises_dialog.dart';
+import 'package:random_workout/widgets/workout/workout_diversity_dialog.dart';
 import '../models/exercise.dart';
 import '../providers/app_state.dart';
 import '../widgets/exercise/exercise_list_tile.dart';
@@ -15,12 +16,18 @@ class WorkoutPage extends StatelessWidget {
     final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('${appState.selectedCategory?.name.capitalize()} Workout'),
+        title: Text('${appState.selectedCategory?.name} Workout'),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            onPressed: () => _showWorkoutDiversityInfo(context),
+            tooltip: 'Workout Diversity Info',
+          ),
           IconButton(
             icon:
                 Icon(appState.isDarkMode ? Icons.light_mode : Icons.dark_mode),
             onPressed: appState.toggleTheme,
+            tooltip: 'Toggle Theme',
           ),
         ],
       ),
@@ -128,6 +135,15 @@ class WorkoutPage extends StatelessWidget {
             ),
           ],
         );
+      },
+    );
+  }
+
+  void _showWorkoutDiversityInfo(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return WorkoutDiversityDialog();
       },
     );
   }
