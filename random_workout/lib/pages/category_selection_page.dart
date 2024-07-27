@@ -37,10 +37,11 @@ class CategorySelectionPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () {
-                  appState.generateWorkout(category);
+                  appState.setSelectedCategory(category);
+                  appState.generateWorkout();
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => WorkoutPage(category: category),
+                      builder: (context) => const WorkoutPage(),
                     ),
                   );
                 },

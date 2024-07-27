@@ -41,6 +41,20 @@ class MockAppState extends _i1.Mock implements _i2.AppState {
       ) as List<_i3.Exercise>);
 
   @override
+  List<_i3.Exercise> get categoryExercises => (super.noSuchMethod(
+        Invocation.getter(#categoryExercises),
+        returnValue: <_i3.Exercise>[],
+        returnValueForMissingStub: <_i3.Exercise>[],
+      ) as List<_i3.Exercise>);
+
+  @override
+  List<_i3.Exercise> get availableExercises => (super.noSuchMethod(
+        Invocation.getter(#availableExercises),
+        returnValue: <_i3.Exercise>[],
+        returnValueForMissingStub: <_i3.Exercise>[],
+      ) as List<_i3.Exercise>);
+
+  @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
         returnValue: false,
@@ -57,10 +71,20 @@ class MockAppState extends _i1.Mock implements _i2.AppState {
       );
 
   @override
-  void generateWorkout(_i3.ExerciseCategory? category) => super.noSuchMethod(
+  void setSelectedCategory(_i3.ExerciseCategory? category) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #setSelectedCategory,
+          [category],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void generateWorkout() => super.noSuchMethod(
         Invocation.method(
           #generateWorkout,
-          [category],
+          [],
         ),
         returnValueForMissingStub: null,
       );

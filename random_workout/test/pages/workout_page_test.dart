@@ -17,7 +17,8 @@ void main() {
     // Set up default stubs
     when(mockAppState.isDarkMode).thenReturn(false);
     when(mockAppState.currentWorkout).thenReturn([]);
-    when(mockAppState.generateWorkout(any)).thenReturn(null);
+    when(mockAppState.selectedCategory).thenReturn(ExerciseCategory.strength);
+    when(mockAppState.generateWorkout()).thenReturn(null);
   });
 
   testWidgets('Add exercise button opens AddExerciseOptionsDialog',
@@ -26,7 +27,7 @@ void main() {
       MaterialApp(
         home: ChangeNotifierProvider<AppState>.value(
           value: mockAppState,
-          child: const WorkoutPage(category: ExerciseCategory.strength),
+          child: const WorkoutPage(),
         ),
       ),
     );
@@ -44,7 +45,7 @@ void main() {
     expect(find.text('Choose from pre-defined exercises'), findsOneWidget);
     expect(find.text('Create a custom exercise'), findsOneWidget);
 
-    verifyNever(mockAppState.generateWorkout(any));
+    verifyNever(mockAppState.generateWorkout());
     verifyNever(mockAppState.addExercise(any));
   });
 
@@ -54,7 +55,7 @@ void main() {
       MaterialApp(
         home: ChangeNotifierProvider<AppState>.value(
           value: mockAppState,
-          child: const WorkoutPage(category: ExerciseCategory.strength),
+          child: const WorkoutPage(),
         ),
       ),
     );
@@ -65,7 +66,7 @@ void main() {
     await tester.tap(generateButton);
     await tester.pumpAndSettle();
 
-    verify(mockAppState.generateWorkout(ExerciseCategory.strength)).called(1);
+    verify(mockAppState.generateWorkout()).called(1);
     verifyNever(mockAppState.addExercise(any));
   });
 
@@ -83,17 +84,34 @@ void main() {
     ];
 
     when(mockAppState.currentWorkout).thenReturn(testExercises);
+    when(mockAppState.selectedCategory).thenReturn(ExerciseCategory.strength);
 
     await tester.pumpWidget(
       MaterialApp(
         home: ChangeNotifierProvider<AppState>.value(
           value: mockAppState,
-          child: const WorkoutPage(category: ExerciseCategory.strength),
+          child: const WorkoutPage(),
         ),
       ),
     );
 
     expect(find.text('Push-ups'), findsOneWidget);
     expect(find.text('Squats'), findsOneWidget);
+  });
+
+  testWidgets('WorkoutPage displays correct category in AppBar',
+      (WidgetTester tester) async {
+    when(mockAppState.selectedCategory).thenReturn(ExerciseCategory.strength);
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: ChangeNotifierProvider<AppState>.value(
+          value: mockAppState,
+          child: const WorkoutPage(),
+        ),
+      ),
+    );
+
+    expect(find.text('Strength Workout'), findsOneWidget);
   });
 }

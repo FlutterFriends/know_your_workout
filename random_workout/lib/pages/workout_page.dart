@@ -4,21 +4,18 @@ import 'package:random_workout/widgets/exercise/add_exercise_options_dialog.dart
 import 'package:random_workout/widgets/exercise/predefined_exercises_dialog.dart';
 import '../models/exercise.dart';
 import '../providers/app_state.dart';
-import '../data/all_exercises.dart';
 import '../widgets/exercise/exercise_list_tile.dart';
 import '../widgets/exercise/create_exercise_dialog.dart';
 
 class WorkoutPage extends StatelessWidget {
-  final ExerciseCategory category;
-
-  const WorkoutPage({super.key, required this.category});
+  const WorkoutPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('${category.name.capitalize()} Workout'),
+        title: Text('${appState.selectedCategory?.name.capitalize()} Workout'),
         actions: [
           IconButton(
             icon:
@@ -46,7 +43,7 @@ class WorkoutPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
-            onPressed: () => appState.generateWorkout(category),
+            onPressed: appState.generateWorkout,
             heroTag: null,
             tooltip: 'Generate new workout',
             child: const Icon(Icons.refresh),
@@ -76,19 +73,13 @@ class WorkoutPage extends StatelessWidget {
   }
 
   Future<void> _showPreDefinedExercisesDialog(BuildContext context) async {
-    final appState = Provider.of<AppState>(context, listen: false);
-    final categoryExercises =
-        allExercises.where((e) => e.category == category).toList();
-    List<Exercise> availableExercises = categoryExercises
-        .where((exercise) => !appState.currentWorkout.contains(exercise))
-        .toList();
-
     return showDialog<void>(
       context: context,
       builder: (BuildContext context) {
+        final appState = Provider.of<AppState>(context, listen: false);
         return PreDefinedExercisesDialog(
-          availableExercises: availableExercises,
-          category: category,
+          availableExercises: appState.availableExercises,
+          category: appState.selectedCategory!,
           onCreateCustomExercise: () => _showCreateExerciseDialog(context),
         );
       },
@@ -99,10 +90,11 @@ class WorkoutPage extends StatelessWidget {
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        final appState = Provider.of<AppState>(context, listen: false);
         return CreateExerciseDialog(
-          category: category,
+          category: appState.selectedCategory!,
           onExerciseCreated: (exercise) {
-            Provider.of<AppState>(context, listen: false).addExercise(exercise);
+            appState.addExercise(exercise);
           },
         );
       },
