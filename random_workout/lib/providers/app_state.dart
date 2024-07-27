@@ -15,9 +15,8 @@ class AppState extends ChangeNotifier {
   ExerciseCategory? get selectedCategory => _selectedCategory;
   List<Exercise> get categoryExercises => _categoryExercises;
   List<Exercise> get availableExercises => _availableExercises;
-  Map<MuscleTarget, int> _muscleTargetCounts = {};
-  Map<JointTarget, int> _jointTargetCounts = {};
-  Map<FocusArea, int> _focusAreaCounts = {};
+
+  Map<dynamic, int> _targetCounts = {};
 
   void toggleTheme() {
     _isDarkMode = !_isDarkMode;
@@ -62,21 +61,25 @@ class AppState extends ChangeNotifier {
   }
 
   void _resetTargetCounts() {
-    _muscleTargetCounts = {};
-    _jointTargetCounts = {};
-    _focusAreaCounts = {};
+    _targetCounts = {};
   }
 
   void _updateTargetCounts(Exercise exercise) {
     exercise.muscleTargets?.forEach((muscle) {
-      _muscleTargetCounts[muscle] = (_muscleTargetCounts[muscle] ?? 0) + 1;
+      _targetCounts[muscle] = (_targetCounts[muscle] ?? 0) + 1;
     });
     exercise.jointTargets?.forEach((joint) {
-      _jointTargetCounts[joint] = (_jointTargetCounts[joint] ?? 0) + 1;
+      _targetCounts[joint] = (_targetCounts[joint] ?? 0) + 1;
     });
     exercise.focusAreas?.forEach((focus) {
-      _focusAreaCounts[focus] = (_focusAreaCounts[focus] ?? 0) + 1;
+      _targetCounts[focus] = (_targetCounts[focus] ?? 0) + 1;
     });
+  }
+
+  List<MapEntry<dynamic, int>> getSortedTargetCounts() {
+    var sortedEntries = _targetCounts.entries.toList()
+      ..sort((a, b) => b.value.compareTo(a.value));
+    return sortedEntries;
   }
 
   Exercise _selectBalancedExercise() {
@@ -95,15 +98,15 @@ class AppState extends ChangeNotifier {
     int score = 0;
 
     exercise.muscleTargets?.forEach((muscle) {
-      score += 3 - min(2, _muscleTargetCounts[muscle] ?? 0);
+      score += 3 - min(2, _targetCounts[muscle] ?? 0);
     });
 
     exercise.jointTargets?.forEach((joint) {
-      score += 3 - min(2, _jointTargetCounts[joint] ?? 0);
+      score += 3 - min(2, _targetCounts[joint] ?? 0);
     });
 
     exercise.focusAreas?.forEach((focus) {
-      score += 3 - min(2, _focusAreaCounts[focus] ?? 0);
+      score += 3 - min(2, _targetCounts[focus] ?? 0);
     });
 
     return score;
@@ -126,17 +129,5 @@ class AppState extends ChangeNotifier {
   int get workoutDiversityScore {
     return _currentWorkout.fold(
         0, (sum, exercise) => sum + _calculateDiversityScore(exercise));
-  }
-
-  List<MapEntry<dynamic, int>> getSortedTargetCounts() {
-    Map<dynamic, int> allTargets = {};
-    allTargets.addAll(_muscleTargetCounts);
-    allTargets.addAll(_jointTargetCounts);
-    allTargets.addAll(_focusAreaCounts);
-
-    var sortedEntries = allTargets.entries.toList()
-      ..sort((a, b) => b.value.compareTo(a.value));
-
-    return sortedEntries;
   }
 }
