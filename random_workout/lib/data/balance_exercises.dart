@@ -7,7 +7,11 @@ final List<Exercise> balanceExercises = [
     instructions:
         "1. Stand on one leg with the other foot lifted off the ground.\n2. Keep your standing leg straight but not locked.\n3. Hold for 30 seconds.\n4. Switch legs and repeat.\n5. For added difficulty, try closing your eyes.",
     category: ExerciseCategory.balance,
-    muscleTargets: [MuscleTarget.quads, MuscleTarget.calves, MuscleTarget.core],
+    muscleTargets: [
+      MuscleTarget.quadriceps,
+      MuscleTarget.calves,
+      MuscleTarget.core
+    ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
   ),
   Exercise(
@@ -16,7 +20,11 @@ final List<Exercise> balanceExercises = [
     instructions:
         "1. Stand on one leg.\n2. Place the sole of your other foot on your inner thigh or calf (avoid the knee).\n3. Bring your palms together in front of your chest.\n4. Hold for 30 seconds, then switch sides.",
     category: ExerciseCategory.balance,
-    muscleTargets: [MuscleTarget.quads, MuscleTarget.calves, MuscleTarget.core],
+    muscleTargets: [
+      MuscleTarget.quadriceps,
+      MuscleTarget.calves,
+      MuscleTarget.core
+    ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
   ),
   Exercise(
@@ -26,7 +34,7 @@ final List<Exercise> balanceExercises = [
         "1. Stand on one leg.\n2. Bend your other leg behind you, grabbing the foot with your hand.\n3. Pull your foot towards your buttocks.\n4. Hold for 15-30 seconds, then switch sides.",
     category: ExerciseCategory.balance,
     muscleTargets: [
-      MuscleTarget.quads,
+      MuscleTarget.quadriceps,
       MuscleTarget.hamstrings,
       MuscleTarget.calves,
       MuscleTarget.core
@@ -84,7 +92,11 @@ final List<Exercise> balanceExercises = [
     instructions:
         "1. Place a pillow on the floor.\n2. Stand on the pillow with both feet.\n3. Try to maintain your balance for 30 seconds.\n4. For a challenge, try standing on one foot.",
     category: ExerciseCategory.balance,
-    muscleTargets: [MuscleTarget.calves, MuscleTarget.quads, MuscleTarget.core],
+    muscleTargets: [
+      MuscleTarget.calves,
+      MuscleTarget.quadriceps,
+      MuscleTarget.core
+    ],
     jointTargets: [JointTarget.ankle, JointTarget.knee],
   ),
   Exercise(
@@ -95,7 +107,7 @@ final List<Exercise> balanceExercises = [
         "1. Imagine you're standing in the center of a clock.\n2. Balance on your right leg.\n3. Reach your left leg to 12 o'clock, then back to center.\n4. Reach to 3 o'clock, then 6 o'clock.\n5. Switch legs and repeat.",
     category: ExerciseCategory.balance,
     muscleTargets: [
-      MuscleTarget.quads,
+      MuscleTarget.quadriceps,
       MuscleTarget.hamstrings,
       MuscleTarget.calves,
       MuscleTarget.core
@@ -111,7 +123,7 @@ final List<Exercise> balanceExercises = [
     muscleTargets: [
       MuscleTarget.core,
       MuscleTarget.shoulders,
-      MuscleTarget.quads
+      MuscleTarget.quadriceps
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.shoulder],
   ),
@@ -157,7 +169,11 @@ final List<Exercise> balanceExercises = [
     instructions:
         "1. Stand with one foot directly in front of the other, heel touching toe.\n2. Maintain this position for 30 seconds.\n3. Switch feet and repeat.",
     category: ExerciseCategory.balance,
-    muscleTargets: [MuscleTarget.calves, MuscleTarget.quads, MuscleTarget.core],
+    muscleTargets: [
+      MuscleTarget.calves,
+      MuscleTarget.quadriceps,
+      MuscleTarget.core
+    ],
     jointTargets: [JointTarget.ankle, JointTarget.knee],
   ),
 ];

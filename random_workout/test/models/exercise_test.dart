@@ -17,13 +17,13 @@ void main() {
       expect(
           exercise.muscleTargets, [MuscleTarget.chest, MuscleTarget.triceps]);
       expect(exercise.jointTargets, isNull);
-      expect(exercise.specialTargets, isNull);
+      expect(exercise.focusAreas, isNull);
     });
 
     test('should return correct labels for targets', () {
       expect(MuscleTarget.chest.label, 'Chest');
       expect(JointTarget.knee.label, 'Knee');
-      expect(SpecialTarget.lowerBack.label, 'Lower Back');
+      expect(FocusArea.lowerBack.label, 'Lower Back');
     });
   });
 }

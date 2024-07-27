@@ -15,7 +15,7 @@ enum ExerciseCategory {
 }
 
 enum MuscleTarget {
-  quads,
+  abdominals,
   hamstrings,
   calves,
   glutes,
@@ -38,6 +38,13 @@ enum MuscleTarget {
   rhomboids,
   serratus,
   tibialis,
+  hips,
+  neck,
+  lowerBack,
+  upperBack,
+  lowerBody,
+  quadriceps,
+  piriformis,
 }
 
 enum JointTarget {
@@ -79,7 +86,8 @@ enum FocusArea {
   feet,
   upperBody,
   lowerBody,
-  fullBody
+  fullBody,
+  legs,
 }
 
 class Exercise {
@@ -106,8 +114,6 @@ class Exercise {
 extension MuscleTargetLabel on MuscleTarget {
   String get label {
     switch (this) {
-      case MuscleTarget.quads:
-        return 'Quadriceps';
       case MuscleTarget.hamstrings:
         return 'Hamstrings';
       case MuscleTarget.calves:
@@ -152,6 +158,22 @@ extension MuscleTargetLabel on MuscleTarget {
         return 'Serratus';
       case MuscleTarget.tibialis:
         return 'Tibialis';
+      case MuscleTarget.hips:
+        return 'Hips';
+      case MuscleTarget.neck:
+        return 'Neck';
+      case MuscleTarget.lowerBack:
+        return 'Lower Back';
+      case MuscleTarget.upperBack:
+        return 'Upper Back';
+      case MuscleTarget.lowerBody:
+        return 'Lower Body';
+      case MuscleTarget.abdominals:
+        return 'Abdominals';
+      case MuscleTarget.quadriceps:
+        return 'Quadriceps';
+      case MuscleTarget.piriformis:
+        return 'Piriformis';
     }
   }
 }
@@ -238,6 +260,8 @@ extension FocusAreaLabel on FocusArea {
         return 'Lower Body';
       case FocusArea.fullBody:
         return 'Full Body';
+      case FocusArea.legs:
+        return 'Legs';
     }
   }
 }

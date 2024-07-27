@@ -7,7 +7,11 @@ final List<Exercise> cardioExercises = [
     instructions:
         "1. Stand in place with feet hip-width apart.\n2. Lift your right knee to your chest.\n3. Switch to the left knee.\n4. Alternate legs quickly, as if running in place.\n5. Continue for 30-60 seconds.",
     category: ExerciseCategory.cardio,
-    muscleTargets: [MuscleTarget.quads, MuscleTarget.calves, MuscleTarget.core],
+    muscleTargets: [
+      MuscleTarget.quadriceps,
+      MuscleTarget.calves,
+      MuscleTarget.core
+    ],
     jointTargets: [JointTarget.knee, JointTarget.hip],
   ),
   Exercise(
@@ -17,7 +21,7 @@ final List<Exercise> cardioExercises = [
         "1. Start with feet together and arms at your sides.\n2. Jump feet apart and raise arms above head simultaneously.\n3. Jump back to starting position.\n4. Repeat for 30-60 seconds.",
     category: ExerciseCategory.cardio,
     muscleTargets: [
-      MuscleTarget.quads,
+      MuscleTarget.quadriceps,
       MuscleTarget.calves,
       MuscleTarget.shoulders
     ],
@@ -31,7 +35,7 @@ final List<Exercise> cardioExercises = [
     category: ExerciseCategory.cardio,
     muscleTargets: [
       MuscleTarget.core,
-      MuscleTarget.quads,
+      MuscleTarget.quadriceps,
       MuscleTarget.shoulders
     ],
     jointTargets: [JointTarget.shoulder, JointTarget.hip, JointTarget.knee],
@@ -43,7 +47,7 @@ final List<Exercise> cardioExercises = [
         "1. Start standing, then drop into a squat.\n2. Place hands on floor and kick feet back to plank position.\n3. Do a push-up (optional).\n4. Jump feet back to hands.\n5. Jump up with arms raised.\n6. Repeat for 30-60 seconds.",
     category: ExerciseCategory.cardio,
     muscleTargets: [
-      MuscleTarget.quads,
+      MuscleTarget.quadriceps,
       MuscleTarget.chest,
       MuscleTarget.core,
       MuscleTarget.shoulders
@@ -59,7 +63,7 @@ final List<Exercise> cardioExercises = [
     category: ExerciseCategory.cardio,
     muscleTargets: [
       MuscleTarget.calves,
-      MuscleTarget.quads,
+      MuscleTarget.quadriceps,
       MuscleTarget.shoulders
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.wrist],
@@ -71,7 +75,7 @@ final List<Exercise> cardioExercises = [
         "1. Start in a squat position with feet shoulder-width apart.\n2. Jump explosively upward.\n3. Land softly back in the squat position.\n4. Immediately repeat.\n5. Continue for 30-60 seconds.",
     category: ExerciseCategory.cardio,
     muscleTargets: [
-      MuscleTarget.quads,
+      MuscleTarget.quadriceps,
       MuscleTarget.glutes,
       MuscleTarget.calves
     ],
@@ -84,7 +88,7 @@ final List<Exercise> cardioExercises = [
         "1. Start in a slight squat position.\n2. Take 5 quick steps to the right.\n3. Then take 5 quick steps to the left.\n4. Keep core engaged and stay low throughout.\n5. Continue for 30-60 seconds.",
     category: ExerciseCategory.cardio,
     muscleTargets: [
-      MuscleTarget.quads,
+      MuscleTarget.quadriceps,
       MuscleTarget.glutes,
       MuscleTarget.calves
     ],
@@ -100,7 +104,7 @@ final List<Exercise> cardioExercises = [
     muscleTargets: [
       MuscleTarget.shoulders,
       MuscleTarget.core,
-      MuscleTarget.quads
+      MuscleTarget.quadriceps
     ],
     jointTargets: [JointTarget.shoulder, JointTarget.hip, JointTarget.knee],
   ),
@@ -112,7 +116,7 @@ final List<Exercise> cardioExercises = [
         "1. Start with feet shoulder-width apart.\n2. Jump to the right, landing on right foot.\n3. Swing left foot behind right ankle and left arm in front of you.\n4. Jump to the left, reversing the position.\n5. Continue alternating for 30-60 seconds.",
     category: ExerciseCategory.cardio,
     muscleTargets: [
-      MuscleTarget.quads,
+      MuscleTarget.quadriceps,
       MuscleTarget.glutes,
       MuscleTarget.calves
     ],
@@ -127,7 +131,7 @@ final List<Exercise> cardioExercises = [
     muscleTargets: [
       MuscleTarget.core,
       MuscleTarget.shoulders,
-      MuscleTarget.quads
+      MuscleTarget.quadriceps
     ],
     jointTargets: [JointTarget.shoulder, JointTarget.hip],
   ),
@@ -147,7 +151,7 @@ final List<Exercise> cardioExercises = [
         "1. Start in a squat position with arms by your sides.\n2. Jump up explosively, spreading arms and legs out to form a star shape.\n3. Land softly back in the squat position.\n4. Immediately repeat.\n5. Continue for 30-60 seconds.",
     category: ExerciseCategory.cardio,
     muscleTargets: [
-      MuscleTarget.quads,
+      MuscleTarget.quadriceps,
       MuscleTarget.glutes,
       MuscleTarget.shoulders
     ],
@@ -161,7 +165,7 @@ final List<Exercise> cardioExercises = [
         "1. Start by jumping to your right side, landing on your right foot.\n2. Swing your left foot behind you and left arm in front of you.\n3. Hold briefly, then jump to your left side.\n4. Continue alternating sides.\n5. Perform for 30-60 seconds.",
     category: ExerciseCategory.cardio,
     muscleTargets: [
-      MuscleTarget.quads,
+      MuscleTarget.quadriceps,
       MuscleTarget.glutes,
       MuscleTarget.calves
     ],
@@ -175,7 +179,7 @@ final List<Exercise> cardioExercises = [
     category: ExerciseCategory.cardio,
     muscleTargets: [
       MuscleTarget.calves,
-      MuscleTarget.quads,
+      MuscleTarget.quadriceps,
       MuscleTarget.hamstrings
     ],
     jointTargets: [JointTarget.knee, JointTarget.hip, JointTarget.ankle],
@@ -188,7 +192,7 @@ final List<Exercise> cardioExercises = [
         "1. Start in a standing position.\n2. Quickly drop into a squat and place hands on floor.\n3. Kick feet back to plank position.\n4. Immediately jump feet back to hands.\n5. Stand up.\n6. Repeat for 30-60 seconds.",
     category: ExerciseCategory.cardio,
     muscleTargets: [
-      MuscleTarget.quads,
+      MuscleTarget.quadriceps,
       MuscleTarget.core,
       MuscleTarget.shoulders
     ],
