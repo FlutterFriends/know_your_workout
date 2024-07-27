@@ -38,13 +38,12 @@ class ExerciseListTile extends StatelessWidget {
                 exercise.jointTargets!.isNotEmpty)
               Text(
                   'Joint Targets: ${exercise.jointTargets!.map((t) => t.label).join(", ")}'),
-            if (exercise.specialTargets != null &&
-                exercise.specialTargets!.isNotEmpty)
+            if (exercise.focusAreas != null && exercise.focusAreas!.isNotEmpty)
               Text(
-                  'Special Targets: ${exercise.specialTargets!.map((t) => t.label).join(", ")}'),
+                  'Special Targets: ${exercise.focusAreas!.map((t) => t.label).join(", ")}'),
           ],
         ),
-        trailing: IconButton(
+        leading: IconButton(
           icon: const Icon(Icons.info_outline),
           onPressed: onShowInstructions,
         ),

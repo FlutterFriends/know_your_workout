@@ -10,7 +10,7 @@ void main() {
       name: 'Squats',
       description: 'Lower body exercise',
       category: ExerciseCategory.strength,
-      muscleTargets: [MuscleTarget.quads, MuscleTarget.glutes],
+      muscleTargets: [MuscleTarget.quadriceps, MuscleTarget.glutes],
     );
 
     await tester.pumpWidget(

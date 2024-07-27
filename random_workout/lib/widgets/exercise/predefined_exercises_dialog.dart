@@ -9,11 +9,11 @@ class PreDefinedExercisesDialog extends StatelessWidget {
   final VoidCallback onCreateCustomExercise;
 
   const PreDefinedExercisesDialog({
-    Key? key,
+    super.key,
     required this.availableExercises,
     required this.category,
     required this.onCreateCustomExercise,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class PreDefinedExercisesDialog extends StatelessWidget {
               )
             : ScrollbarTheme(
                 data: ScrollbarThemeData(
-                  thumbVisibility: MaterialStateProperty.all(true),
+                  thumbVisibility: WidgetStateProperty.all(true),
                 ),
                 child: ListView.builder(
                   itemCount: availableExercises.length,

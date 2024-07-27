@@ -5,10 +5,10 @@ class AddExerciseOptionsDialog extends StatelessWidget {
   final VoidCallback onCreateCustom;
 
   const AddExerciseOptionsDialog({
-    Key? key,
+    super.key,
     required this.onChoosePreDefined,
     required this.onCreateCustom,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
