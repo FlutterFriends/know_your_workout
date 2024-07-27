@@ -74,13 +74,23 @@ void main() {
       (WidgetTester tester) async {
     final testExercises = [
       Exercise(
-          name: 'Push-ups',
-          description: 'Do push-ups',
-          category: ExerciseCategory.strength),
+        name: 'Push-ups',
+        description: 'Do push-ups',
+        instructions: 'Do push-ups',
+        category: ExerciseCategory.strength,
+        muscleTargets: [MuscleTarget.chest, MuscleTarget.triceps],
+        jointTargets: [JointTarget.elbow],
+        focusAreas: [FocusArea.upperBody],
+      ),
       Exercise(
-          name: 'Squats',
-          description: 'Do squats',
-          category: ExerciseCategory.strength),
+        name: 'Squats',
+        description: 'Do squats',
+        instructions: 'Do squats',
+        category: ExerciseCategory.strength,
+        muscleTargets: [MuscleTarget.quadriceps],
+        jointTargets: [JointTarget.knee],
+        focusAreas: [FocusArea.lowerBody],
+      ),
     ];
 
     when(mockAppState.currentWorkout).thenReturn(testExercises);

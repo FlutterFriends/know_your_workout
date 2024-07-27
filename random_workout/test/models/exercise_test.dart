@@ -7,8 +7,11 @@ void main() {
       final exercise = Exercise(
         name: 'Push-ups',
         description: 'Basic upper body exercise',
+        instructions: 'Do push-ups',
         category: ExerciseCategory.strength,
         muscleTargets: [MuscleTarget.chest, MuscleTarget.triceps],
+        jointTargets: [JointTarget.elbow],
+        focusAreas: [FocusArea.upperBody],
       );
 
       expect(exercise.name, 'Push-ups');
