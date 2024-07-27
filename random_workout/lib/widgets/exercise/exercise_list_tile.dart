@@ -43,7 +43,7 @@ class ExerciseListTile extends StatelessWidget {
                   'Special Targets: ${exercise.focusAreas!.map((t) => t.label).join(", ")}'),
           ],
         ),
-        trailing: IconButton(
+        leading: IconButton(
           icon: const Icon(Icons.info_outline),
           onPressed: onShowInstructions,
         ),

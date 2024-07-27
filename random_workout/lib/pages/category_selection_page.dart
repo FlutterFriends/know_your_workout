@@ -4,6 +4,14 @@ import '../models/exercise.dart';
 import '../providers/app_state.dart';
 import 'workout_page.dart';
 
+const List<ExerciseCategory> exerciseMenuChoices = [
+  ExerciseCategory.balance,
+  ExerciseCategory.cardio,
+  ExerciseCategory.mobility,
+  ExerciseCategory.strength,
+  ExerciseCategory.stretching,
+];
+
 class CategorySelectionPage extends StatelessWidget {
   const CategorySelectionPage({super.key});
 
@@ -24,7 +32,7 @@ class CategorySelectionPage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: ExerciseCategory.values.map((category) {
+          children: exerciseMenuChoices.map((category) {
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
