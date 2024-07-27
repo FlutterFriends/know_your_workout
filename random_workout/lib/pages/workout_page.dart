@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:random_workout/widgets/exercise/add_exercise_options_dialog.dart';
+import 'package:random_workout/widgets/exercise/predefined_exercises_dialog.dart';
 import '../models/exercise.dart';
 import '../providers/app_state.dart';
 import '../data/all_exercises.dart';
@@ -85,54 +86,10 @@ class WorkoutPage extends StatelessWidget {
     return showDialog<void>(
       context: context,
       builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Choose an Exercise'),
-          content: SizedBox(
-            width: double.maxFinite,
-            child: availableExercises.isEmpty
-                ? const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      'No more pre-defined exercises available. Try creating your own custom exercise!',
-                      style: TextStyle(fontStyle: FontStyle.italic),
-                    ),
-                  )
-                : ScrollbarTheme(
-                    data: ScrollbarThemeData(
-                      thumbVisibility: WidgetStateProperty.all(true),
-                    ),
-                    child: ListView.builder(
-                      itemCount: availableExercises.length,
-                      itemBuilder: (context, index) {
-                        final exercise = availableExercises[index];
-                        return ListTile(
-                          title: Text(exercise.name),
-                          subtitle: Text(exercise.description),
-                          onTap: () {
-                            appState.addExercise(exercise);
-                            Navigator.of(context).pop();
-                          },
-                        );
-                      },
-                    ),
-                  ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('Cancel'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            if (availableExercises.isEmpty)
-              TextButton(
-                child: const Text('Create Custom Exercise'),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                  _showCreateExerciseDialog(context);
-                },
-              ),
-          ],
+        return PreDefinedExercisesDialog(
+          availableExercises: availableExercises,
+          category: category,
+          onCreateCustomExercise: () => _showCreateExerciseDialog(context),
         );
       },
     );
