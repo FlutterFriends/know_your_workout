@@ -75,6 +75,20 @@ To run tests for the app, use the following command:
 flutter test
 ```
 
+To generate a coverage report, use the following command:
+
+```sh
+flutter test --coverage
+```
+
+To run integration tests, use the following command:
+
+```sh
+flutter drive \
+  --driver=test_driver/integration_test.dart \
+  --target=integration_test/app_test.dart
+```
+
 ## Contributing
 
 We welcome contributions from the community! Whether you're fixing bugs, adding new features, or improving documentation, your input is valuable. 
