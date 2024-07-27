@@ -1,9 +1,17 @@
 enum ExerciseCategory {
   stretching,
   strength,
+  powerAndExplosiveness,
+  endurance,
   mobility,
+  stability,
   balance,
   cardio,
+  flexibility,
+  functionalStrength,
+  recovery,
+  posture,
+  plyometrics
 }
 
 enum MuscleTarget {
@@ -20,22 +28,59 @@ enum MuscleTarget {
   forearms,
   traps,
   lats,
-  neckMuscles
+  neckMuscles,
+  obliques,
+  hipFlexors,
+  adductors,
+  abductors,
+  rotatorCuff,
+  erectorSpinae,
+  rhomboids,
+  serratus,
+  tibialis,
 }
 
 enum JointTarget {
-  wrist,
-  elbow,
-  shoulder,
-  cervicalSpine,
-  thoracicSpine,
-  lumbarSpine,
-  hip,
-  knee,
-  ankle
+  wrist, // radiocarpal
+  elbow, // humeroulnar
+  shoulder, // glenohumeral
+  cervicalSpine, // cervicothoracic
+  thoracicSpine, // thoracolumbar
+  lumbarSpine, // lumbosacral
+  hip, // coxal
+  knee, // tibiofemoral
+  ankle, // talocrural
+  spine, // vertebral column
+  temporomandibular, // jaw joint
+  acromioclavicular, // AC joint
+  sternoclavicular, // SC joint
+  sacroiliac, // SI joint
+  intervertebral, // between vertebrae
 }
 
-enum SpecialTarget { neck, lowerBack, upperBack }
+enum FocusArea {
+  head,
+  neck,
+  shoulders,
+  chest,
+  upperBack,
+  lowerBack,
+  arms,
+  forearms,
+  wrists,
+  hands,
+  core,
+  hips,
+  glutes,
+  thighs,
+  knees,
+  calves,
+  ankles,
+  feet,
+  upperBody,
+  lowerBody,
+  fullBody
+}
 
 class Exercise {
   final String name;
@@ -44,7 +89,7 @@ class Exercise {
   final ExerciseCategory category;
   final List<MuscleTarget>? muscleTargets;
   final List<JointTarget>? jointTargets;
-  final List<SpecialTarget>? specialTargets;
+  final List<FocusArea>? focusAreas;
 
   Exercise({
     required this.name,
@@ -53,7 +98,7 @@ class Exercise {
     required this.category,
     this.muscleTargets,
     this.jointTargets,
-    this.specialTargets,
+    this.focusAreas,
   });
 }
 
@@ -89,6 +134,24 @@ extension MuscleTargetLabel on MuscleTarget {
         return 'Latissimus Dorsi';
       case MuscleTarget.neckMuscles:
         return 'Neck Muscles';
+      case MuscleTarget.obliques:
+        return 'Obliques';
+      case MuscleTarget.hipFlexors:
+        return 'Hip Flexors';
+      case MuscleTarget.adductors:
+        return 'Adductors';
+      case MuscleTarget.abductors:
+        return 'Abductors';
+      case MuscleTarget.rotatorCuff:
+        return 'Rotator Cuff';
+      case MuscleTarget.erectorSpinae:
+        return 'Erector Spinae';
+      case MuscleTarget.rhomboids:
+        return 'Rhomboids';
+      case MuscleTarget.serratus:
+        return 'Serratus';
+      case MuscleTarget.tibialis:
+        return 'Tibialis';
     }
   }
 }
@@ -114,19 +177,67 @@ extension JointTargetLabel on JointTarget {
         return 'Knee';
       case JointTarget.ankle:
         return 'Ankle';
+      case JointTarget.spine:
+        return 'Spine';
+      case JointTarget.temporomandibular:
+        return 'Temporomandibular';
+      case JointTarget.acromioclavicular:
+        return 'Acromioclavicular';
+      case JointTarget.sternoclavicular:
+        return 'Sternoclavicular';
+      case JointTarget.sacroiliac:
+        return 'Sacroiliac';
+      case JointTarget.intervertebral:
+        return 'Intervertebral';
     }
   }
 }
 
-extension SpecialTargetLabel on SpecialTarget {
+extension FocusAreaLabel on FocusArea {
   String get label {
     switch (this) {
-      case SpecialTarget.neck:
+      case FocusArea.head:
+        return 'Head';
+      case FocusArea.neck:
         return 'Neck';
-      case SpecialTarget.lowerBack:
-        return 'Lower Back';
-      case SpecialTarget.upperBack:
+      case FocusArea.shoulders:
+        return 'Shoulders';
+      case FocusArea.chest:
+        return 'Chest';
+      case FocusArea.upperBack:
         return 'Upper Back';
+      case FocusArea.lowerBack:
+        return 'Lower Back';
+      case FocusArea.arms:
+        return 'Arms';
+      case FocusArea.forearms:
+        return 'Forearms';
+      case FocusArea.wrists:
+        return 'Wrists';
+      case FocusArea.hands:
+        return 'Hands';
+      case FocusArea.core:
+        return 'Core';
+      case FocusArea.hips:
+        return 'Hips';
+      case FocusArea.glutes:
+        return 'Glutes';
+      case FocusArea.thighs:
+        return 'Thighs';
+      case FocusArea.knees:
+        return 'Knees';
+      case FocusArea.calves:
+        return 'Calves';
+      case FocusArea.ankles:
+        return 'Ankles';
+      case FocusArea.feet:
+        return 'Feet';
+      case FocusArea.upperBody:
+        return 'Upper Body';
+      case FocusArea.lowerBody:
+        return 'Lower Body';
+      case FocusArea.fullBody:
+        return 'Full Body';
     }
   }
 }
