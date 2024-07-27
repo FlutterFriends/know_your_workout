@@ -15,6 +15,9 @@ class AppState extends ChangeNotifier {
   ExerciseCategory? get selectedCategory => _selectedCategory;
   List<Exercise> get categoryExercises => _categoryExercises;
   List<Exercise> get availableExercises => _availableExercises;
+  Map<MuscleTarget, int> _muscleTargetCounts = {};
+  Map<JointTarget, int> _jointTargetCounts = {};
+  Map<FocusArea, int> _focusAreaCounts = {};
 
   void toggleTheme() {
     _isDarkMode = !_isDarkMode;
@@ -44,18 +47,66 @@ class AppState extends ChangeNotifier {
   void generateWorkout() {
     if (_selectedCategory == null) return;
 
-    final random = Random();
     _currentWorkout = [];
     _updateAvailableExercises();
+    _resetTargetCounts();
 
     while (_currentWorkout.length < 5 && _availableExercises.isNotEmpty) {
-      final randomIndex = random.nextInt(_availableExercises.length);
-      final selectedExercise = _availableExercises[randomIndex];
+      Exercise selectedExercise = _selectBalancedExercise();
       _currentWorkout.add(selectedExercise);
-      _availableExercises.removeAt(randomIndex);
+      _updateTargetCounts(selectedExercise);
+      _availableExercises.remove(selectedExercise);
     }
 
     notifyListeners();
+  }
+
+  void _resetTargetCounts() {
+    _muscleTargetCounts = {};
+    _jointTargetCounts = {};
+    _focusAreaCounts = {};
+  }
+
+  void _updateTargetCounts(Exercise exercise) {
+    exercise.muscleTargets?.forEach((muscle) {
+      _muscleTargetCounts[muscle] = (_muscleTargetCounts[muscle] ?? 0) + 1;
+    });
+    exercise.jointTargets?.forEach((joint) {
+      _jointTargetCounts[joint] = (_jointTargetCounts[joint] ?? 0) + 1;
+    });
+    exercise.focusAreas?.forEach((focus) {
+      _focusAreaCounts[focus] = (_focusAreaCounts[focus] ?? 0) + 1;
+    });
+  }
+
+  Exercise _selectBalancedExercise() {
+    _availableExercises.sort((a, b) {
+      int scoreA = _calculateDiversityScore(a);
+      int scoreB = _calculateDiversityScore(b);
+      return scoreB.compareTo(scoreA); // Higher score is better
+    });
+
+    // Select randomly from top 3 to maintain some randomness
+    int selectionPool = min(3, _availableExercises.length);
+    return _availableExercises[Random().nextInt(selectionPool)];
+  }
+
+  int _calculateDiversityScore(Exercise exercise) {
+    int score = 0;
+
+    exercise.muscleTargets?.forEach((muscle) {
+      score += 3 - min(2, _muscleTargetCounts[muscle] ?? 0);
+    });
+
+    exercise.jointTargets?.forEach((joint) {
+      score += 3 - min(2, _jointTargetCounts[joint] ?? 0);
+    });
+
+    exercise.focusAreas?.forEach((focus) {
+      score += 3 - min(2, _focusAreaCounts[focus] ?? 0);
+    });
+
+    return score;
   }
 
   void removeExercise(int index) {
@@ -70,5 +121,22 @@ class AppState extends ChangeNotifier {
       _updateAvailableExercises();
       notifyListeners();
     }
+  }
+
+  int get workoutDiversityScore {
+    return _currentWorkout.fold(
+        0, (sum, exercise) => sum + _calculateDiversityScore(exercise));
+  }
+
+  List<MapEntry<dynamic, int>> getSortedTargetCounts() {
+    Map<dynamic, int> allTargets = {};
+    allTargets.addAll(_muscleTargetCounts);
+    allTargets.addAll(_jointTargetCounts);
+    allTargets.addAll(_focusAreaCounts);
+
+    var sortedEntries = allTargets.entries.toList()
+      ..sort((a, b) => b.value.compareTo(a.value));
+
+    return sortedEntries;
   }
 }
