@@ -265,3 +265,35 @@ extension FocusAreaLabel on FocusArea {
     }
   }
 }
+
+/// Extension on the [Exercise] class to calculate the score of an exercise.
+extension ExerciseScore on Exercise {
+  /// Calculates the score of an exercise based on the number of muscle targets,
+  /// joint targets, and focus areas.
+  ///
+  /// The score is calculated by summing the lengths of the muscleTargets,
+  /// jointTargets, and focusAreas lists.
+  ///
+  /// Returns the total score of the exercise.
+  ///
+  /// Scoring exercises based on the number of targets can be useful in various use-cases.
+  /// For example:
+  /// - Fitness tracking: By assigning a score to each exercise, you can track the overall intensity and variety of a workout routine.
+  /// - Exercise selection: When designing a workout program, you can prioritize exercises with a higher score to ensure a balanced and comprehensive training session.
+  /// - Progress tracking: As users progress in their fitness journey, they can aim to increase the score of their exercises by targeting different muscle groups, joints, and focus areas.
+  ///
+  /// The score itself represents the complexity and diversity of an exercise, providing a quantitative measure of its effectiveness and potential benefits.
+  int get score {
+    int score = 0;
+    if (muscleTargets != null) {
+      score += muscleTargets!.length;
+    }
+    if (jointTargets != null) {
+      score += jointTargets!.length;
+    }
+    if (focusAreas != null) {
+      score += focusAreas!.length;
+    }
+    return score;
+  }
+}
