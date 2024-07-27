@@ -76,6 +76,13 @@ class AppState extends ChangeNotifier {
     });
   }
 
+  void _recalculateTargetCounts() {
+    _resetTargetCounts();
+    for (var exercise in _currentWorkout) {
+      _updateTargetCounts(exercise);
+    }
+  }
+
   List<MapEntry<dynamic, int>> getSortedTargetCounts() {
     var sortedEntries = _targetCounts.entries.toList()
       ..sort((a, b) => b.value.compareTo(a.value));
@@ -115,6 +122,7 @@ class AppState extends ChangeNotifier {
   void removeExercise(int index) {
     _currentWorkout.removeAt(index);
     _updateAvailableExercises();
+    _recalculateTargetCounts();
     notifyListeners();
   }
 
@@ -122,6 +130,7 @@ class AppState extends ChangeNotifier {
     if (!_currentWorkout.contains(exercise)) {
       _currentWorkout.add(exercise);
       _updateAvailableExercises();
+      _updateTargetCounts(exercise);
       notifyListeners();
     }
   }
