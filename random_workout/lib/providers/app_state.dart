@@ -45,11 +45,16 @@ class AppState extends ChangeNotifier {
     if (_selectedCategory == null) return;
 
     final random = Random();
-    _currentWorkout = List.generate(
-      5,
-      (_) => _availableExercises[random.nextInt(_availableExercises.length)],
-    );
+    _currentWorkout = [];
     _updateAvailableExercises();
+
+    while (_currentWorkout.length < 5 && _availableExercises.isNotEmpty) {
+      final randomIndex = random.nextInt(_availableExercises.length);
+      final selectedExercise = _availableExercises[randomIndex];
+      _currentWorkout.add(selectedExercise);
+      _availableExercises.removeAt(randomIndex);
+    }
+
     notifyListeners();
   }
 
