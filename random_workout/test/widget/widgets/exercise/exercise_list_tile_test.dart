@@ -30,6 +30,8 @@ void main() {
 
     expect(find.text('Squats'), findsOneWidget);
     expect(find.text('Lower body exercise'), findsOneWidget);
-    expect(find.text('Muscle Targets: Quadriceps, Glutes'), findsOneWidget);
+    expect(find.text('Muscles: Quadriceps, Glutes'), findsOneWidget);
+    expect(find.text('Joints: Knee'), findsOneWidget);
+    expect(find.text('Focus: Lower Body'), findsOneWidget);
   });
 }

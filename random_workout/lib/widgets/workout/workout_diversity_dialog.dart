@@ -8,7 +8,7 @@ class WorkoutDiversityDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final appState = Provider.of<AppState>(context);
+    final appState = Provider.of<AppState>(context, listen: false);
     final groupedTargets = appState.getGroupedTargetCounts();
 
     return AlertDialog(

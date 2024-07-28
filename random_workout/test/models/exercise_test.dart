@@ -19,8 +19,8 @@ void main() {
       expect(exercise.category, ExerciseCategory.strength);
       expect(
           exercise.muscleTargets, [MuscleTarget.chest, MuscleTarget.triceps]);
-      expect(exercise.jointTargets, isNull);
-      expect(exercise.focusAreas, isNull);
+      expect(exercise.jointTargets, [JointTarget.elbow]);
+      expect(exercise.focusAreas, [FocusArea.upperBody]);
     });
 
     test('should return correct labels for targets', () {
