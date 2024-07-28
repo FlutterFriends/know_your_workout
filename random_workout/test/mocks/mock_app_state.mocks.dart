@@ -55,6 +55,13 @@ class MockAppState extends _i1.Mock implements _i2.AppState {
       ) as List<_i3.Exercise>);
 
   @override
+  int get workoutDiversityScore => (super.noSuchMethod(
+        Invocation.getter(#workoutDiversityScore),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+
+  @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
         returnValue: false,
@@ -90,6 +97,16 @@ class MockAppState extends _i1.Mock implements _i2.AppState {
       );
 
   @override
+  List<MapEntry<dynamic, int>> getSortedTargetCounts() => (super.noSuchMethod(
+        Invocation.method(
+          #getSortedTargetCounts,
+          [],
+        ),
+        returnValue: <MapEntry<dynamic, int>>[],
+        returnValueForMissingStub: <MapEntry<dynamic, int>>[],
+      ) as List<MapEntry<dynamic, int>>);
+
+  @override
   void removeExercise(int? index) => super.noSuchMethod(
         Invocation.method(
           #removeExercise,
@@ -106,6 +123,17 @@ class MockAppState extends _i1.Mock implements _i2.AppState {
         ),
         returnValueForMissingStub: null,
       );
+
+  @override
+  Map<String, List<MapEntry<dynamic, int>>> getGroupedTargetCounts() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getGroupedTargetCounts,
+          [],
+        ),
+        returnValue: <String, List<MapEntry<dynamic, int>>>{},
+        returnValueForMissingStub: <String, List<MapEntry<dynamic, int>>>{},
+      ) as Map<String, List<MapEntry<dynamic, int>>>);
 
   @override
   void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
