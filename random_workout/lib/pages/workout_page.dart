@@ -16,7 +16,7 @@ class WorkoutPage extends StatelessWidget {
     final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('${appState.selectedCategory?.name} Workout'),
+        title: Text('${appState.selectedCategory?.name.capitalize()} Workout'),
         actions: [
           IconButton(
             icon: const Icon(Icons.info_outline),
