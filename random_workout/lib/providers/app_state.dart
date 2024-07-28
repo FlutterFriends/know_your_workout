@@ -101,24 +101,6 @@ class AppState extends ChangeNotifier {
     return _availableExercises[Random().nextInt(selectionPool)];
   }
 
-  int _calculateDiversityScore(Exercise exercise) {
-    int score = 0;
-
-    exercise.muscleTargets?.forEach((muscle) {
-      score += 3 - min(2, _targetCounts[muscle] ?? 0);
-    });
-
-    exercise.jointTargets?.forEach((joint) {
-      score += 3 - min(2, _targetCounts[joint] ?? 0);
-    });
-
-    exercise.focusAreas?.forEach((focus) {
-      score += 3 - min(2, _targetCounts[focus] ?? 0);
-    });
-
-    return score;
-  }
-
   void removeExercise(int index) {
     _currentWorkout.removeAt(index);
     _updateAvailableExercises();
@@ -135,11 +117,38 @@ class AppState extends ChangeNotifier {
     }
   }
 
+  /// Calculates the workout diversity score based on the number of unique targets engaged.
+  ///
+  /// The score is calculated by counting the unique muscle targets, joint targets,
+  /// and focus areas engaged by all exercises in the current workout.
+  ///
+  /// Returns the total diversity score of the current workout.
   int get workoutDiversityScore {
-    return _currentWorkout.fold(
-        0, (sum, exercise) => sum + _calculateDiversityScore(exercise));
+    Set<dynamic> uniqueTargets = {};
+
+    for (var exercise in _currentWorkout) {
+      exercise.muscleTargets?.forEach((muscle) {
+        uniqueTargets.add(muscle);
+      });
+
+      exercise.jointTargets?.forEach((joint) {
+        uniqueTargets.add(joint);
+      });
+
+      exercise.focusAreas?.forEach((focus) {
+        uniqueTargets.add(focus);
+      });
+    }
+
+    return uniqueTargets.length;
   }
 
+  /// Groups the target counts by type (Muscles, Joints, Focus Areas) and sorts them.
+  ///
+  /// The target counts are grouped into three categories: Muscles, Joints, and Focus Areas.
+  /// Each group is sorted in descending order based on the count.
+  ///
+  /// Returns a map where the keys are the group names and the values are the sorted target counts.
   Map<String, List<MapEntry<dynamic, int>>> getGroupedTargetCounts() {
     Map<String, List<MapEntry<dynamic, int>>> groupedCounts = {
       'Muscles': [],

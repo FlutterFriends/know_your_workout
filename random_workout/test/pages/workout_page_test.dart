@@ -124,4 +124,45 @@ void main() {
 
     expect(find.text('Strength Workout'), findsOneWidget);
   });
+
+  testWidgets('Workout diversity score is calculated correctly',
+      (WidgetTester tester) async {
+    final testExercises = [
+      Exercise(
+        name: 'Push-ups',
+        description: 'Do push-ups',
+        instructions: 'Do push-ups',
+        category: ExerciseCategory.strength,
+        muscleTargets: [MuscleTarget.chest, MuscleTarget.triceps],
+        jointTargets: [JointTarget.elbow],
+        focusAreas: [FocusArea.upperBody],
+      ),
+      Exercise(
+        name: 'Squats',
+        description: 'Do squats',
+        instructions: 'Do squats',
+        category: ExerciseCategory.strength,
+        muscleTargets: [MuscleTarget.quadriceps],
+        jointTargets: [JointTarget.knee],
+        focusAreas: [FocusArea.lowerBody],
+      ),
+    ];
+
+    when(mockAppState.currentWorkout).thenReturn(testExercises);
+    when(mockAppState.selectedCategory).thenReturn(ExerciseCategory.strength);
+    when(mockAppState.workoutDiversityScore).thenReturn(4);
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: ChangeNotifierProvider<AppState>.value(
+          value: mockAppState,
+          child: const WorkoutPage(),
+        ),
+      ),
+    );
+
+    expect(find.text('Push-ups'), findsOneWidget);
+    expect(find.text('Squats'), findsOneWidget);
+    expect(find.text('Diversity Score: 4'), findsOneWidget);
+  });
 }
