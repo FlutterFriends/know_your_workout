@@ -91,8 +91,8 @@ class AppState extends ChangeNotifier {
 
   Exercise _selectBalancedExercise() {
     _availableExercises.sort((a, b) {
-      int scoreA = _calculateDiversityScore(a);
-      int scoreB = _calculateDiversityScore(b);
+      int scoreA = a.score;
+      int scoreB = b.score;
       return scoreB.compareTo(scoreA); // Higher score is better
     });
 
