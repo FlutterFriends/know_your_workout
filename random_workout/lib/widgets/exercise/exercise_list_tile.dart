@@ -33,14 +33,14 @@ class ExerciseListTile extends StatelessWidget {
             if (exercise.muscleTargets != null &&
                 exercise.muscleTargets!.isNotEmpty)
               Text(
-                  'Muscle Targets: ${exercise.muscleTargets!.map((t) => t.label).join(", ")}'),
+                  'Muscles: ${exercise.muscleTargets!.map((t) => t.label).join(", ")}'),
             if (exercise.jointTargets != null &&
                 exercise.jointTargets!.isNotEmpty)
               Text(
-                  'Joint Targets: ${exercise.jointTargets!.map((t) => t.label).join(", ")}'),
+                  'Joints: ${exercise.jointTargets!.map((t) => t.label).join(", ")}'),
             if (exercise.focusAreas != null && exercise.focusAreas!.isNotEmpty)
               Text(
-                  'Special Targets: ${exercise.focusAreas!.map((t) => t.label).join(", ")}'),
+                  'Focus: ${exercise.focusAreas!.map((t) => t.label).join(", ")}'),
           ],
         ),
         leading: IconButton(
