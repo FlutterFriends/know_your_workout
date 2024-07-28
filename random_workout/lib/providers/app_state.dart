@@ -147,7 +147,7 @@ class AppState extends ChangeNotifier {
       'Focus Areas': [],
     };
 
-    _targetCounts.entries.forEach((entry) {
+    for (var entry in _targetCounts.entries) {
       if (entry.key is MuscleTarget) {
         groupedCounts['Muscles']!.add(entry);
       } else if (entry.key is JointTarget) {
@@ -155,7 +155,7 @@ class AppState extends ChangeNotifier {
       } else if (entry.key is FocusArea) {
         groupedCounts['Focus Areas']!.add(entry);
       }
-    });
+    }
 
     // Sort each group
     groupedCounts.forEach((key, value) {

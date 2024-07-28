@@ -4,7 +4,7 @@ import 'package:random_workout/providers/app_state.dart';
 import 'package:random_workout/models/exercise.dart';
 
 class WorkoutDiversityDialog extends StatelessWidget {
-  const WorkoutDiversityDialog({Key? key}) : super(key: key);
+  const WorkoutDiversityDialog({super.key});
 
   @override
   Widget build(BuildContext context) {

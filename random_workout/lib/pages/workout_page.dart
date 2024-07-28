@@ -143,7 +143,7 @@ class WorkoutPage extends StatelessWidget {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return WorkoutDiversityDialog();
+        return const WorkoutDiversityDialog();
       },
     );
   }
