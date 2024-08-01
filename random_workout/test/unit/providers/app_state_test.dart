@@ -79,17 +79,17 @@ void main() {
     // Set up the expected grouped counts
     final expectedGroupedCounts = {
       'Muscles': [
-        MapEntry(MuscleTarget.chest, 1),
-        MapEntry(MuscleTarget.triceps, 1),
-        MapEntry(MuscleTarget.quadriceps, 1),
+        const MapEntry(MuscleTarget.chest, 1),
+        const MapEntry(MuscleTarget.triceps, 1),
+        const MapEntry(MuscleTarget.quadriceps, 1),
       ],
       'Joints': [
-        MapEntry(JointTarget.elbow, 1),
-        MapEntry(JointTarget.knee, 1),
+        const MapEntry(JointTarget.elbow, 1),
+        const MapEntry(JointTarget.knee, 1),
       ],
       'Focus Areas': [
-        MapEntry(FocusArea.upperBody, 1),
-        MapEntry(FocusArea.lowerBody, 1),
+        const MapEntry(FocusArea.upperBody, 1),
+        const MapEntry(FocusArea.lowerBody, 1),
       ],
     };
 
