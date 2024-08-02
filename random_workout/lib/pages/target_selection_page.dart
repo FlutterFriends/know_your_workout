@@ -59,7 +59,7 @@ class TargetSelectionPage extends StatelessWidget {
     );
   }
 
-  String _getLabel(dynamic target) {
+  String _getLabel(Enum target) {
     if (target is MuscleTarget) {
       return target.label;
     } else if (target is JointTarget) {
