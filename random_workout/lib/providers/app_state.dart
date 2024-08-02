@@ -18,6 +18,28 @@ class AppState extends ChangeNotifier {
 
   Map<dynamic, int> _targetCounts = {};
 
+  Set<dynamic> _selectedTargets = {};
+
+  Set<dynamic> get selectedTargets => _selectedTargets;
+
+  bool isTargetSelected(dynamic target) {
+    return _selectedTargets.contains(target);
+  }
+
+  void toggleTargetSelection(dynamic target) {
+    if (_selectedTargets.contains(target)) {
+      _selectedTargets.remove(target);
+    } else {
+      _selectedTargets.add(target);
+    }
+    notifyListeners();
+  }
+
+  void clearSelectedTargets() {
+    _selectedTargets.clear();
+    notifyListeners();
+  }
+
   void toggleTheme() {
     _isDarkMode = !_isDarkMode;
     notifyListeners();
@@ -91,14 +113,43 @@ class AppState extends ChangeNotifier {
 
   Exercise _selectBalancedExercise() {
     _availableExercises.sort((a, b) {
-      int scoreA = a.score;
-      int scoreB = b.score;
+      int scoreA = _calculateExerciseScore(a);
+      int scoreB = _calculateExerciseScore(b);
       return scoreB.compareTo(scoreA); // Higher score is better
     });
 
     // Select randomly from top 3 to maintain some randomness
     int selectionPool = min(3, _availableExercises.length);
     return _availableExercises[Random().nextInt(selectionPool)];
+  }
+
+  int _calculateExerciseScore(Exercise exercise) {
+    int score = 0;
+
+    // Add points for each target that matches the selected targets
+    if (exercise.muscleTargets != null) {
+      score += exercise.muscleTargets!
+              .where((muscle) => _selectedTargets.contains(muscle))
+              .length *
+          2;
+    }
+    if (exercise.jointTargets != null) {
+      score += exercise.jointTargets!
+              .where((joint) => _selectedTargets.contains(joint))
+              .length *
+          2;
+    }
+    if (exercise.focusAreas != null) {
+      score += exercise.focusAreas!
+              .where((focus) => _selectedTargets.contains(focus))
+              .length *
+          2;
+    }
+
+    // Add a base score to ensure exercises without selected targets still have a chance
+    score += exercise.score;
+
+    return score;
   }
 
   void removeExercise(int index) {

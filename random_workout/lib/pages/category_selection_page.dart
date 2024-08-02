@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../models/exercise.dart';
 import '../providers/app_state.dart';
 import 'workout_page.dart';
+import 'target_selection_page.dart';
 
 const List<ExerciseCategory> exerciseMenuChoices = [
   ExerciseCategory.balance,
@@ -32,23 +33,36 @@ class CategorySelectionPage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: exerciseMenuChoices.map((category) {
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  appState.setSelectedCategory(category);
-                  appState.generateWorkout();
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const WorkoutPage(),
-                    ),
-                  );
-                },
-                child: Text(category.name.toUpperCase()),
-              ),
-            );
-          }).toList(),
+          children: [
+            ...exerciseMenuChoices.map((category) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    appState.setSelectedCategory(category);
+                    appState.generateWorkout();
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const WorkoutPage(),
+                      ),
+                    );
+                  },
+                  child: Text(category.name.toUpperCase()),
+                ),
+              );
+            }).toList(),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const TargetSelectionPage(),
+                  ),
+                );
+              },
+              child: const Text('Select Workout Targets'),
+            ),
+          ],
         ),
       ),
     );
