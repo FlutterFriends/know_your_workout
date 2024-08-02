@@ -49,7 +49,7 @@ class TargetSelectionPage extends StatelessWidget {
       itemBuilder: (context, index) {
         final target = targets[index];
         return CheckboxListTile(
-          title: Text(target.toString().split('.').last),
+          title: Text(_getLabel(target)),
           value: appState.isTargetSelected(target),
           onChanged: (bool? value) {
             appState.toggleTargetSelection(target);
@@ -57,5 +57,16 @@ class TargetSelectionPage extends StatelessWidget {
         );
       },
     );
+  }
+
+  String _getLabel(dynamic target) {
+    if (target is MuscleTarget) {
+      return target.label;
+    } else if (target is JointTarget) {
+      return target.label;
+    } else if (target is FocusArea) {
+      return target.label;
+    }
+    return target.toString().split('.').last;
   }
 }
