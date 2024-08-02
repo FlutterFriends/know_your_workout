@@ -20,35 +20,35 @@ enum ExerciseCategory {
 
 enum MuscleTarget with LabeledEnum {
   abdominals('Abdominals'),
-  hamstrings('Hamstrings'),
-  calves('Calves'),
-  glutes('Glutes'),
-  core('Core'),
-  chest('Chest'),
+  abductors('Abductors'),
+  adductors('Adductors'),
   back('Back'),
-  shoulders('Shoulders'),
   biceps('Biceps'),
-  triceps('Triceps'),
+  calves('Calves'),
+  chest('Chest'),
+  core('Core'),
+  erectorSpinae('Erector Spinae'),
   forearms('Forearms'),
-  traps('Trapezius'),
+  glutes('Glutes'),
+  hamstrings('Hamstrings'),
+  hips('Hips'),
+  hipFlexors('Hip Flexors'),
   lats('Latissimus Dorsi'),
+  lowerBack('Lower Back'),
+  lowerBody('Lower Body'),
+  neck('Neck'),
   neckMuscles('Neck Muscles'),
   obliques('Obliques'),
-  hipFlexors('Hip Flexors'),
-  adductors('Adductors'),
-  abductors('Abductors'),
-  rotatorCuff('Rotator Cuff'),
-  erectorSpinae('Erector Spinae'),
-  rhomboids('Rhomboids'),
-  serratus('Serratus'),
-  tibialis('Tibialis'),
-  hips('Hips'),
-  neck('Neck'),
-  lowerBack('Lower Back'),
-  upperBack('Upper Back'),
-  lowerBody('Lower Body'),
+  piriformis('Piriformis'),
   quadriceps('Quadriceps'),
-  piriformis('Piriformis');
+  rhomboids('Rhomboids'),
+  rotatorCuff('Rotator Cuff'),
+  serratus('Serratus'),
+  shoulders('Shoulders'),
+  tibialis('Tibialis'),
+  traps('Trapezius'),
+  triceps('Triceps'),
+  upperBack('Upper Back');
 
   @override
   final String label;
@@ -56,21 +56,16 @@ enum MuscleTarget with LabeledEnum {
 }
 
 enum JointTarget with LabeledEnum {
-  wrist('Wrist'),
-  elbow('Elbow'),
-  shoulder('Shoulder'),
+  ankle('Ankle'),
   cervicalSpine('Cervical Spine'),
-  thoracicSpine('Thoracic Spine'),
-  lumbarSpine('Lumbar Spine'),
+  elbow('Elbow'),
   hip('Hip'),
   knee('Knee'),
-  ankle('Ankle'),
+  lumbarSpine('Lumbar Spine'),
+  shoulder('Shoulder'),
   spine('Spine'),
-  temporomandibular('Temporomandibular'),
-  acromioclavicular('Acromioclavicular'),
-  sternoclavicular('Sternoclavicular'),
-  sacroiliac('Sacroiliac'),
-  intervertebral('Intervertebral');
+  thoracicSpine('Thoracic Spine'),
+  wrist('Wrist');
 
   @override
   final String label;
@@ -78,28 +73,28 @@ enum JointTarget with LabeledEnum {
 }
 
 enum FocusArea with LabeledEnum {
+  ankles('Ankles'),
+  arms('Arms'),
+  calves('Calves'),
+  chest('Chest'),
+  core('Core'),
+  feet('Feet'),
+  forearms('Forearms'),
+  fullBody('Full Body'),
+  glutes('Glutes'),
+  hands('Hands'),
   head('Head'),
+  hips('Hips'),
+  knees('Knees'),
+  legs('Legs'),
+  lowerBack('Lower Back'),
+  lowerBody('Lower Body'),
   neck('Neck'),
   shoulders('Shoulders'),
-  chest('Chest'),
-  upperBack('Upper Back'),
-  lowerBack('Lower Back'),
-  arms('Arms'),
-  forearms('Forearms'),
-  wrists('Wrists'),
-  hands('Hands'),
-  core('Core'),
-  hips('Hips'),
-  glutes('Glutes'),
   thighs('Thighs'),
-  knees('Knees'),
-  calves('Calves'),
-  ankles('Ankles'),
-  feet('Feet'),
+  upperBack('Upper Back'),
   upperBody('Upper Body'),
-  lowerBody('Lower Body'),
-  fullBody('Full Body'),
-  legs('Legs');
+  wrists('Wrists');
 
   @override
   final String label;
