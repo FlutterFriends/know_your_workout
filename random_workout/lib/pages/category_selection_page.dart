@@ -62,7 +62,7 @@ class CategorySelectionPage extends StatelessWidget {
                         child: Text(category.name.toUpperCase()),
                       ),
                     );
-                  }).toList(),
+                  }),
                 ],
               ),
             ),

@@ -18,7 +18,7 @@ class AppState extends ChangeNotifier {
 
   Map<dynamic, int> _targetCounts = {};
 
-  Set<dynamic> _selectedTargets = {};
+  final Set<dynamic> _selectedTargets = {};
 
   Set<dynamic> get selectedTargets => _selectedTargets;
 

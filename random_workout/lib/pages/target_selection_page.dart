@@ -4,7 +4,7 @@ import '../models/exercise.dart';
 import '../providers/app_state.dart';
 
 class TargetSelectionPage extends StatelessWidget {
-  const TargetSelectionPage({Key? key}) : super(key: key);
+  const TargetSelectionPage({super.key});
 
   @override
   Widget build(BuildContext context) {
