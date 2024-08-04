@@ -16,6 +16,7 @@ final List<Exercise> strengthExercises = [
       MuscleTarget.triceps,
     ],
     jointTargets: [JointTarget.shoulder, JointTarget.elbow],
+    version: 1,
   ),
   Exercise(
     name: 'Squats',
@@ -30,6 +31,7 @@ final List<Exercise> strengthExercises = [
       MuscleTarget.glutes,
     ],
     jointTargets: [JointTarget.knee, JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Lunges',
@@ -44,6 +46,7 @@ final List<Exercise> strengthExercises = [
       MuscleTarget.glutes,
     ],
     jointTargets: [JointTarget.knee, JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Plank',
@@ -53,6 +56,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.abdominals, MuscleTarget.obliques],
     jointTargets: [JointTarget.spine],
+    version: 1,
   ),
   Exercise(
     name: 'Burpees',
@@ -67,6 +71,7 @@ final List<Exercise> strengthExercises = [
       MuscleTarget.shoulders,
     ],
     jointTargets: [JointTarget.shoulder, JointTarget.hip, JointTarget.knee],
+    version: 1,
   ),
   Exercise(
     name: 'Mountain Climbers',
@@ -82,6 +87,7 @@ final List<Exercise> strengthExercises = [
       MuscleTarget.hipFlexors,
     ],
     jointTargets: [JointTarget.shoulder, JointTarget.hip, JointTarget.knee],
+    version: 1,
   ),
   Exercise(
     name: 'Dips',
@@ -95,6 +101,7 @@ final List<Exercise> strengthExercises = [
       MuscleTarget.shoulders,
     ],
     jointTargets: [JointTarget.elbow, JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: 'Pull-ups',
@@ -104,6 +111,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.lats, MuscleTarget.biceps],
     jointTargets: [JointTarget.shoulder, JointTarget.elbow],
+    version: 1,
   ),
   Exercise(
     name: 'Glute Bridge',
@@ -113,6 +121,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.glutes, MuscleTarget.hamstrings],
     jointTargets: [JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Russian Twists',
@@ -122,6 +131,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.obliques, MuscleTarget.abdominals],
     jointTargets: [JointTarget.spine],
+    version: 1,
   ),
   Exercise(
     name: 'Superman',
@@ -131,6 +141,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.traps, MuscleTarget.glutes],
     jointTargets: [JointTarget.spine, JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Wall Sit',
@@ -140,6 +151,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.quadriceps, MuscleTarget.hamstrings],
     jointTargets: [JointTarget.knee, JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Calf Raises',
@@ -149,6 +161,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.calves],
     jointTargets: [JointTarget.ankle],
+    version: 1,
   ),
   Exercise(
     name: 'Tricep Dips',
@@ -158,6 +171,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.triceps],
     jointTargets: [JointTarget.elbow],
+    version: 1,
   ),
   Exercise(
     name: 'Lateral Raises',
@@ -167,6 +181,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.shoulders],
     jointTargets: [JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: 'Bicycle Crunches',
@@ -176,6 +191,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.abdominals, MuscleTarget.obliques],
     jointTargets: [JointTarget.spine, JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Leg Raises',
@@ -185,6 +201,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.abdominals, MuscleTarget.hipFlexors],
     jointTargets: [JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Front and Side Arm Raises',
@@ -194,6 +211,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.shoulders],
     jointTargets: [JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: 'Plank to Downward Dog',
@@ -207,6 +225,7 @@ final List<Exercise> strengthExercises = [
       MuscleTarget.triceps
     ],
     jointTargets: [JointTarget.shoulder, JointTarget.spine],
+    version: 1,
   ),
   Exercise(
     name: 'Bicep Curls',
@@ -216,6 +235,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.biceps, MuscleTarget.forearms],
     jointTargets: [JointTarget.elbow],
+    version: 1,
   ),
   Exercise(
     name: 'Standing Calf Raises',
@@ -225,6 +245,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.calves],
     jointTargets: [JointTarget.ankle],
+    version: 1,
   ),
   Exercise(
     name: 'Dumbbell Shrugs',
@@ -234,6 +255,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.traps],
     jointTargets: [JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: 'Standing Hip Abductions',
@@ -243,6 +265,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.abductors],
     jointTargets: [JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Sumo Squats',
@@ -256,6 +279,7 @@ final List<Exercise> strengthExercises = [
       MuscleTarget.glutes
     ],
     jointTargets: [JointTarget.knee, JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: "Farmer's Walks",
@@ -270,6 +294,7 @@ final List<Exercise> strengthExercises = [
       MuscleTarget.abdominals
     ],
     jointTargets: [JointTarget.shoulder, JointTarget.elbow, JointTarget.spine],
+    version: 1,
   ),
   Exercise(
     name: 'Lying Leg Raises',
@@ -279,6 +304,7 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.abdominals, MuscleTarget.hipFlexors],
     jointTargets: [JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Seated Leg Adductions',
@@ -288,5 +314,6 @@ final List<Exercise> strengthExercises = [
     category: ExerciseCategory.strength,
     muscleTargets: [MuscleTarget.adductors],
     jointTargets: [JointTarget.hip, JointTarget.knee],
+    version: 1,
   ),
 ];

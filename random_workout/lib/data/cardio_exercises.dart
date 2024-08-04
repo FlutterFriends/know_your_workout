@@ -20,6 +20,7 @@ final List<Exercise> cardioExercises = [
       JointTarget.hip,
       JointTarget.ankle,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Jumping Jacks',
@@ -39,6 +40,7 @@ final List<Exercise> cardioExercises = [
       JointTarget.hip,
       JointTarget.ankle,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Mountain Climbers',
@@ -60,6 +62,7 @@ final List<Exercise> cardioExercises = [
       JointTarget.knee,
       JointTarget.ankle,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Burpees',
@@ -81,6 +84,7 @@ final List<Exercise> cardioExercises = [
       JointTarget.knee,
       JointTarget.ankle,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Jump Rope (Imaginary)',
@@ -102,6 +106,7 @@ final List<Exercise> cardioExercises = [
       JointTarget.knee,
       JointTarget.wrist,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Squat Jumps',
@@ -122,6 +127,7 @@ final List<Exercise> cardioExercises = [
       JointTarget.hip,
       JointTarget.ankle,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Lateral Shuffles',
@@ -142,6 +148,7 @@ final List<Exercise> cardioExercises = [
       JointTarget.hip,
       JointTarget.ankle,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Punch and Kick',
@@ -166,6 +173,7 @@ final List<Exercise> cardioExercises = [
       JointTarget.knee,
       JointTarget.ankle,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Speed Skaters',
@@ -187,6 +195,7 @@ final List<Exercise> cardioExercises = [
       JointTarget.hip,
       JointTarget.ankle,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Plank Jacks',
@@ -208,6 +217,7 @@ final List<Exercise> cardioExercises = [
       JointTarget.hip,
       JointTarget.ankle,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Butt Kicks',
@@ -225,6 +235,7 @@ final List<Exercise> cardioExercises = [
       JointTarget.knee,
       JointTarget.hip,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Star Jumps',
@@ -247,6 +258,7 @@ final List<Exercise> cardioExercises = [
       JointTarget.shoulder,
       JointTarget.ankle,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Skater Hops',
@@ -268,6 +280,7 @@ final List<Exercise> cardioExercises = [
       JointTarget.hip,
       JointTarget.ankle,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Invisible Jump Rope Sprints',
@@ -289,6 +302,7 @@ final List<Exercise> cardioExercises = [
       JointTarget.ankle,
       JointTarget.shoulder,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Half Burpees',
@@ -310,6 +324,7 @@ final List<Exercise> cardioExercises = [
       JointTarget.shoulder,
       JointTarget.ankle,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Woodchoppers',
@@ -324,6 +339,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.shoulders
     ],
     jointTargets: [JointTarget.spine, JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: 'Standing Cross-Body Crunch',
@@ -337,6 +353,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.abdominals
     ],
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: 'Lateral Lunges with Arm Raise',
@@ -351,6 +368,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.quadriceps
     ],
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: 'Plank to Downward Dog Tap',
@@ -365,6 +383,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.hipFlexors
     ],
     jointTargets: [JointTarget.shoulder, JointTarget.wrist, JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Sumo Squat with Upright Row',
@@ -380,6 +399,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.traps
     ],
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: 'Standing Oblique Crunch',
@@ -393,6 +413,7 @@ final List<Exercise> cardioExercises = [
       MuscleTarget.abdominals
     ],
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.spine],
+    version: 1,
   ),
   Exercise(
     name: 'Inchworm Walk with Push-Up',
@@ -413,5 +434,6 @@ final List<Exercise> cardioExercises = [
       JointTarget.wrist,
       JointTarget.hip
     ],
+    version: 1,
   ),
 ];

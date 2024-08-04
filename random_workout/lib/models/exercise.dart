@@ -63,6 +63,7 @@ class Exercise {
   final ExerciseCategory category;
   final List<MuscleTarget>? muscleTargets;
   final List<JointTarget>? jointTargets;
+  final int version;
 
   Exercise({
     required this.name,
@@ -71,6 +72,7 @@ class Exercise {
     required this.category,
     required this.muscleTargets,
     required this.jointTargets,
+    required this.version,
   });
 }
 

@@ -9,6 +9,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.shoulders],
     jointTargets: [JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: 'Hip Circles',
@@ -18,6 +19,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.glutes, MuscleTarget.hipFlexors],
     jointTargets: [JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Ankle Rotations',
@@ -27,6 +29,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.calves],
     jointTargets: [JointTarget.ankle],
+    version: 1,
   ),
   Exercise(
     name: 'Neck Rolls',
@@ -36,6 +39,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.traps],
     jointTargets: [JointTarget.neck],
+    version: 1,
   ),
   Exercise(
     name: 'Wrist Flexion and Extension',
@@ -45,6 +49,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.forearms],
     jointTargets: [JointTarget.wrist],
+    version: 1,
   ),
   Exercise(
     name: 'Shoulder Shrugs',
@@ -54,6 +59,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.traps],
     jointTargets: [JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: 'Torso Twists',
@@ -63,6 +69,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.abdominals, MuscleTarget.obliques],
     jointTargets: [JointTarget.spine],
+    version: 1,
   ),
   Exercise(
     name: 'Cat-Cow',
@@ -72,6 +79,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.abdominals],
     jointTargets: [JointTarget.spine],
+    version: 1,
   ),
   Exercise(
     name: 'Thread the Needle',
@@ -81,6 +89,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.shoulders],
     jointTargets: [JointTarget.spine, JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: 'Leg Swings',
@@ -94,6 +103,7 @@ final List<Exercise> mobilityExercises = [
       MuscleTarget.adductors
     ],
     jointTargets: [JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Shoulder Pass-Throughs',
@@ -103,6 +113,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.shoulders],
     jointTargets: [JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: "World's Greatest Stretch",
@@ -116,6 +127,7 @@ final List<Exercise> mobilityExercises = [
       MuscleTarget.hamstrings
     ],
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.spine],
+    version: 1,
   ),
   Exercise(
     name: 'Thoracic Bridge',
@@ -125,6 +137,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.shoulders, MuscleTarget.glutes],
     jointTargets: [JointTarget.spine, JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: 'Squat to Stand',
@@ -138,6 +151,7 @@ final List<Exercise> mobilityExercises = [
       MuscleTarget.glutes
     ],
     jointTargets: [JointTarget.hip, JointTarget.ankle, JointTarget.knee],
+    version: 1,
   ),
   Exercise(
     name: 'Scorpion',
@@ -147,6 +161,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.hipFlexors, MuscleTarget.obliques],
     jointTargets: [JointTarget.spine, JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Wall Slides',
@@ -156,6 +171,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.shoulders],
     jointTargets: [JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: 'Cossack Squat',
@@ -169,6 +185,7 @@ final List<Exercise> mobilityExercises = [
       MuscleTarget.quadriceps
     ],
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.ankle],
+    version: 1,
   ),
   Exercise(
     name: 'Bird Dog',
@@ -178,6 +195,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.abdominals, MuscleTarget.glutes],
     jointTargets: [JointTarget.spine, JointTarget.shoulder, JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Prone Scorpion',
@@ -187,6 +205,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.hipFlexors, MuscleTarget.obliques],
     jointTargets: [JointTarget.spine, JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Downward Dog to Cobra Flow',
@@ -206,6 +225,7 @@ final List<Exercise> mobilityExercises = [
       JointTarget.wrist,
       JointTarget.ankle
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Elbow Circles',
@@ -215,6 +235,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.forearms],
     jointTargets: [JointTarget.elbow],
+    version: 1,
   ),
   Exercise(
     name: 'Wrist Flexor Stretch',
@@ -224,6 +245,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.forearms],
     jointTargets: [JointTarget.wrist],
+    version: 1,
   ),
   Exercise(
     name: 'Neck Clock',
@@ -233,6 +255,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.traps],
     jointTargets: [JointTarget.neck],
+    version: 1,
   ),
   Exercise(
     name: 'Elbow-to-Knee Touch',
@@ -242,6 +265,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.obliques],
     jointTargets: [JointTarget.elbow, JointTarget.shoulder, JointTarget.spine],
+    version: 1,
   ),
   Exercise(
     name: 'Wrist Rotations',
@@ -251,6 +275,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.forearms],
     jointTargets: [JointTarget.wrist],
+    version: 1,
   ),
   Exercise(
     name: 'Elbow Crawl',
@@ -260,6 +285,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.shoulders, MuscleTarget.triceps],
     jointTargets: [JointTarget.elbow, JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: 'Hand Walks',
@@ -269,6 +295,7 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.shoulders, MuscleTarget.hamstrings],
     jointTargets: [JointTarget.wrist, JointTarget.elbow, JointTarget.shoulder],
+    version: 1,
   ),
   Exercise(
     name: 'Neck and Shoulder Release',
@@ -278,5 +305,6 @@ final List<Exercise> mobilityExercises = [
     category: ExerciseCategory.mobility,
     muscleTargets: [MuscleTarget.traps, MuscleTarget.shoulders],
     jointTargets: [JointTarget.neck, JointTarget.shoulder],
+    version: 1,
   ),
 ];

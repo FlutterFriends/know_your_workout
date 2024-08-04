@@ -15,6 +15,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.glutes,
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Tree Pose',
@@ -29,6 +30,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.obliques,
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Flamingo Stand',
@@ -44,6 +46,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.obliques,
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Tightrope Walk',
@@ -57,6 +60,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.quadriceps,
     ],
     jointTargets: [JointTarget.ankle],
+    version: 1,
   ),
   Exercise(
     name: 'Single Leg Deadlift',
@@ -73,6 +77,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.traps,
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Warrior III Pose',
@@ -88,6 +93,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.hamstrings
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
+    version: 1,
   ),
   Exercise(
     name: 'Standing Leg Swings',
@@ -102,6 +108,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.hipFlexors,
     ],
     jointTargets: [JointTarget.hip, JointTarget.ankle],
+    version: 1,
   ),
   Exercise(
     name: 'Pillow Balance',
@@ -116,6 +123,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.abdominals,
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee],
+    version: 1,
   ),
   Exercise(
     name: 'Clock Reach',
@@ -136,6 +144,7 @@ final List<Exercise> balanceExercises = [
       JointTarget.knee,
       JointTarget.hip,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Single Leg Balance with Arm Movements',
@@ -154,6 +163,7 @@ final List<Exercise> balanceExercises = [
       JointTarget.knee,
       JointTarget.shoulder,
     ],
+    version: 1,
   ),
   Exercise(
     name: 'Heel-to-Toe Balance Walk',
@@ -167,6 +177,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.obliques,
     ],
     jointTargets: [JointTarget.ankle],
+    version: 1,
   ),
   Exercise(
     name: 'Standing Windmill',
@@ -181,6 +192,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.obliques
     ],
     jointTargets: [JointTarget.hip, JointTarget.spine],
+    version: 1,
   ),
   Exercise(
     name: 'Single Leg Romanian Deadlift',
@@ -197,6 +209,7 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.traps,
     ],
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.ankle],
+    version: 1,
   ),
   Exercise(
     name: 'Tandem Balance',
@@ -211,5 +224,6 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.obliques,
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee],
+    version: 1,
   ),
 ];
