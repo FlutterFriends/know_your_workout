@@ -12,21 +12,23 @@ void main() {
 
   test('workoutDiversityScore calculation is correct', () {
     final testExercises = [
-      Exercise(
+      ExerciseModel(
         name: 'Push-ups',
         category: ExerciseCategory.strength,
         description: 'Do a push-up',
         instructions: 'Do a push-up',
         muscleTargets: [MuscleTarget.chest, MuscleTarget.triceps],
         jointTargets: [JointTarget.elbow],
+        version: 1,
       ),
-      Exercise(
+      ExerciseModel(
         name: 'Squats',
         description: 'Do a squat',
         instructions: 'Do a squat',
         category: ExerciseCategory.strength,
         muscleTargets: [MuscleTarget.quadriceps],
         jointTargets: [JointTarget.knee],
+        version: 1,
       ),
     ];
 
@@ -50,21 +52,23 @@ void main() {
 
   test('getGroupedTargetCounts returns correct data', () {
     final testExercises = [
-      Exercise(
+      ExerciseModel(
         name: 'Push-ups',
         description: 'Do a push-up',
         instructions: 'Do a push-up',
         category: ExerciseCategory.strength,
         muscleTargets: [MuscleTarget.chest, MuscleTarget.triceps],
         jointTargets: [JointTarget.elbow],
+        version: 1,
       ),
-      Exercise(
+      ExerciseModel(
         name: 'Squats',
         description: 'Do a squat',
         instructions: 'Do a squat',
         category: ExerciseCategory.strength,
         muscleTargets: [MuscleTarget.quadriceps],
         jointTargets: [JointTarget.knee],
+        version: 1,
       ),
     ];
 

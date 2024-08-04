@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../models/exercise.dart';
 
 class ExerciseListTile extends StatelessWidget {
-  final Exercise exercise;
+  final ExerciseModel exercise;
   final VoidCallback onRemove;
   final VoidCallback onShowInstructions;
 
@@ -32,12 +32,14 @@ class ExerciseListTile extends StatelessWidget {
             Text(exercise.description),
             if (exercise.muscleTargets != null &&
                 exercise.muscleTargets!.isNotEmpty)
-              Text(
-                  'Muscles: ${exercise.muscleTargets!.map((t) => t.label).join(", ")}'),
+              if (exercise.muscleTargets != null &&
+                  exercise.muscleTargets!.isNotEmpty)
+                Text(
+                    'Muscles: ${exercise.muscleTargets!.map((t) => getMuscleTargetLabel(t)).join(", ")}'),
             if (exercise.jointTargets != null &&
                 exercise.jointTargets!.isNotEmpty)
               Text(
-                  'Joints: ${exercise.jointTargets!.map((t) => t.label).join(", ")}'),
+                  'Joints: ${exercise.jointTargets!.map((t) => getJointTargetLabel(t)).join(", ")}'),
           ],
         ),
         leading: IconButton(

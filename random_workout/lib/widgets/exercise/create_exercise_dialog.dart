@@ -3,7 +3,7 @@ import '../../models/exercise.dart';
 
 class CreateExerciseDialog extends StatefulWidget {
   final ExerciseCategory category;
-  final Function(Exercise) onExerciseCreated;
+  final Function(ExerciseModel) onExerciseCreated;
 
   const CreateExerciseDialog({
     super.key,
@@ -100,9 +100,9 @@ class _CreateExerciseDialogState extends State<CreateExerciseDialog> {
 
   String _getLabel(dynamic target) {
     if (target is MuscleTarget) {
-      return target.label;
+      return getMuscleTargetLabel(target);
     } else if (target is JointTarget) {
-      return target.label;
+      return getJointTargetLabel(target);
     }
     return target.toString();
   }
@@ -110,7 +110,7 @@ class _CreateExerciseDialogState extends State<CreateExerciseDialog> {
   void _createExercise() {
     if (nameController.text.isNotEmpty &&
         descriptionController.text.isNotEmpty) {
-      final newExercise = Exercise(
+      final newExercise = ExerciseModel(
         name: nameController.text,
         description: descriptionController.text,
         instructions: instructionsController.text.isNotEmpty
@@ -121,6 +121,7 @@ class _CreateExerciseDialogState extends State<CreateExerciseDialog> {
             selectedMuscleTargets.isNotEmpty ? selectedMuscleTargets : null,
         jointTargets:
             selectedJointTargets.isNotEmpty ? selectedJointTargets : null,
+        version: 1,
       );
       widget.onExerciseCreated(newExercise);
       Navigator.of(context).pop();

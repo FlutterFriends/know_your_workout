@@ -1,7 +1,7 @@
 import '../models/exercise.dart';
 
-final List<Exercise> stretchingExercises = [
-  Exercise(
+final List<ExerciseModel> stretchingExercises = [
+  ExerciseModel(
     name: 'Standing Hamstring Stretch',
     description: 'Stretches the back of the thighs',
     instructions:
@@ -9,8 +9,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.hamstrings],
     jointTargets: [JointTarget.knee, JointTarget.hip],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Butterfly Stretch',
     description: 'Stretches the inner thighs',
     instructions:
@@ -18,8 +19,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.adductors],
     jointTargets: [JointTarget.hip],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Triceps Stretch',
     description: 'Stretches the back of the upper arms',
     instructions:
@@ -27,8 +29,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.triceps],
     jointTargets: [JointTarget.elbow, JointTarget.shoulder],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Seated Forward Bend',
     description: 'Stretches the hamstrings and lower back',
     instructions:
@@ -36,8 +39,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.hamstrings],
     jointTargets: [JointTarget.hip, JointTarget.spine],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Chest and Shoulder Stretch',
     description: 'Stretches the chest and front of the shoulders',
     instructions:
@@ -45,8 +49,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.chest, MuscleTarget.shoulders],
     jointTargets: [JointTarget.shoulder],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Standing Quad Stretch',
     description: 'Stretches the front of the thighs',
     instructions:
@@ -54,8 +59,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.quadriceps],
     jointTargets: [JointTarget.knee, JointTarget.hip],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Calf Stretch',
     description: 'Stretches the back of the lower legs',
     instructions:
@@ -63,8 +69,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.calves],
     jointTargets: [JointTarget.ankle],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Hip Flexor Stretch',
     description: 'Stretches the front of the hips',
     instructions:
@@ -72,8 +79,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.hipFlexors],
     jointTargets: [JointTarget.hip],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Piriformis Stretch',
     description: 'Stretches the deep hip rotator muscles',
     instructions:
@@ -81,8 +89,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.glutes],
     jointTargets: [JointTarget.hip],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Lower Back Twist',
     description: 'Stretches the lower back and obliques',
     instructions:
@@ -90,8 +99,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.obliques],
     jointTargets: [JointTarget.spine],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: "Child's Pose",
     description: 'Stretches the back, hips, and shoulders',
     instructions:
@@ -99,8 +109,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.hipFlexors, MuscleTarget.shoulders],
     jointTargets: [JointTarget.hip, JointTarget.spine, JointTarget.shoulder],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Figure Four Stretch',
     description: 'Stretches the glutes and outer hips',
     instructions:
@@ -108,8 +119,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.glutes, MuscleTarget.abductors],
     jointTargets: [JointTarget.hip],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Cobra Stretch',
     description: 'Stretches the abdominals and chest',
     instructions:
@@ -117,8 +129,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.abdominals, MuscleTarget.chest],
     jointTargets: [JointTarget.spine],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Seated Spinal Twist',
     description: 'Stretches the back and improves spinal mobility',
     instructions:
@@ -126,8 +139,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.obliques],
     jointTargets: [JointTarget.spine],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Neck Stretch',
     description: 'Stretches the muscles of the neck and upper trapezius',
     instructions:
@@ -135,8 +149,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.traps],
     jointTargets: [JointTarget.neck],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Wrist and Forearm Stretch',
     description: 'Stretches the muscles of the forearms and wrists',
     instructions:
@@ -144,8 +159,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.forearms],
     jointTargets: [JointTarget.wrist],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Standing Side Bend',
     description: 'Stretches the obliques and lats',
     instructions:
@@ -153,8 +169,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.obliques, MuscleTarget.lats],
     jointTargets: [JointTarget.spine],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Lying Glute Stretch',
     description: 'Stretches the glutes while lying on the back',
     instructions:
@@ -162,8 +179,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.glutes],
     jointTargets: [JointTarget.hip],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Downward Facing Dog',
     description:
         'Full body stretch, particularly for shoulders, hamstrings, and calves',
@@ -176,8 +194,9 @@ final List<Exercise> stretchingExercises = [
       MuscleTarget.shoulders
     ],
     jointTargets: [JointTarget.ankle, JointTarget.shoulder, JointTarget.spine],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Standing Biceps Stretch',
     description: 'Stretches the biceps and forearms',
     instructions:
@@ -185,8 +204,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.biceps, MuscleTarget.forearms],
     jointTargets: [JointTarget.elbow, JointTarget.shoulder],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Sphinx Pose',
     description: 'Stretches the abdominals and lower back',
     instructions:
@@ -194,8 +214,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.abdominals],
     jointTargets: [JointTarget.spine],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Standing Lat Stretch',
     description: 'Stretches the latissimus dorsi muscles',
     instructions:
@@ -203,8 +224,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.lats],
     jointTargets: [JointTarget.shoulder, JointTarget.spine],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Lying Quad Stretch',
     description: 'Stretches the quadriceps while lying down',
     instructions:
@@ -212,8 +234,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.quadriceps],
     jointTargets: [JointTarget.knee, JointTarget.hip],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Standing Hip Abductor Stretch',
     description: 'Stretches the hip abductor muscles',
     instructions:
@@ -221,8 +244,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.abductors],
     jointTargets: [JointTarget.hip],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Seated Adductor Stretch',
     description: 'Stretches the inner thigh muscles',
     instructions:
@@ -230,8 +254,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.adductors],
     jointTargets: [JointTarget.hip],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Wall Chest Stretch',
     description: 'Stretches the chest muscles',
     instructions:
@@ -239,8 +264,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.chest],
     jointTargets: [JointTarget.shoulder],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Kneeling Hip Flexor Stretch',
     description: 'Stretches the hip flexors and quadriceps',
     instructions:
@@ -248,8 +274,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.hipFlexors, MuscleTarget.quadriceps],
     jointTargets: [JointTarget.hip, JointTarget.knee],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Seated Forward Bend with Twist',
     description: 'Stretches the hamstrings, lower back, and obliques',
     instructions:
@@ -257,8 +284,9 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.hamstrings, MuscleTarget.obliques],
     jointTargets: [JointTarget.hip, JointTarget.spine],
+    version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Neck and Trap Release',
     description: 'Stretches the neck and upper trapezius muscles',
     instructions:
@@ -266,5 +294,6 @@ final List<Exercise> stretchingExercises = [
     category: ExerciseCategory.stretching,
     muscleTargets: [MuscleTarget.traps],
     jointTargets: [JointTarget.neck],
+    version: 1,
   ),
 ];

@@ -69,21 +69,23 @@ void main() {
   testWidgets('WorkoutPage displays current workout',
       (WidgetTester tester) async {
     final testExercises = [
-      Exercise(
+      ExerciseModel(
         name: 'Push-ups',
         description: 'Do push-ups',
         instructions: 'Do push-ups',
         category: ExerciseCategory.strength,
         muscleTargets: [MuscleTarget.chest, MuscleTarget.triceps],
         jointTargets: [JointTarget.elbow],
+        version: 1,
       ),
-      Exercise(
+      ExerciseModel(
         name: 'Squats',
         description: 'Do squats',
         instructions: 'Do squats',
         category: ExerciseCategory.strength,
         muscleTargets: [MuscleTarget.quadriceps],
         jointTargets: [JointTarget.knee],
+        version: 1,
       ),
     ];
 

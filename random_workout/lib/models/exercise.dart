@@ -1,7 +1,3 @@
-mixin LabeledEnum on Enum {
-  String get label;
-}
-
 enum ExerciseCategory {
   stretching,
   strength,
@@ -18,64 +14,49 @@ enum ExerciseCategory {
   plyometrics
 }
 
-enum MuscleTarget with LabeledEnum {
-  abdominals('Abdominals'),
-  biceps('Biceps'),
-  calves('Calves'),
-  chest('Chest'),
-  forearms('Forearms'),
-  glutes('Glutes'),
-  hamstrings('Hamstrings'),
-  lats('Lats'),
-  obliques('Obliques'),
-  quadriceps('Quads'),
-  shoulders('Shoulders'),
-  traps('Traps'),
-  triceps('Triceps'),
-  hipFlexors('Hip Flexors'),
-  abductors('Abductors'),
-  adductors('Adductors');
-
-  @override
-  final String label;
-  const MuscleTarget(this.label);
+enum MuscleTarget {
+  abdominals,
+  biceps,
+  calves,
+  chest,
+  forearms,
+  glutes,
+  hamstrings,
+  lats,
+  obliques,
+  quadriceps,
+  shoulders,
+  traps,
+  triceps,
+  hipFlexors,
+  abductors,
+  adductors
 }
 
-enum JointTarget with LabeledEnum {
-  ankle('Ankle'),
-  elbow('Elbow'),
-  hip('Hip'),
-  knee('Knee'),
-  neck('Neck'),
-  shoulder('Shoulder'),
-  spine('Spine'),
-  wrist('Wrist');
+enum JointTarget { ankle, elbow, hip, knee, neck, shoulder, spine, wrist }
 
-  @override
-  final String label;
-  const JointTarget(this.label);
-}
-
-class Exercise {
+class ExerciseModel {
   final String name;
   final String description;
   final String? instructions;
   final ExerciseCategory category;
   final List<MuscleTarget>? muscleTargets;
   final List<JointTarget>? jointTargets;
+  final int version;
 
-  Exercise({
+  ExerciseModel({
     required this.name,
     required this.description,
     required this.instructions,
     required this.category,
     required this.muscleTargets,
     required this.jointTargets,
+    required this.version,
   });
 }
 
-/// Extension on the [Exercise] class to calculate the score of an exercise.
-extension ExerciseScore on Exercise {
+/// Extension on the [ExerciseModel] class to calculate the score of an exercise.
+extension ExerciseScore on ExerciseModel {
   /// Calculates the score of an exercise based on the number of muscle targets,
   /// joint targets, and focus areas.
   ///
@@ -101,5 +82,65 @@ extension ExerciseScore on Exercise {
     }
 
     return score;
+  }
+}
+
+/// Returns the label of the given [MuscleTarget].
+String getMuscleTargetLabel(MuscleTarget target) {
+  switch (target) {
+    case MuscleTarget.abdominals:
+      return 'Abdominals';
+    case MuscleTarget.biceps:
+      return 'Biceps';
+    case MuscleTarget.calves:
+      return 'Calves';
+    case MuscleTarget.chest:
+      return 'Chest';
+    case MuscleTarget.forearms:
+      return 'Forearms';
+    case MuscleTarget.glutes:
+      return 'Glutes';
+    case MuscleTarget.hamstrings:
+      return 'Hamstrings';
+    case MuscleTarget.lats:
+      return 'Lats';
+    case MuscleTarget.obliques:
+      return 'Obliques';
+    case MuscleTarget.quadriceps:
+      return 'Quads';
+    case MuscleTarget.shoulders:
+      return 'Shoulders';
+    case MuscleTarget.traps:
+      return 'Traps';
+    case MuscleTarget.triceps:
+      return 'Triceps';
+    case MuscleTarget.hipFlexors:
+      return 'Hip Flexors';
+    case MuscleTarget.abductors:
+      return 'Abductors';
+    case MuscleTarget.adductors:
+      return 'Adductors';
+  }
+}
+
+/// Returns the label of the given [JointTarget].
+String getJointTargetLabel(JointTarget target) {
+  switch (target) {
+    case JointTarget.ankle:
+      return 'Ankle';
+    case JointTarget.elbow:
+      return 'Elbow';
+    case JointTarget.hip:
+      return 'Hip';
+    case JointTarget.knee:
+      return 'Knee';
+    case JointTarget.neck:
+      return 'Neck';
+    case JointTarget.shoulder:
+      return 'Shoulder';
+    case JointTarget.spine:
+      return 'Spine';
+    case JointTarget.wrist:
+      return 'Wrist';
   }
 }
