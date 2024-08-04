@@ -73,9 +73,9 @@ class WorkoutDiversityDialog extends StatelessWidget {
 
   String _getTargetLabel(dynamic target) {
     if (target is MuscleTarget) {
-      return target.label;
+      return getMuscleTargetLabel(target);
     } else if (target is JointTarget) {
-      return target.label;
+      return getJointTargetLabel(target);
     }
     return target.toString(); // Fallback, shouldn't be needed
   }

@@ -56,9 +56,9 @@ class TargetSelectionPage extends StatelessWidget {
 
   String _getLabel(Enum target) {
     if (target is MuscleTarget) {
-      return target.label;
+      return getMuscleTargetLabel(target);
     } else if (target is JointTarget) {
-      return target.label;
+      return getJointTargetLabel(target);
     }
 
     return target.toString().split('.').last;

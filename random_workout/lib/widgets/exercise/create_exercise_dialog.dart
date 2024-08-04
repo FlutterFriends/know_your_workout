@@ -100,9 +100,9 @@ class _CreateExerciseDialogState extends State<CreateExerciseDialog> {
 
   String _getLabel(dynamic target) {
     if (target is MuscleTarget) {
-      return target.label;
+      return getMuscleTargetLabel(target);
     } else if (target is JointTarget) {
-      return target.label;
+      return getJointTargetLabel(target);
     }
     return target.toString();
   }
@@ -121,6 +121,7 @@ class _CreateExerciseDialogState extends State<CreateExerciseDialog> {
             selectedMuscleTargets.isNotEmpty ? selectedMuscleTargets : null,
         jointTargets:
             selectedJointTargets.isNotEmpty ? selectedJointTargets : null,
+        version: 1,
       );
       widget.onExerciseCreated(newExercise);
       Navigator.of(context).pop();
