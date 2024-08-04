@@ -208,4 +208,85 @@ final List<Exercise> strengthExercises = [
     ],
     jointTargets: [JointTarget.shoulder, JointTarget.spine],
   ),
+  Exercise(
+    name: 'Bicep Curls',
+    description: 'Isolation exercise for biceps',
+    instructions:
+        "1. Stand with feet shoulder-width apart, holding dumbbells at your sides.\n2. Keeping your upper arms stationary, curl the weights up to your shoulders.\n3. Slowly lower the weights back to the starting position.\n4. Repeat for desired reps.",
+    category: ExerciseCategory.strength,
+    muscleTargets: [MuscleTarget.biceps, MuscleTarget.forearms],
+    jointTargets: [JointTarget.elbow],
+  ),
+  Exercise(
+    name: 'Standing Calf Raises',
+    description: 'Isolation exercise for calf muscles',
+    instructions:
+        "1. Stand on the edge of a step or platform, with your heels hanging off.\n2. Rise up onto your toes, lifting your heels as high as possible.\n3. Lower your heels below the level of the step, feeling a stretch in your calves.\n4. Repeat for desired reps.",
+    category: ExerciseCategory.strength,
+    muscleTargets: [MuscleTarget.calves],
+    jointTargets: [JointTarget.ankle],
+  ),
+  Exercise(
+    name: 'Dumbbell Shrugs',
+    description: 'Upper body exercise focusing on the trapezius muscles',
+    instructions:
+        "1. Stand with feet shoulder-width apart, holding dumbbells at your sides.\n2. Lift your shoulders up towards your ears.\n3. Hold briefly, then lower your shoulders back down.\n4. Repeat for desired reps.",
+    category: ExerciseCategory.strength,
+    muscleTargets: [MuscleTarget.traps],
+    jointTargets: [JointTarget.shoulder],
+  ),
+  Exercise(
+    name: 'Standing Hip Abductions',
+    description: 'Lower body exercise targeting the hip abductor muscles',
+    instructions:
+        "1. Stand next to a wall or chair for support.\n2. Lift your outside leg out to the side, keeping it straight.\n3. Lower the leg back to the starting position.\n4. Repeat for desired reps, then switch sides.",
+    category: ExerciseCategory.strength,
+    muscleTargets: [MuscleTarget.abductors],
+    jointTargets: [JointTarget.hip],
+  ),
+  Exercise(
+    name: 'Sumo Squats',
+    description: 'Lower body exercise targeting inner thighs and glutes',
+    instructions:
+        "1. Stand with feet wider than shoulder-width, toes pointed out.\n2. Lower your body as if sitting back into a chair.\n3. Keep your chest up and knees in line with your toes.\n4. Push through your heels to return to standing.\n5. Repeat for desired reps.",
+    category: ExerciseCategory.strength,
+    muscleTargets: [
+      MuscleTarget.adductors,
+      MuscleTarget.quadriceps,
+      MuscleTarget.glutes
+    ],
+    jointTargets: [JointTarget.knee, JointTarget.hip],
+  ),
+  Exercise(
+    name: "Farmer's Walks",
+    description:
+        'Full body exercise with emphasis on forearms and grip strength',
+    instructions:
+        "1. Hold a heavy dumbbell or kettlebell in each hand.\n2. Walk forward with short, quick steps.\n3. Keep your shoulders back and core engaged.\n4. Continue for the desired distance or time.",
+    category: ExerciseCategory.strength,
+    muscleTargets: [
+      MuscleTarget.forearms,
+      MuscleTarget.traps,
+      MuscleTarget.abdominals
+    ],
+    jointTargets: [JointTarget.shoulder, JointTarget.elbow, JointTarget.spine],
+  ),
+  Exercise(
+    name: 'Lying Leg Raises',
+    description: 'Core exercise targeting lower abs and hip flexors',
+    instructions:
+        "1. Lie on your back with legs straight and hands by your sides.\n2. Keeping your legs straight, lift them up towards the ceiling.\n3. Slowly lower your legs back down without touching the ground.\n4. Repeat for desired reps.",
+    category: ExerciseCategory.strength,
+    muscleTargets: [MuscleTarget.abdominals, MuscleTarget.hipFlexors],
+    jointTargets: [JointTarget.hip],
+  ),
+  Exercise(
+    name: 'Seated Leg Adductions',
+    description: 'Lower body exercise targeting inner thigh muscles',
+    instructions:
+        "1. Sit on a chair with feet flat on the ground.\n2. Place a small ball or cushion between your knees.\n3. Squeeze your knees together, engaging your inner thighs.\n4. Hold for a few seconds, then release.\n5. Repeat for desired reps.",
+    category: ExerciseCategory.strength,
+    muscleTargets: [MuscleTarget.adductors],
+    jointTargets: [JointTarget.hip, JointTarget.knee],
+  ),
 ];
