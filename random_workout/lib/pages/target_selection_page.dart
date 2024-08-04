@@ -9,7 +9,7 @@ class TargetSelectionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Select Workout Targets'),
@@ -17,7 +17,6 @@ class TargetSelectionPage extends StatelessWidget {
             tabs: [
               Tab(text: 'Muscles'),
               Tab(text: 'Joints'),
-              Tab(text: 'Focus Areas'),
             ],
           ),
         ),
