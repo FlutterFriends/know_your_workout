@@ -38,9 +38,6 @@ class ExerciseListTile extends StatelessWidget {
                 exercise.jointTargets!.isNotEmpty)
               Text(
                   'Joints: ${exercise.jointTargets!.map((t) => t.label).join(", ")}'),
-            if (exercise.focusAreas != null && exercise.focusAreas!.isNotEmpty)
-              Text(
-                  'Focus: ${exercise.focusAreas!.map((t) => t.label).join(", ")}'),
           ],
         ),
         leading: IconButton(

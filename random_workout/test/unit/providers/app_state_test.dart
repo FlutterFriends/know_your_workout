@@ -19,7 +19,6 @@ void main() {
         instructions: 'Do a push-up',
         muscleTargets: [MuscleTarget.chest, MuscleTarget.triceps],
         jointTargets: [JointTarget.elbow],
-        focusAreas: [FocusArea.upperBody],
       ),
       Exercise(
         name: 'Squats',
@@ -28,7 +27,6 @@ void main() {
         category: ExerciseCategory.strength,
         muscleTargets: [MuscleTarget.quadriceps],
         jointTargets: [JointTarget.knee],
-        focusAreas: [FocusArea.lowerBody],
       ),
     ];
 
@@ -42,7 +40,6 @@ void main() {
       for (var exercise in workout) {
         uniqueTargets.addAll(exercise.muscleTargets ?? []);
         uniqueTargets.addAll(exercise.jointTargets ?? []);
-        uniqueTargets.addAll(exercise.focusAreas ?? []);
       }
       return uniqueTargets.length;
     });
@@ -60,7 +57,6 @@ void main() {
         category: ExerciseCategory.strength,
         muscleTargets: [MuscleTarget.chest, MuscleTarget.triceps],
         jointTargets: [JointTarget.elbow],
-        focusAreas: [FocusArea.upperBody],
       ),
       Exercise(
         name: 'Squats',
@@ -69,7 +65,6 @@ void main() {
         category: ExerciseCategory.strength,
         muscleTargets: [MuscleTarget.quadriceps],
         jointTargets: [JointTarget.knee],
-        focusAreas: [FocusArea.lowerBody],
       ),
     ];
 
@@ -86,10 +81,6 @@ void main() {
       'Joints': [
         const MapEntry(JointTarget.elbow, 1),
         const MapEntry(JointTarget.knee, 1),
-      ],
-      'Focus Areas': [
-        const MapEntry(FocusArea.upperBody, 1),
-        const MapEntry(FocusArea.lowerBody, 1),
       ],
     };
 

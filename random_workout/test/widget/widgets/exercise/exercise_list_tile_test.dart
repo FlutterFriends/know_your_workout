@@ -13,7 +13,6 @@ void main() {
       category: ExerciseCategory.strength,
       muscleTargets: [MuscleTarget.quadriceps, MuscleTarget.glutes],
       jointTargets: [JointTarget.knee],
-      focusAreas: [FocusArea.lowerBody],
     );
 
     await tester.pumpWidget(

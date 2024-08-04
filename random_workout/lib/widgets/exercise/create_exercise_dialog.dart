@@ -21,7 +21,6 @@ class _CreateExerciseDialogState extends State<CreateExerciseDialog> {
   final instructionsController = TextEditingController();
   List<MuscleTarget> selectedMuscleTargets = [];
   List<JointTarget> selectedJointTargets = [];
-  List<FocusArea> selectedFocusAreas = [];
 
   @override
   Widget build(BuildContext context) {
@@ -53,11 +52,6 @@ class _CreateExerciseDialogState extends State<CreateExerciseDialog> {
               'Joint Targets',
               JointTarget.values,
               selectedJointTargets,
-            ),
-            _buildTargetSection<FocusArea>(
-              'Special Targets',
-              FocusArea.values,
-              selectedFocusAreas,
             ),
           ],
         ),
@@ -109,8 +103,6 @@ class _CreateExerciseDialogState extends State<CreateExerciseDialog> {
       return target.label;
     } else if (target is JointTarget) {
       return target.label;
-    } else if (target is FocusArea) {
-      return target.label;
     }
     return target.toString();
   }
@@ -129,7 +121,6 @@ class _CreateExerciseDialogState extends State<CreateExerciseDialog> {
             selectedMuscleTargets.isNotEmpty ? selectedMuscleTargets : null,
         jointTargets:
             selectedJointTargets.isNotEmpty ? selectedJointTargets : null,
-        focusAreas: selectedFocusAreas.isNotEmpty ? selectedFocusAreas : null,
       );
       widget.onExerciseCreated(newExercise);
       Navigator.of(context).pop();

@@ -9,7 +9,7 @@ class TargetSelectionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Select Workout Targets'),
@@ -17,7 +17,6 @@ class TargetSelectionPage extends StatelessWidget {
             tabs: [
               Tab(text: 'Muscles'),
               Tab(text: 'Joints'),
-              Tab(text: 'Focus Areas'),
             ],
           ),
         ),
@@ -25,7 +24,6 @@ class TargetSelectionPage extends StatelessWidget {
           children: [
             _buildTargetList<MuscleTarget>(context),
             _buildTargetList<JointTarget>(context),
-            _buildTargetList<FocusArea>(context),
           ],
         ),
         floatingActionButton: FloatingActionButton(
@@ -38,11 +36,8 @@ class TargetSelectionPage extends StatelessWidget {
 
   Widget _buildTargetList<T extends Enum>(BuildContext context) {
     final appState = Provider.of<AppState>(context);
-    final targets = T == MuscleTarget
-        ? MuscleTarget.values
-        : T == JointTarget
-            ? JointTarget.values
-            : FocusArea.values;
+    final targets =
+        T == MuscleTarget ? MuscleTarget.values : JointTarget.values;
 
     return ListView.builder(
       itemCount: targets.length,
@@ -64,9 +59,8 @@ class TargetSelectionPage extends StatelessWidget {
       return target.label;
     } else if (target is JointTarget) {
       return target.label;
-    } else if (target is FocusArea) {
-      return target.label;
     }
+
     return target.toString().split('.').last;
   }
 }

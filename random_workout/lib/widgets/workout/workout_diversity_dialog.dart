@@ -76,8 +76,6 @@ class WorkoutDiversityDialog extends StatelessWidget {
       return target.label;
     } else if (target is JointTarget) {
       return target.label;
-    } else if (target is FocusArea) {
-      return target.label;
     }
     return target.toString(); // Fallback, shouldn't be needed
   }

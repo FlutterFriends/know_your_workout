@@ -10,10 +10,16 @@ final List<Exercise> cardioExercises = [
     muscleTargets: [
       MuscleTarget.quadriceps,
       MuscleTarget.calves,
-      MuscleTarget.core
+      MuscleTarget.hamstrings,
+      MuscleTarget.abdominals,
+      MuscleTarget.hipFlexors,
+      MuscleTarget.adductors,
     ],
-    jointTargets: [JointTarget.knee, JointTarget.hip],
-    focusAreas: [FocusArea.legs, FocusArea.core],
+    jointTargets: [
+      JointTarget.knee,
+      JointTarget.hip,
+      JointTarget.ankle,
+    ],
   ),
   Exercise(
     name: 'Jumping Jacks',
@@ -24,10 +30,15 @@ final List<Exercise> cardioExercises = [
     muscleTargets: [
       MuscleTarget.quadriceps,
       MuscleTarget.calves,
-      MuscleTarget.shoulders
+      MuscleTarget.shoulders,
+      MuscleTarget.adductors,
+      MuscleTarget.abductors,
     ],
-    jointTargets: [JointTarget.shoulder, JointTarget.hip, JointTarget.ankle],
-    focusAreas: [FocusArea.legs, FocusArea.arms],
+    jointTargets: [
+      JointTarget.shoulder,
+      JointTarget.hip,
+      JointTarget.ankle,
+    ],
   ),
   Exercise(
     name: 'Mountain Climbers',
@@ -36,12 +47,19 @@ final List<Exercise> cardioExercises = [
         "1. Start in a high plank position.\n2. Bring right knee towards chest.\n3. Quickly switch, extending right leg back while bringing left knee in.\n4. Alternate legs as if running in place.\n5. Continue for 30-60 seconds.",
     category: ExerciseCategory.cardio,
     muscleTargets: [
-      MuscleTarget.core,
+      MuscleTarget.abdominals,
+      MuscleTarget.obliques,
       MuscleTarget.quadriceps,
-      MuscleTarget.shoulders
+      MuscleTarget.shoulders,
+      MuscleTarget.hipFlexors,
+      MuscleTarget.adductors,
     ],
-    jointTargets: [JointTarget.shoulder, JointTarget.hip, JointTarget.knee],
-    focusAreas: [FocusArea.core, FocusArea.legs],
+    jointTargets: [
+      JointTarget.shoulder,
+      JointTarget.hip,
+      JointTarget.knee,
+      JointTarget.ankle,
+    ],
   ),
   Exercise(
     name: 'Burpees',
@@ -52,11 +70,17 @@ final List<Exercise> cardioExercises = [
     muscleTargets: [
       MuscleTarget.quadriceps,
       MuscleTarget.chest,
-      MuscleTarget.core,
-      MuscleTarget.shoulders
+      MuscleTarget.abdominals,
+      MuscleTarget.shoulders,
+      MuscleTarget.glutes,
+      MuscleTarget.hipFlexors,
     ],
-    jointTargets: [JointTarget.shoulder, JointTarget.hip, JointTarget.knee],
-    focusAreas: [FocusArea.fullBody],
+    jointTargets: [
+      JointTarget.shoulder,
+      JointTarget.hip,
+      JointTarget.knee,
+      JointTarget.ankle,
+    ],
   ),
   Exercise(
     name: 'Jump Rope (Imaginary)',
@@ -68,10 +92,16 @@ final List<Exercise> cardioExercises = [
     muscleTargets: [
       MuscleTarget.calves,
       MuscleTarget.quadriceps,
-      MuscleTarget.shoulders
+      MuscleTarget.shoulders,
+      MuscleTarget.abdominals,
+      MuscleTarget.forearms,
+      MuscleTarget.hipFlexors,
     ],
-    jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.wrist],
-    focusAreas: [FocusArea.legs, FocusArea.arms],
+    jointTargets: [
+      JointTarget.ankle,
+      JointTarget.knee,
+      JointTarget.wrist,
+    ],
   ),
   Exercise(
     name: 'Squat Jumps',
@@ -82,10 +112,16 @@ final List<Exercise> cardioExercises = [
     muscleTargets: [
       MuscleTarget.quadriceps,
       MuscleTarget.glutes,
-      MuscleTarget.calves
+      MuscleTarget.calves,
+      MuscleTarget.hamstrings,
+      MuscleTarget.hipFlexors,
+      MuscleTarget.adductors,
     ],
-    jointTargets: [JointTarget.knee, JointTarget.hip, JointTarget.ankle],
-    focusAreas: [FocusArea.legs],
+    jointTargets: [
+      JointTarget.knee,
+      JointTarget.hip,
+      JointTarget.ankle,
+    ],
   ),
   Exercise(
     name: 'Lateral Shuffles',
@@ -96,10 +132,16 @@ final List<Exercise> cardioExercises = [
     muscleTargets: [
       MuscleTarget.quadriceps,
       MuscleTarget.glutes,
-      MuscleTarget.calves
+      MuscleTarget.calves,
+      MuscleTarget.abdominals,
+      MuscleTarget.abductors,
+      MuscleTarget.adductors,
     ],
-    jointTargets: [JointTarget.knee, JointTarget.hip, JointTarget.ankle],
-    focusAreas: [FocusArea.legs],
+    jointTargets: [
+      JointTarget.knee,
+      JointTarget.hip,
+      JointTarget.ankle,
+    ],
   ),
   Exercise(
     name: 'Punch and Kick',
@@ -110,11 +152,20 @@ final List<Exercise> cardioExercises = [
     category: ExerciseCategory.cardio,
     muscleTargets: [
       MuscleTarget.shoulders,
-      MuscleTarget.core,
-      MuscleTarget.quadriceps
+      MuscleTarget.abdominals,
+      MuscleTarget.obliques,
+      MuscleTarget.quadriceps,
+      MuscleTarget.glutes,
+      MuscleTarget.hipFlexors,
+      MuscleTarget.calves,
+      MuscleTarget.abductors,
     ],
-    jointTargets: [JointTarget.shoulder, JointTarget.hip, JointTarget.knee],
-    focusAreas: [FocusArea.fullBody],
+    jointTargets: [
+      JointTarget.shoulder,
+      JointTarget.hip,
+      JointTarget.knee,
+      JointTarget.ankle,
+    ],
   ),
   Exercise(
     name: 'Speed Skaters',
@@ -126,10 +177,16 @@ final List<Exercise> cardioExercises = [
     muscleTargets: [
       MuscleTarget.quadriceps,
       MuscleTarget.glutes,
-      MuscleTarget.calves
+      MuscleTarget.calves,
+      MuscleTarget.abdominals,
+      MuscleTarget.adductors,
+      MuscleTarget.abductors,
     ],
-    jointTargets: [JointTarget.knee, JointTarget.hip, JointTarget.ankle],
-    focusAreas: [FocusArea.legs],
+    jointTargets: [
+      JointTarget.knee,
+      JointTarget.hip,
+      JointTarget.ankle,
+    ],
   ),
   Exercise(
     name: 'Plank Jacks',
@@ -138,12 +195,19 @@ final List<Exercise> cardioExercises = [
         "1. Start in a high plank position.\n2. Jump both feet out wide.\n3. Immediately jump feet back together.\n4. Keep core engaged throughout.\n5. Continue for 30-60 seconds.",
     category: ExerciseCategory.cardio,
     muscleTargets: [
-      MuscleTarget.core,
+      MuscleTarget.abdominals,
       MuscleTarget.shoulders,
-      MuscleTarget.quadriceps
+      MuscleTarget.quadriceps,
+      MuscleTarget.calves,
+      MuscleTarget.glutes,
+      MuscleTarget.adductors,
+      MuscleTarget.abductors,
     ],
-    jointTargets: [JointTarget.shoulder, JointTarget.hip],
-    focusAreas: [FocusArea.core, FocusArea.legs],
+    jointTargets: [
+      JointTarget.shoulder,
+      JointTarget.hip,
+      JointTarget.ankle,
+    ],
   ),
   Exercise(
     name: 'Butt Kicks',
@@ -151,9 +215,16 @@ final List<Exercise> cardioExercises = [
     instructions:
         "1. Stand in place with feet hip-width apart.\n2. Run in place, kicking your heels up towards your buttocks.\n3. Keep your thighs relatively stationary.\n4. Swing your arms as if running.\n5. Continue for 30-60 seconds.",
     category: ExerciseCategory.cardio,
-    muscleTargets: [MuscleTarget.hamstrings, MuscleTarget.calves],
-    jointTargets: [JointTarget.knee, JointTarget.hip],
-    focusAreas: [FocusArea.legs],
+    muscleTargets: [
+      MuscleTarget.hamstrings,
+      MuscleTarget.calves,
+      MuscleTarget.quadriceps,
+      MuscleTarget.hipFlexors,
+    ],
+    jointTargets: [
+      JointTarget.knee,
+      JointTarget.hip,
+    ],
   ),
   Exercise(
     name: 'Star Jumps',
@@ -164,10 +235,18 @@ final List<Exercise> cardioExercises = [
     muscleTargets: [
       MuscleTarget.quadriceps,
       MuscleTarget.glutes,
-      MuscleTarget.shoulders
+      MuscleTarget.shoulders,
+      MuscleTarget.calves,
+      MuscleTarget.abdominals,
+      MuscleTarget.adductors,
+      MuscleTarget.abductors,
     ],
-    jointTargets: [JointTarget.knee, JointTarget.hip, JointTarget.shoulder],
-    focusAreas: [FocusArea.fullBody],
+    jointTargets: [
+      JointTarget.knee,
+      JointTarget.hip,
+      JointTarget.shoulder,
+      JointTarget.ankle,
+    ],
   ),
   Exercise(
     name: 'Skater Hops',
@@ -179,10 +258,16 @@ final List<Exercise> cardioExercises = [
     muscleTargets: [
       MuscleTarget.quadriceps,
       MuscleTarget.glutes,
-      MuscleTarget.calves
+      MuscleTarget.calves,
+      MuscleTarget.abdominals,
+      MuscleTarget.adductors,
+      MuscleTarget.abductors,
     ],
-    jointTargets: [JointTarget.knee, JointTarget.hip, JointTarget.ankle],
-    focusAreas: [FocusArea.legs],
+    jointTargets: [
+      JointTarget.knee,
+      JointTarget.hip,
+      JointTarget.ankle,
+    ],
   ),
   Exercise(
     name: 'Invisible Jump Rope Sprints',
@@ -193,10 +278,17 @@ final List<Exercise> cardioExercises = [
     muscleTargets: [
       MuscleTarget.calves,
       MuscleTarget.quadriceps,
-      MuscleTarget.hamstrings
+      MuscleTarget.hamstrings,
+      MuscleTarget.abdominals,
+      MuscleTarget.hipFlexors,
+      MuscleTarget.adductors,
     ],
-    jointTargets: [JointTarget.knee, JointTarget.hip, JointTarget.ankle],
-    focusAreas: [FocusArea.legs],
+    jointTargets: [
+      JointTarget.knee,
+      JointTarget.hip,
+      JointTarget.ankle,
+      JointTarget.shoulder,
+    ],
   ),
   Exercise(
     name: 'Half Burpees',
@@ -207,10 +299,119 @@ final List<Exercise> cardioExercises = [
     category: ExerciseCategory.cardio,
     muscleTargets: [
       MuscleTarget.quadriceps,
-      MuscleTarget.core,
+      MuscleTarget.abdominals,
+      MuscleTarget.shoulders,
+      MuscleTarget.glutes,
+      MuscleTarget.hipFlexors,
+    ],
+    jointTargets: [
+      JointTarget.knee,
+      JointTarget.hip,
+      JointTarget.shoulder,
+      JointTarget.ankle,
+    ],
+  ),
+  Exercise(
+    name: 'Woodchoppers',
+    description:
+        'Rotational exercise that targets obliques and improves core stability',
+    instructions:
+        "1. Stand with feet shoulder-width apart.\n2. Hold a weight or medicine ball with both hands.\n3. Rotate your torso and arms from high on one side to low on the opposite side.\n4. Return to starting position.\n5. Perform 10-15 reps on each side.",
+    category: ExerciseCategory.cardio,
+    muscleTargets: [
+      MuscleTarget.obliques,
+      MuscleTarget.abdominals,
       MuscleTarget.shoulders
     ],
-    jointTargets: [JointTarget.knee, JointTarget.hip, JointTarget.shoulder],
-    focusAreas: [FocusArea.fullBody],
+    jointTargets: [JointTarget.spine, JointTarget.shoulder],
+  ),
+  Exercise(
+    name: 'Standing Cross-Body Crunch',
+    description: 'Engages obliques and improves coordination',
+    instructions:
+        "1. Stand with feet shoulder-width apart.\n2. Lift your right knee and left elbow, bringing them together in front of your body.\n3. Return to starting position.\n4. Repeat on the other side.\n5. Alternate sides for 30-60 seconds.",
+    category: ExerciseCategory.cardio,
+    muscleTargets: [
+      MuscleTarget.obliques,
+      MuscleTarget.hipFlexors,
+      MuscleTarget.abdominals
+    ],
+    jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.shoulder],
+  ),
+  Exercise(
+    name: 'Lateral Lunges with Arm Raise',
+    description: 'Targets abductors, hip flexors, and shoulders',
+    instructions:
+        "1. Stand with feet together.\n2. Take a large step to the right, lowering into a side lunge.\n3. Simultaneously raise both arms overhead.\n4. Push off right foot to return to starting position.\n5. Repeat on the left side.\n6. Alternate sides for 30-60 seconds.",
+    category: ExerciseCategory.cardio,
+    muscleTargets: [
+      MuscleTarget.abductors,
+      MuscleTarget.hipFlexors,
+      MuscleTarget.shoulders,
+      MuscleTarget.quadriceps
+    ],
+    jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.shoulder],
+  ),
+  Exercise(
+    name: 'Plank to Downward Dog Tap',
+    description: 'Engages core, shoulders, and improves flexibility',
+    instructions:
+        "1. Start in a high plank position.\n2. Push hips up and back into downward dog position.\n3. Lift right hand and tap left ankle.\n4. Return to downward dog.\n5. Repeat with left hand tapping right ankle.\n6. Return to plank position.\n7. Continue for 30-60 seconds.",
+    category: ExerciseCategory.cardio,
+    muscleTargets: [
+      MuscleTarget.abdominals,
+      MuscleTarget.shoulders,
+      MuscleTarget.triceps,
+      MuscleTarget.hipFlexors
+    ],
+    jointTargets: [JointTarget.shoulder, JointTarget.wrist, JointTarget.hip],
+  ),
+  Exercise(
+    name: 'Sumo Squat with Upright Row',
+    description:
+        'Combines lower body and upper body movements for a full-body cardio exercise',
+    instructions:
+        "1. Stand with feet wider than shoulder-width, toes pointed out.\n2. Hold a weight or resistance band in front of thighs.\n3. Lower into a sumo squat.\n4. As you stand, perform an upright row by lifting the weight to chin level, elbows out.\n5. Lower the weight as you return to squat position.\n6. Repeat for 30-60 seconds.",
+    category: ExerciseCategory.cardio,
+    muscleTargets: [
+      MuscleTarget.quadriceps,
+      MuscleTarget.adductors,
+      MuscleTarget.shoulders,
+      MuscleTarget.traps
+    ],
+    jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.shoulder],
+  ),
+  Exercise(
+    name: 'Standing Oblique Crunch',
+    description: 'Targets obliques while improving balance',
+    instructions:
+        "1. Stand with feet shoulder-width apart.\n2. Place hands behind head, elbows out.\n3. Lift right knee towards right elbow, crunching sideways.\n4. Lower leg and repeat on the left side.\n5. Alternate sides for 30-60 seconds.",
+    category: ExerciseCategory.cardio,
+    muscleTargets: [
+      MuscleTarget.obliques,
+      MuscleTarget.hipFlexors,
+      MuscleTarget.abdominals
+    ],
+    jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.spine],
+  ),
+  Exercise(
+    name: 'Inchworm Walk with Push-Up',
+    description: 'Full-body exercise that targets upper body and core',
+    instructions:
+        "1. Stand with feet hip-width apart.\n2. Bend at the waist and walk hands out to a high plank position.\n3. Perform a push-up.\n4. Walk feet towards hands, keeping legs straight.\n5. Stand up and repeat for 30-60 seconds.",
+    category: ExerciseCategory.cardio,
+    muscleTargets: [
+      MuscleTarget.chest,
+      MuscleTarget.triceps,
+      MuscleTarget.shoulders,
+      MuscleTarget.abdominals,
+      MuscleTarget.hamstrings
+    ],
+    jointTargets: [
+      JointTarget.shoulder,
+      JointTarget.elbow,
+      JointTarget.wrist,
+      JointTarget.hip
+    ],
   ),
 ];
