@@ -5,16 +5,16 @@ import 'dart:math';
 
 class AppState extends ChangeNotifier {
   bool _isDarkMode = true;
-  List<Exercise> _currentWorkout = [];
+  List<ExerciseModel> _currentWorkout = [];
   ExerciseCategory? _selectedCategory;
-  List<Exercise> _categoryExercises = [];
-  List<Exercise> _availableExercises = [];
+  List<ExerciseModel> _categoryExercises = [];
+  List<ExerciseModel> _availableExercises = [];
 
   bool get isDarkMode => _isDarkMode;
-  List<Exercise> get currentWorkout => _currentWorkout;
+  List<ExerciseModel> get currentWorkout => _currentWorkout;
   ExerciseCategory? get selectedCategory => _selectedCategory;
-  List<Exercise> get categoryExercises => _categoryExercises;
-  List<Exercise> get availableExercises => _availableExercises;
+  List<ExerciseModel> get categoryExercises => _categoryExercises;
+  List<ExerciseModel> get availableExercises => _availableExercises;
 
   Map<dynamic, int> _targetCounts = {};
 
@@ -73,7 +73,7 @@ class AppState extends ChangeNotifier {
     _resetTargetCounts();
 
     while (_currentWorkout.length < 5 && _availableExercises.isNotEmpty) {
-      Exercise selectedExercise = _selectBalancedExercise();
+      ExerciseModel selectedExercise = _selectBalancedExercise();
       _currentWorkout.add(selectedExercise);
       _updateTargetCounts(selectedExercise);
       _availableExercises.remove(selectedExercise);
@@ -86,7 +86,7 @@ class AppState extends ChangeNotifier {
     _targetCounts = {};
   }
 
-  void _updateTargetCounts(Exercise exercise) {
+  void _updateTargetCounts(ExerciseModel exercise) {
     exercise.muscleTargets?.forEach((muscle) {
       _targetCounts[muscle] = (_targetCounts[muscle] ?? 0) + 1;
     });
@@ -108,7 +108,7 @@ class AppState extends ChangeNotifier {
     return sortedEntries;
   }
 
-  Exercise _selectBalancedExercise() {
+  ExerciseModel _selectBalancedExercise() {
     _availableExercises.sort((a, b) {
       int scoreA = _calculateExerciseScore(a);
       int scoreB = _calculateExerciseScore(b);
@@ -120,7 +120,7 @@ class AppState extends ChangeNotifier {
     return _availableExercises[Random().nextInt(selectionPool)];
   }
 
-  int _calculateExerciseScore(Exercise exercise) {
+  int _calculateExerciseScore(ExerciseModel exercise) {
     int score = 0;
 
     // Add points for each target that matches the selected targets
@@ -150,7 +150,7 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  void addExercise(Exercise exercise) {
+  void addExercise(ExerciseModel exercise) {
     if (!_currentWorkout.contains(exercise)) {
       _currentWorkout.add(exercise);
       _updateAvailableExercises();

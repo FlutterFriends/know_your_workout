@@ -4,13 +4,14 @@ import 'package:random_workout/models/exercise.dart';
 void main() {
   group('Exercise', () {
     test('should create an Exercise instance', () {
-      final exercise = Exercise(
+      final exercise = ExerciseModel(
         name: 'Push-ups',
         description: 'Basic upper body exercise',
         instructions: 'Do push-ups',
         category: ExerciseCategory.strength,
         muscleTargets: [MuscleTarget.chest, MuscleTarget.triceps],
         jointTargets: [JointTarget.elbow],
+        version: 1,
       );
 
       expect(exercise.name, 'Push-ups');
@@ -22,8 +23,8 @@ void main() {
     });
 
     test('should return correct labels for targets', () {
-      expect(MuscleTarget.chest.label, 'Chest');
-      expect(JointTarget.knee.label, 'Knee');
+      expect(getMuscleTargetLabel(MuscleTarget.chest), 'Chest');
+      expect(getJointTargetLabel(JointTarget.knee), 'Knee');
     });
   });
 }

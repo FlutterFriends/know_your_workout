@@ -11,10 +11,10 @@ class MockAppState extends Mock implements AppState {
       );
 
   @override
-  List<Exercise> get currentWorkout => super.noSuchMethod(
+  List<ExerciseModel> get currentWorkout => super.noSuchMethod(
         Invocation.getter(#currentWorkout),
-        returnValue: <Exercise>[],
-        returnValueForMissingStub: <Exercise>[],
+        returnValue: <ExerciseModel>[],
+        returnValueForMissingStub: <ExerciseModel>[],
       );
 
   @override

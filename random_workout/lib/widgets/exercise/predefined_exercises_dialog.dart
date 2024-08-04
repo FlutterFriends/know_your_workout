@@ -4,7 +4,7 @@ import '../../models/exercise.dart';
 import '../../providers/app_state.dart';
 
 class PreDefinedExercisesDialog extends StatelessWidget {
-  final List<Exercise> availableExercises;
+  final List<ExerciseModel> availableExercises;
   final ExerciseCategory category;
   final VoidCallback onCreateCustomExercise;
 

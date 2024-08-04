@@ -3,7 +3,7 @@ import '../../models/exercise.dart';
 
 class CreateExerciseDialog extends StatefulWidget {
   final ExerciseCategory category;
-  final Function(Exercise) onExerciseCreated;
+  final Function(ExerciseModel) onExerciseCreated;
 
   const CreateExerciseDialog({
     super.key,
@@ -110,7 +110,7 @@ class _CreateExerciseDialogState extends State<CreateExerciseDialog> {
   void _createExercise() {
     if (nameController.text.isNotEmpty &&
         descriptionController.text.isNotEmpty) {
-      final newExercise = Exercise(
+      final newExercise = ExerciseModel(
         name: nameController.text,
         description: descriptionController.text,
         instructions: instructionsController.text.isNotEmpty

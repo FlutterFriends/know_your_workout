@@ -6,13 +6,14 @@ import 'package:random_workout/widgets/exercise/exercise_list_tile.dart';
 void main() {
   testWidgets('ExerciseListTile displays exercise information',
       (WidgetTester tester) async {
-    final exercise = Exercise(
+    final exercise = ExerciseModel(
       name: 'Squats',
       description: 'Lower body exercise',
       instructions: 'Do squats',
       category: ExerciseCategory.strength,
       muscleTargets: [MuscleTarget.quadriceps, MuscleTarget.glutes],
       jointTargets: [JointTarget.knee],
+      version: 1,
     );
 
     await tester.pumpWidget(

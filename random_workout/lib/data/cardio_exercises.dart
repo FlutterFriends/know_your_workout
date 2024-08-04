@@ -1,7 +1,7 @@
 import 'package:random_workout/models/exercise.dart';
 
-final List<Exercise> cardioExercises = [
-  Exercise(
+final List<ExerciseModel> cardioExercises = [
+  ExerciseModel(
     name: 'High Knees',
     description: 'Elevates heart rate and improves coordination',
     instructions:
@@ -22,7 +22,7 @@ final List<Exercise> cardioExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Jumping Jacks',
     description: 'Full-body cardio exercise that raises heart rate quickly',
     instructions:
@@ -42,7 +42,7 @@ final List<Exercise> cardioExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Mountain Climbers',
     description: 'Engages core while providing an intense cardio workout',
     instructions:
@@ -64,7 +64,7 @@ final List<Exercise> cardioExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Burpees',
     description: 'Full-body exercise that boosts heart rate and burns calories',
     instructions:
@@ -86,7 +86,7 @@ final List<Exercise> cardioExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Jump Rope (Imaginary)',
     description:
         'Improves coordination and provides an effective cardio workout',
@@ -108,7 +108,7 @@ final List<Exercise> cardioExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Squat Jumps',
     description: 'Builds lower body strength while elevating heart rate',
     instructions:
@@ -129,7 +129,7 @@ final List<Exercise> cardioExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Lateral Shuffles',
     description: 'Improves agility and provides a good cardio workout',
     instructions:
@@ -150,7 +150,7 @@ final List<Exercise> cardioExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Punch and Kick',
     description:
         'Combines upper and lower body movements for a full-body cardio workout',
@@ -175,7 +175,7 @@ final List<Exercise> cardioExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Speed Skaters',
     description:
         'Lateral movement exercise that improves balance and burns calories',
@@ -197,7 +197,7 @@ final List<Exercise> cardioExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Plank Jacks',
     description: 'Combines core stability with cardio for an effective workout',
     instructions:
@@ -219,7 +219,7 @@ final List<Exercise> cardioExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Butt Kicks',
     description: 'Elevates heart rate while focusing on hamstring flexibility',
     instructions:
@@ -237,7 +237,7 @@ final List<Exercise> cardioExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Star Jumps',
     description: 'Full-body exercise that quickly raises heart rate',
     instructions:
@@ -260,7 +260,7 @@ final List<Exercise> cardioExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Skater Hops',
     description:
         'Lateral movement exercise that improves balance and coordination',
@@ -282,7 +282,7 @@ final List<Exercise> cardioExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Invisible Jump Rope Sprints',
     description: 'High-intensity cardio that mimics sprinting in place',
     instructions:
@@ -304,7 +304,7 @@ final List<Exercise> cardioExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Half Burpees',
     description:
         'Modified burpee that still provides an intense cardio workout',
@@ -326,7 +326,7 @@ final List<Exercise> cardioExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Woodchoppers',
     description:
         'Rotational exercise that targets obliques and improves core stability',
@@ -341,7 +341,7 @@ final List<Exercise> cardioExercises = [
     jointTargets: [JointTarget.spine, JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Standing Cross-Body Crunch',
     description: 'Engages obliques and improves coordination',
     instructions:
@@ -355,7 +355,7 @@ final List<Exercise> cardioExercises = [
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Lateral Lunges with Arm Raise',
     description: 'Targets abductors, hip flexors, and shoulders',
     instructions:
@@ -370,7 +370,7 @@ final List<Exercise> cardioExercises = [
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Plank to Downward Dog Tap',
     description: 'Engages core, shoulders, and improves flexibility',
     instructions:
@@ -385,7 +385,7 @@ final List<Exercise> cardioExercises = [
     jointTargets: [JointTarget.shoulder, JointTarget.wrist, JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Sumo Squat with Upright Row',
     description:
         'Combines lower body and upper body movements for a full-body cardio exercise',
@@ -401,7 +401,7 @@ final List<Exercise> cardioExercises = [
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Standing Oblique Crunch',
     description: 'Targets obliques while improving balance',
     instructions:
@@ -415,7 +415,7 @@ final List<Exercise> cardioExercises = [
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.spine],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Inchworm Walk with Push-Up',
     description: 'Full-body exercise that targets upper body and core',
     instructions:

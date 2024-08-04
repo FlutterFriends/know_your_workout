@@ -1,7 +1,7 @@
 import '../models/exercise.dart';
 
-final List<Exercise> mobilityExercises = [
-  Exercise(
+final List<ExerciseModel> mobilityExercises = [
+  ExerciseModel(
     name: 'Arm Circles',
     description: 'Improves shoulder mobility and warms up the upper body',
     instructions:
@@ -11,7 +11,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Hip Circles',
     description: 'Enhances hip joint mobility and loosens the lower back',
     instructions:
@@ -21,7 +21,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Ankle Rotations',
     description: 'Increases ankle flexibility and prevents injuries',
     instructions:
@@ -31,7 +31,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.ankle],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Neck Rolls',
     description: 'Improves neck mobility and relieves tension',
     instructions:
@@ -41,7 +41,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.neck],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Wrist Flexion and Extension',
     description: 'Enhances wrist mobility and prevents carpal tunnel',
     instructions:
@@ -51,7 +51,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.wrist],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Shoulder Shrugs',
     description: 'Releases tension in the upper trapezius and neck',
     instructions:
@@ -61,7 +61,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Torso Twists',
     description: 'Improves spinal mobility and core engagement',
     instructions:
@@ -71,7 +71,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.spine],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Cat-Cow',
     description: 'Enhances spinal flexibility and core strength',
     instructions:
@@ -81,7 +81,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.spine],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Thread the Needle',
     description: 'Increases thoracic spine mobility and shoulder flexibility',
     instructions:
@@ -91,7 +91,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.spine, JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Leg Swings',
     description: 'Improves hip mobility and dynamic flexibility',
     instructions:
@@ -105,7 +105,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Shoulder Pass-Throughs',
     description: 'Enhances shoulder flexibility and posture',
     instructions:
@@ -115,7 +115,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: "World's Greatest Stretch",
     description: 'Comprehensive stretch improving overall body mobility',
     instructions:
@@ -129,7 +129,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.spine],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Thoracic Bridge',
     description: 'Increases thoracic spine extension and shoulder mobility',
     instructions:
@@ -139,7 +139,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.spine, JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Squat to Stand',
     description: 'Improves hip and ankle mobility for better squats',
     instructions:
@@ -153,7 +153,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.hip, JointTarget.ankle, JointTarget.knee],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Scorpion',
     description: 'Enhances spine rotation and hip flexor flexibility',
     instructions:
@@ -163,7 +163,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.spine, JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Wall Slides',
     description: 'Improves shoulder mobility and scapular stability',
     instructions:
@@ -173,7 +173,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Cossack Squat',
     description: 'Increases lateral hip mobility and ankle flexibility',
     instructions:
@@ -187,7 +187,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.ankle],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Bird Dog',
     description: 'Enhances core stability and spine neutral position',
     instructions:
@@ -197,7 +197,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.spine, JointTarget.shoulder, JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Prone Scorpion',
     description: 'Improves thoracic mobility and hip flexor flexibility',
     instructions:
@@ -207,7 +207,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.spine, JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Downward Dog to Cobra Flow',
     description:
         'Enhances full-body mobility, especially in the spine and shoulders',
@@ -227,7 +227,7 @@ final List<Exercise> mobilityExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Elbow Circles',
     description: 'Improves elbow joint mobility and forearm flexibility',
     instructions:
@@ -237,7 +237,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.elbow],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Wrist Flexor Stretch',
     description: 'Enhances wrist flexibility and forearm mobility',
     instructions:
@@ -247,7 +247,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.wrist],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Neck Clock',
     description: 'Improves neck mobility and reduces tension',
     instructions:
@@ -257,7 +257,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.neck],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Elbow-to-Knee Touch',
     description: 'Enhances elbow, shoulder, and spine mobility',
     instructions:
@@ -267,7 +267,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.elbow, JointTarget.shoulder, JointTarget.spine],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Wrist Rotations',
     description: 'Improves wrist mobility and forearm flexibility',
     instructions:
@@ -277,7 +277,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.wrist],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Elbow Crawl',
     description: 'Enhances elbow and shoulder mobility',
     instructions:
@@ -287,7 +287,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.elbow, JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Hand Walks',
     description: 'Improves wrist, elbow, and shoulder mobility',
     instructions:
@@ -297,7 +297,7 @@ final List<Exercise> mobilityExercises = [
     jointTargets: [JointTarget.wrist, JointTarget.elbow, JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Neck and Shoulder Release',
     description: 'Relieves tension in the neck and improves shoulder mobility',
     instructions:

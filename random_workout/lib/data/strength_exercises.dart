@@ -2,8 +2,8 @@ import '../models/exercise.dart';
 
 import '../models/exercise.dart';
 
-final List<Exercise> strengthExercises = [
-  Exercise(
+final List<ExerciseModel> strengthExercises = [
+  ExerciseModel(
     name: 'Push-ups',
     description:
         'Classic upper body exercise targeting chest, shoulders, and triceps',
@@ -18,7 +18,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.shoulder, JointTarget.elbow],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Squats',
     description:
         'Lower body strength builder focusing on quads, hamstrings, and glutes',
@@ -33,7 +33,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.knee, JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Lunges',
     description:
         'Unilateral leg exercise working quads, hamstrings, and glutes',
@@ -48,7 +48,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.knee, JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Plank',
     description: 'Core stability exercise engaging the entire midsection',
     instructions:
@@ -58,7 +58,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.spine],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Burpees',
     description: 'Full body cardio and strength exercise',
     instructions:
@@ -73,7 +73,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.shoulder, JointTarget.hip, JointTarget.knee],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Mountain Climbers',
     description:
         'Dynamic core exercise also engaging shoulders and hip flexors',
@@ -89,7 +89,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.shoulder, JointTarget.hip, JointTarget.knee],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Dips',
     description: 'Upper body exercise targeting triceps and chest',
     instructions:
@@ -103,7 +103,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.elbow, JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Pull-ups',
     description: 'Upper body exercise focusing on back and biceps',
     instructions:
@@ -113,7 +113,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.shoulder, JointTarget.elbow],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Glute Bridge',
     description: 'Lower body exercise targeting glutes and hamstrings',
     instructions:
@@ -123,7 +123,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Russian Twists',
     description: 'Core exercise focusing on obliques and rotational strength',
     instructions:
@@ -133,7 +133,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.spine],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Superman',
     description: 'Back extension exercise for spinal erectors and glutes',
     instructions:
@@ -143,7 +143,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.spine, JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Wall Sit',
     description: 'Isometric leg exercise for endurance and strength',
     instructions:
@@ -153,7 +153,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.knee, JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Calf Raises',
     description: 'Lower leg exercise targeting the calf muscles',
     instructions:
@@ -163,7 +163,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.ankle],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Tricep Dips',
     description: 'Upper body exercise focusing on triceps',
     instructions:
@@ -173,7 +173,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.elbow],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Lateral Raises',
     description: 'Shoulder isolation exercise',
     instructions:
@@ -183,7 +183,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Bicycle Crunches',
     description: 'Dynamic core exercise targeting abs and obliques',
     instructions:
@@ -193,7 +193,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.spine, JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Leg Raises',
     description: 'Core exercise focusing on lower abs and hip flexors',
     instructions:
@@ -203,7 +203,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Front and Side Arm Raises',
     description: 'Shoulder exercise targeting deltoids',
     instructions:
@@ -213,7 +213,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Plank to Downward Dog',
     description: 'Dynamic core and upper body exercise',
     instructions:
@@ -227,7 +227,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.shoulder, JointTarget.spine],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Bicep Curls',
     description: 'Isolation exercise for biceps',
     instructions:
@@ -237,7 +237,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.elbow],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Standing Calf Raises',
     description: 'Isolation exercise for calf muscles',
     instructions:
@@ -247,7 +247,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.ankle],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Dumbbell Shrugs',
     description: 'Upper body exercise focusing on the trapezius muscles',
     instructions:
@@ -257,7 +257,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.shoulder],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Standing Hip Abductions',
     description: 'Lower body exercise targeting the hip abductor muscles',
     instructions:
@@ -267,7 +267,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Sumo Squats',
     description: 'Lower body exercise targeting inner thighs and glutes',
     instructions:
@@ -281,7 +281,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.knee, JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: "Farmer's Walks",
     description:
         'Full body exercise with emphasis on forearms and grip strength',
@@ -296,7 +296,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.shoulder, JointTarget.elbow, JointTarget.spine],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Lying Leg Raises',
     description: 'Core exercise targeting lower abs and hip flexors',
     instructions:
@@ -306,7 +306,7 @@ final List<Exercise> strengthExercises = [
     jointTargets: [JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Seated Leg Adductions',
     description: 'Lower body exercise targeting inner thigh muscles',
     instructions:

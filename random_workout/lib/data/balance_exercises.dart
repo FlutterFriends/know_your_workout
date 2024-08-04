@@ -1,7 +1,7 @@
 import 'package:random_workout/models/exercise.dart';
 
-final List<Exercise> balanceExercises = [
-  Exercise(
+final List<ExerciseModel> balanceExercises = [
+  ExerciseModel(
     name: 'Single Leg Stand',
     description: 'Improves balance and strengthens leg and core muscles',
     instructions:
@@ -17,7 +17,7 @@ final List<Exercise> balanceExercises = [
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Tree Pose',
     description: 'Enhances balance and focus while stretching the inner thighs',
     instructions:
@@ -32,7 +32,7 @@ final List<Exercise> balanceExercises = [
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Flamingo Stand',
     description: 'Challenges balance and strengthens the standing leg',
     instructions:
@@ -48,7 +48,7 @@ final List<Exercise> balanceExercises = [
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Tightrope Walk',
     description: 'Improves balance and coordination',
     instructions:
@@ -62,7 +62,7 @@ final List<Exercise> balanceExercises = [
     jointTargets: [JointTarget.ankle],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Single Leg Deadlift',
     description: 'Enhances balance while strengthening the back and legs',
     instructions:
@@ -79,7 +79,7 @@ final List<Exercise> balanceExercises = [
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Warrior III Pose',
     description: 'Improves balance, focus, and core strength',
     instructions:
@@ -95,7 +95,7 @@ final List<Exercise> balanceExercises = [
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Standing Leg Swings',
     description: 'Improves dynamic balance and hip mobility',
     instructions:
@@ -110,7 +110,7 @@ final List<Exercise> balanceExercises = [
     jointTargets: [JointTarget.hip, JointTarget.ankle],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Pillow Balance',
     description: 'Improves balance on an unstable surface',
     instructions:
@@ -125,7 +125,7 @@ final List<Exercise> balanceExercises = [
     jointTargets: [JointTarget.ankle, JointTarget.knee],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Clock Reach',
     description:
         'Enhances balance while improving leg strength and flexibility',
@@ -146,7 +146,7 @@ final List<Exercise> balanceExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Single Leg Balance with Arm Movements',
     description: 'Challenges balance while performing upper body movements',
     instructions:
@@ -165,7 +165,7 @@ final List<Exercise> balanceExercises = [
     ],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Heel-to-Toe Balance Walk',
     description: 'Improves balance and coordination',
     instructions:
@@ -179,7 +179,7 @@ final List<Exercise> balanceExercises = [
     jointTargets: [JointTarget.ankle],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Standing Windmill',
     description: 'Enhances balance while improving flexibility',
     instructions:
@@ -194,7 +194,7 @@ final List<Exercise> balanceExercises = [
     jointTargets: [JointTarget.hip, JointTarget.spine],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Single Leg Romanian Deadlift',
     description: 'Improves balance and strengthens the posterior chain',
     instructions:
@@ -211,7 +211,7 @@ final List<Exercise> balanceExercises = [
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.ankle],
     version: 1,
   ),
-  Exercise(
+  ExerciseModel(
     name: 'Tandem Balance',
     description: 'Challenges balance by narrowing the base of support',
     instructions:

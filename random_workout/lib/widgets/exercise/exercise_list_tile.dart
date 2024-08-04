@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../models/exercise.dart';
 
 class ExerciseListTile extends StatelessWidget {
-  final Exercise exercise;
+  final ExerciseModel exercise;
   final VoidCallback onRemove;
   final VoidCallback onShowInstructions;
 

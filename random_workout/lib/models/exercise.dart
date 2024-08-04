@@ -56,7 +56,7 @@ enum JointTarget with LabeledEnum {
   const JointTarget(this.label);
 }
 
-class Exercise {
+class ExerciseModel {
   final String name;
   final String description;
   final String? instructions;
@@ -65,7 +65,7 @@ class Exercise {
   final List<JointTarget>? jointTargets;
   final int version;
 
-  Exercise({
+  ExerciseModel({
     required this.name,
     required this.description,
     required this.instructions,
@@ -76,8 +76,8 @@ class Exercise {
   });
 }
 
-/// Extension on the [Exercise] class to calculate the score of an exercise.
-extension ExerciseScore on Exercise {
+/// Extension on the [ExerciseModel] class to calculate the score of an exercise.
+extension ExerciseScore on ExerciseModel {
   /// Calculates the score of an exercise based on the number of muscle targets,
   /// joint targets, and focus areas.
   ///

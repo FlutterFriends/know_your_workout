@@ -6,7 +6,7 @@ import 'package:random_workout/widgets/exercise/create_exercise_dialog.dart';
 void main() {
   testWidgets('CreateExerciseDialog creates a new exercise',
       (WidgetTester tester) async {
-    Exercise? createdExercise;
+    ExerciseModel? createdExercise;
 
     await tester.pumpWidget(
       MaterialApp(

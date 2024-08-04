@@ -108,7 +108,7 @@ class WorkoutPage extends StatelessWidget {
     );
   }
 
-  void _showInstructions(BuildContext context, Exercise exercise) {
+  void _showInstructions(BuildContext context, ExerciseModel exercise) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
