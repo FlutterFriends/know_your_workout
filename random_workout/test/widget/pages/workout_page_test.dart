@@ -76,7 +76,6 @@ void main() {
         category: ExerciseCategory.strength,
         muscleTargets: [MuscleTarget.chest, MuscleTarget.triceps],
         jointTargets: [JointTarget.elbow],
-        focusAreas: [FocusArea.upperBody],
       ),
       Exercise(
         name: 'Squats',
@@ -85,7 +84,6 @@ void main() {
         category: ExerciseCategory.strength,
         muscleTargets: [MuscleTarget.quadriceps],
         jointTargets: [JointTarget.knee],
-        focusAreas: [FocusArea.lowerBody],
       ),
     ];
 

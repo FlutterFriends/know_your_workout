@@ -25,7 +25,6 @@ class TargetSelectionPage extends StatelessWidget {
           children: [
             _buildTargetList<MuscleTarget>(context),
             _buildTargetList<JointTarget>(context),
-            _buildTargetList<FocusArea>(context),
           ],
         ),
         floatingActionButton: FloatingActionButton(
@@ -38,11 +37,8 @@ class TargetSelectionPage extends StatelessWidget {
 
   Widget _buildTargetList<T extends Enum>(BuildContext context) {
     final appState = Provider.of<AppState>(context);
-    final targets = T == MuscleTarget
-        ? MuscleTarget.values
-        : T == JointTarget
-            ? JointTarget.values
-            : FocusArea.values;
+    final targets =
+        T == MuscleTarget ? MuscleTarget.values : JointTarget.values;
 
     return ListView.builder(
       itemCount: targets.length,
@@ -64,9 +60,8 @@ class TargetSelectionPage extends StatelessWidget {
       return target.label;
     } else if (target is JointTarget) {
       return target.label;
-    } else if (target is FocusArea) {
-      return target.label;
     }
+
     return target.toString().split('.').last;
   }
 }

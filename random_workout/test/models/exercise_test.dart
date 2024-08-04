@@ -11,7 +11,6 @@ void main() {
         category: ExerciseCategory.strength,
         muscleTargets: [MuscleTarget.chest, MuscleTarget.triceps],
         jointTargets: [JointTarget.elbow],
-        focusAreas: [FocusArea.upperBody],
       );
 
       expect(exercise.name, 'Push-ups');
@@ -20,13 +19,11 @@ void main() {
       expect(
           exercise.muscleTargets, [MuscleTarget.chest, MuscleTarget.triceps]);
       expect(exercise.jointTargets, [JointTarget.elbow]);
-      expect(exercise.focusAreas, [FocusArea.upperBody]);
     });
 
     test('should return correct labels for targets', () {
       expect(MuscleTarget.chest.label, 'Chest');
       expect(JointTarget.knee.label, 'Knee');
-      expect(FocusArea.lowerBack.label, 'Lower Back');
     });
   });
 }

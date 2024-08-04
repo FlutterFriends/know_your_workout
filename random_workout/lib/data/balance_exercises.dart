@@ -10,10 +10,11 @@ final List<Exercise> balanceExercises = [
     muscleTargets: [
       MuscleTarget.quadriceps,
       MuscleTarget.calves,
-      MuscleTarget.core
+      MuscleTarget.abdominals,
+      MuscleTarget.obliques,
+      MuscleTarget.glutes,
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
-    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Tree Pose',
@@ -24,10 +25,10 @@ final List<Exercise> balanceExercises = [
     muscleTargets: [
       MuscleTarget.quadriceps,
       MuscleTarget.calves,
-      MuscleTarget.core
+      MuscleTarget.abdominals,
+      MuscleTarget.obliques,
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
-    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Flamingo Stand',
@@ -39,10 +40,10 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.quadriceps,
       MuscleTarget.hamstrings,
       MuscleTarget.calves,
-      MuscleTarget.core
+      MuscleTarget.abdominals,
+      MuscleTarget.obliques,
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
-    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Tightrope Walk',
@@ -50,9 +51,12 @@ final List<Exercise> balanceExercises = [
     instructions:
         "1. Find a straight line on the floor or imagine one.\n2. Walk heel-to-toe along the line.\n3. Keep your arms out to the sides for balance.\n4. Take 10-15 steps forward, then backward.",
     category: ExerciseCategory.balance,
-    muscleTargets: [MuscleTarget.calves, MuscleTarget.core],
+    muscleTargets: [
+      MuscleTarget.calves,
+      MuscleTarget.abdominals,
+      MuscleTarget.quadriceps,
+    ],
     jointTargets: [JointTarget.ankle],
-    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Single Leg Deadlift',
@@ -63,11 +67,12 @@ final List<Exercise> balanceExercises = [
     muscleTargets: [
       MuscleTarget.hamstrings,
       MuscleTarget.glutes,
-      MuscleTarget.core,
-      MuscleTarget.back
+      MuscleTarget.abdominals,
+      MuscleTarget.obliques,
+      MuscleTarget.lats,
+      MuscleTarget.traps,
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
-    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Warrior III Pose',
@@ -76,12 +81,13 @@ final List<Exercise> balanceExercises = [
         "1. Start in a standing position.\n2. Shift your weight onto one leg.\n3. Lean forward, lifting your other leg behind you.\n4. Extend your arms forward.\n5. Hold for 30 seconds, then switch sides.",
     category: ExerciseCategory.balance,
     muscleTargets: [
-      MuscleTarget.core,
+      MuscleTarget.abdominals,
+      MuscleTarget.obliques,
+      MuscleTarget.quadriceps,
       MuscleTarget.glutes,
       MuscleTarget.hamstrings
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
-    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Standing Leg Swings',
@@ -89,9 +95,13 @@ final List<Exercise> balanceExercises = [
     instructions:
         "1. Stand on one leg.\n2. Swing the other leg forward and back.\n3. Keep your upper body stable.\n4. Do 15 swings, then switch legs.\n5. Repeat with side-to-side swings.",
     category: ExerciseCategory.balance,
-    muscleTargets: [MuscleTarget.core],
+    muscleTargets: [
+      MuscleTarget.abdominals,
+      MuscleTarget.obliques,
+      MuscleTarget.quadriceps,
+      MuscleTarget.hipFlexors,
+    ],
     jointTargets: [JointTarget.hip, JointTarget.ankle],
-    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Pillow Balance',
@@ -102,10 +112,10 @@ final List<Exercise> balanceExercises = [
     muscleTargets: [
       MuscleTarget.calves,
       MuscleTarget.quadriceps,
-      MuscleTarget.core
+      MuscleTarget.obliques,
+      MuscleTarget.abdominals,
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee],
-    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Clock Reach',
@@ -118,10 +128,14 @@ final List<Exercise> balanceExercises = [
       MuscleTarget.quadriceps,
       MuscleTarget.hamstrings,
       MuscleTarget.calves,
-      MuscleTarget.core
+      MuscleTarget.abdominals,
+      MuscleTarget.obliques,
     ],
-    jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.hip],
-    focusAreas: [FocusArea.legs, FocusArea.core],
+    jointTargets: [
+      JointTarget.ankle,
+      JointTarget.knee,
+      JointTarget.hip,
+    ],
   ),
   Exercise(
     name: 'Single Leg Balance with Arm Movements',
@@ -130,12 +144,16 @@ final List<Exercise> balanceExercises = [
         "1. Stand on one leg.\n2. Perform arm circles, punches, or reaches while maintaining balance.\n3. Continue for 30 seconds.\n4. Switch legs and repeat.",
     category: ExerciseCategory.balance,
     muscleTargets: [
-      MuscleTarget.core,
+      MuscleTarget.abdominals,
+      MuscleTarget.obliques,
       MuscleTarget.shoulders,
       MuscleTarget.quadriceps
     ],
-    jointTargets: [JointTarget.ankle, JointTarget.knee, JointTarget.shoulder],
-    focusAreas: [FocusArea.legs, FocusArea.core],
+    jointTargets: [
+      JointTarget.ankle,
+      JointTarget.knee,
+      JointTarget.shoulder,
+    ],
   ),
   Exercise(
     name: 'Heel-to-Toe Balance Walk',
@@ -143,9 +161,12 @@ final List<Exercise> balanceExercises = [
     instructions:
         "1. Stand with your heel touching the toe of your back foot.\n2. Take a step forward, placing your back foot's heel against the front foot's toe.\n3. Continue for 10-15 steps.\n4. Turn around and return to the start.",
     category: ExerciseCategory.balance,
-    muscleTargets: [MuscleTarget.calves, MuscleTarget.core],
+    muscleTargets: [
+      MuscleTarget.calves,
+      MuscleTarget.quadriceps,
+      MuscleTarget.obliques,
+    ],
     jointTargets: [JointTarget.ankle],
-    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Standing Windmill',
@@ -154,12 +175,12 @@ final List<Exercise> balanceExercises = [
         "1. Stand with feet wider than shoulder-width.\n2. Extend arms out to the sides.\n3. Bend to touch your right hand to your left foot.\n4. Return to standing.\n5. Alternate sides for 10 reps each.",
     category: ExerciseCategory.balance,
     muscleTargets: [
-      MuscleTarget.core,
+      MuscleTarget.quadriceps,
+      MuscleTarget.abdominals,
       MuscleTarget.hamstrings,
       MuscleTarget.obliques
     ],
     jointTargets: [JointTarget.hip, JointTarget.spine],
-    focusAreas: [FocusArea.core],
   ),
   Exercise(
     name: 'Single Leg Romanian Deadlift',
@@ -170,11 +191,12 @@ final List<Exercise> balanceExercises = [
     muscleTargets: [
       MuscleTarget.hamstrings,
       MuscleTarget.glutes,
-      MuscleTarget.core,
-      MuscleTarget.back
+      MuscleTarget.abdominals,
+      MuscleTarget.obliques,
+      MuscleTarget.lats,
+      MuscleTarget.traps,
     ],
     jointTargets: [JointTarget.hip, JointTarget.knee, JointTarget.ankle],
-    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
   Exercise(
     name: 'Tandem Balance',
@@ -185,9 +207,9 @@ final List<Exercise> balanceExercises = [
     muscleTargets: [
       MuscleTarget.calves,
       MuscleTarget.quadriceps,
-      MuscleTarget.core
+      MuscleTarget.abdominals,
+      MuscleTarget.obliques,
     ],
     jointTargets: [JointTarget.ankle, JointTarget.knee],
-    focusAreas: [FocusArea.legs, FocusArea.core],
   ),
 ];

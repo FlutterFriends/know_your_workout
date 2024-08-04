@@ -20,35 +20,21 @@ enum ExerciseCategory {
 
 enum MuscleTarget with LabeledEnum {
   abdominals('Abdominals'),
-  abductors('Abductors'),
-  adductors('Adductors'),
-  back('Back'),
   biceps('Biceps'),
   calves('Calves'),
   chest('Chest'),
-  core('Core'),
-  erectorSpinae('Erector Spinae'),
   forearms('Forearms'),
   glutes('Glutes'),
   hamstrings('Hamstrings'),
-  hips('Hips'),
-  hipFlexors('Hip Flexors'),
-  lats('Latissimus Dorsi'),
-  lowerBack('Lower Back'),
-  lowerBody('Lower Body'),
-  neck('Neck'),
-  neckMuscles('Neck Muscles'),
+  lats('Lats'),
   obliques('Obliques'),
-  piriformis('Piriformis'),
-  quadriceps('Quadriceps'),
-  rhomboids('Rhomboids'),
-  rotatorCuff('Rotator Cuff'),
-  serratus('Serratus'),
+  quadriceps('Quads'),
   shoulders('Shoulders'),
-  tibialis('Tibialis'),
-  traps('Trapezius'),
+  traps('Traps'),
   triceps('Triceps'),
-  upperBack('Upper Back');
+  hipFlexors('Hip Flexors'),
+  abductors('Abductors'),
+  adductors('Adductors');
 
   @override
   final String label;
@@ -57,48 +43,17 @@ enum MuscleTarget with LabeledEnum {
 
 enum JointTarget with LabeledEnum {
   ankle('Ankle'),
-  cervicalSpine('Cervical Spine'),
   elbow('Elbow'),
   hip('Hip'),
   knee('Knee'),
-  lumbarSpine('Lumbar Spine'),
+  neck('Neck'),
   shoulder('Shoulder'),
   spine('Spine'),
-  thoracicSpine('Thoracic Spine'),
   wrist('Wrist');
 
   @override
   final String label;
   const JointTarget(this.label);
-}
-
-enum FocusArea with LabeledEnum {
-  ankles('Ankles'),
-  arms('Arms'),
-  calves('Calves'),
-  chest('Chest'),
-  core('Core'),
-  feet('Feet'),
-  forearms('Forearms'),
-  fullBody('Full Body'),
-  glutes('Glutes'),
-  hands('Hands'),
-  head('Head'),
-  hips('Hips'),
-  knees('Knees'),
-  legs('Legs'),
-  lowerBack('Lower Back'),
-  lowerBody('Lower Body'),
-  neck('Neck'),
-  shoulders('Shoulders'),
-  thighs('Thighs'),
-  upperBack('Upper Back'),
-  upperBody('Upper Body'),
-  wrists('Wrists');
-
-  @override
-  final String label;
-  const FocusArea(this.label);
 }
 
 class Exercise {
@@ -108,7 +63,6 @@ class Exercise {
   final ExerciseCategory category;
   final List<MuscleTarget>? muscleTargets;
   final List<JointTarget>? jointTargets;
-  final List<FocusArea>? focusAreas;
 
   Exercise({
     required this.name,
@@ -117,7 +71,6 @@ class Exercise {
     required this.category,
     required this.muscleTargets,
     required this.jointTargets,
-    required this.focusAreas,
   });
 }
 
@@ -146,9 +99,7 @@ extension ExerciseScore on Exercise {
     if (jointTargets != null) {
       score += jointTargets!.length;
     }
-    if (focusAreas != null) {
-      score += focusAreas!.length;
-    }
+
     return score;
   }
 }

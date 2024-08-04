@@ -93,9 +93,6 @@ class AppState extends ChangeNotifier {
     exercise.jointTargets?.forEach((joint) {
       _targetCounts[joint] = (_targetCounts[joint] ?? 0) + 1;
     });
-    exercise.focusAreas?.forEach((focus) {
-      _targetCounts[focus] = (_targetCounts[focus] ?? 0) + 1;
-    });
   }
 
   void _recalculateTargetCounts() {
@@ -139,12 +136,6 @@ class AppState extends ChangeNotifier {
               .length *
           2;
     }
-    if (exercise.focusAreas != null) {
-      score += exercise.focusAreas!
-              .where((focus) => _selectedTargets.contains(focus))
-              .length *
-          2;
-    }
 
     // Add a base score to ensure exercises without selected targets still have a chance
     score += exercise.score;
@@ -185,10 +176,6 @@ class AppState extends ChangeNotifier {
       exercise.jointTargets?.forEach((joint) {
         uniqueTargets.add(joint);
       });
-
-      exercise.focusAreas?.forEach((focus) {
-        uniqueTargets.add(focus);
-      });
     }
 
     return uniqueTargets.length;
@@ -212,8 +199,6 @@ class AppState extends ChangeNotifier {
         groupedCounts['Muscles']!.add(entry);
       } else if (entry.key is JointTarget) {
         groupedCounts['Joints']!.add(entry);
-      } else if (entry.key is FocusArea) {
-        groupedCounts['Focus Areas']!.add(entry);
       }
     }
 
