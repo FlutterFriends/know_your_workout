@@ -1,6 +1,5 @@
 import '../models/exercise.dart';
 
-import '../models/exercise.dart';
 
 final List<ExerciseModel> strengthExercises = [
   ExerciseModel(
