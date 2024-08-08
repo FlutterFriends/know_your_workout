@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return Consumer<AppState>(
       builder: (context, appState, child) {
         return MaterialApp(
-          title: 'Random Workout Generator',
+          title: 'Know Your Workout',
           debugShowCheckedModeBanner: false,
           theme: appState.isDarkMode ? ThemeData.dark() : ThemeData.light(),
           home: const CategorySelectionPage(),

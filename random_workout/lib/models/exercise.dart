@@ -58,10 +58,10 @@ class ExerciseModel {
 /// Extension on the [ExerciseModel] class to calculate the score of an exercise.
 extension ExerciseScore on ExerciseModel {
   /// Calculates the score of an exercise based on the number of muscle targets,
-  /// joint targets, and focus areas.
+  /// and joint targets.
   ///
   /// The score is calculated by summing the lengths of the muscleTargets,
-  /// jointTargets, and focusAreas lists.
+  /// and jointTargets lists.
   ///
   /// Returns the total score of the exercise.
   ///
