@@ -97,7 +97,6 @@ void main() {
 
     expect(groupedCounts['Muscles']!.length, 3);
     expect(groupedCounts['Joints']!.length, 2);
-    expect(groupedCounts['Focus Areas']!.length, 2);
 
     expect(
         groupedCounts['Muscles']!

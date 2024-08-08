@@ -31,12 +31,10 @@ class MockAppState extends Mock implements AppState {
         returnValue: <String, List<MapEntry<dynamic, int>>>{
           'Muscles': [],
           'Joints': [],
-          'Focus Areas': [],
         },
         returnValueForMissingStub: <String, List<MapEntry<dynamic, int>>>{
           'Muscles': [],
           'Joints': [],
-          'Focus Areas': [],
         },
       );
 }

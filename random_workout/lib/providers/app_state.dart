@@ -181,9 +181,9 @@ class AppState extends ChangeNotifier {
     return uniqueTargets.length;
   }
 
-  /// Groups the target counts by type (Muscles, Joints, Focus Areas) and sorts them.
+  /// Groups the target counts by type (Muscles, Joints) and sorts them.
   ///
-  /// The target counts are grouped into three categories: Muscles, Joints, and Focus Areas.
+  /// The target counts are grouped into two categories: Muscles and Joints.
   /// Each group is sorted in descending order based on the count.
   ///
   /// Returns a map where the keys are the group names and the values are the sorted target counts.
@@ -191,7 +191,6 @@ class AppState extends ChangeNotifier {
     Map<String, List<MapEntry<dynamic, int>>> groupedCounts = {
       'Muscles': [],
       'Joints': [],
-      'Focus Areas': [],
     };
 
     for (var entry in _targetCounts.entries) {
